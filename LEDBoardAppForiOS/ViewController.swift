@@ -8,12 +8,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+  //MARK: - View Property
+  
+  //MARK: - Onother Property
+  
+  //MARK: - Life Cycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
   }
-
-
+  
+  //MARK: - Private Function
+  
+  //MARK: - Action
+  
 }
 
