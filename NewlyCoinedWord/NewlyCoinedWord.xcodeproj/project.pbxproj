@@ -13,6 +13,8 @@
 		B606CBEB2A68DADD00A11320 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B606CBE92A68DADD00A11320 /* Main.storyboard */; };
 		B606CBED2A68DADF00A11320 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B606CBEC2A68DADF00A11320 /* Assets.xcassets */; };
 		B606CBF02A68DADF00A11320 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B606CBEE2A68DADF00A11320 /* LaunchScreen.storyboard */; };
+		B6344C732A6CFD200023F199 /* UIColor+hexcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6344C722A6CFD200023F199 /* UIColor+hexcode.swift */; };
+		B65AB9A22A6CFC1E007C0871 /* BaminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AB9A12A6CFC1E007C0871 /* BaminViewController.swift */; };
 		B68288BB2A6991FA0071417B /* NewlyCoinedWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68288BA2A6991FA0071417B /* NewlyCoinedWordViewController.swift */; };
 		B68288BE2A69B5D60071417B /* NewlyCoinedKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68288BD2A69B5D60071417B /* NewlyCoinedKeyword.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +28,8 @@
 		B606CBEC2A68DADF00A11320 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B606CBEF2A68DADF00A11320 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B606CBF12A68DADF00A11320 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6344C722A6CFD200023F199 /* UIColor+hexcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hexcode.swift"; sourceTree = "<group>"; };
+		B65AB9A12A6CFC1E007C0871 /* BaminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaminViewController.swift; sourceTree = "<group>"; };
 		B68288BA2A6991FA0071417B /* NewlyCoinedWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewlyCoinedWordViewController.swift; sourceTree = "<group>"; };
 		B68288BD2A69B5D60071417B /* NewlyCoinedKeyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewlyCoinedKeyword.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +67,7 @@
 				B68288BC2A69B5C60071417B /* Models */,
 				B606CBF82A68DB1A00A11320 /* Storyboards */,
 				B606CBF72A68DB1200A11320 /* ViewControllers */,
+				B6344C712A6CFCC70023F199 /* Extension */,
 				B606CBE32A68DADD00A11320 /* AppDelegate.swift */,
 				B606CBE52A68DADD00A11320 /* SceneDelegate.swift */,
 				B606CBEC2A68DADF00A11320 /* Assets.xcassets */,
@@ -76,6 +81,7 @@
 			children = (
 				B68288BA2A6991FA0071417B /* NewlyCoinedWordViewController.swift */,
 				B606CBE72A68DADD00A11320 /* DdayCaculaterViewController.swift */,
+				B65AB9A12A6CFC1E007C0871 /* BaminViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -87,6 +93,14 @@
 				B606CBEE2A68DADF00A11320 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B6344C712A6CFCC70023F199 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B6344C722A6CFD200023F199 /* UIColor+hexcode.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		B68288BC2A69B5C60071417B /* Models */ = {
@@ -168,11 +182,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B65AB9A22A6CFC1E007C0871 /* BaminViewController.swift in Sources */,
 				B68288BE2A69B5D60071417B /* NewlyCoinedKeyword.swift in Sources */,
 				B606CBE82A68DADD00A11320 /* DdayCaculaterViewController.swift in Sources */,
 				B68288BB2A6991FA0071417B /* NewlyCoinedWordViewController.swift in Sources */,
 				B606CBE42A68DADD00A11320 /* AppDelegate.swift in Sources */,
 				B606CBE62A68DADD00A11320 /* SceneDelegate.swift in Sources */,
+				B6344C732A6CFD200023F199 /* UIColor+hexcode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

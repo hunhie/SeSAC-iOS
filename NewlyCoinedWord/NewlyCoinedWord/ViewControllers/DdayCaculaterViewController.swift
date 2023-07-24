@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DdayCaculaterViewController.swift
 //  NewlyCoinedWord
 //
 //  Created by walkerhilla on 2023/07/20.

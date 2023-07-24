@@ -1,6 +1,6 @@
 //
 //  NewlyCoinedWordViewController.swift
-//  NewlyCoinedWordViewController
+//  NewlyCoinedWord
 //
 //  Created by walkerhilla on 2023/07/21.
 //
@@ -71,6 +71,7 @@ final class NewlyCoinedWordViewController: UIViewController {
       button.frame = CGRect(x: xPos, y: 0, width: 70, height: 30)
       button.tag = i
       button.addTarget(self, action: #selector(keywordButtonTapped(_:)), for: .touchUpInside)
+      
       recommendKeywordScrollView.addSubview(button)
       recommendKeywordScrollView.contentSize.width = 80 * CGFloat(i + 1)
     }
@@ -87,7 +88,22 @@ final class NewlyCoinedWordViewController: UIViewController {
   }
   
   // 키워드 검색 메소드
-  func searchKeyword(_ searchStr: String?) -> NewlyCoinedKeyword? {
+  func searchKeyword() {
+    guard let keyword = searchTextField.text,
+          keyword.count > 0 else {
+      showAlert()
+      return
+    }
+    // 검색한 키워드가 존재하는 경우
+    if let keywordResult = searchKeywordQuery(keyword) {
+      updateKeywordDetail(keywordResult)
+    } else {
+      keywordDetailLabel.text = "조회 결과 없음"
+    }
+  }
+  
+  // 키워드 검색 쿼리
+  func searchKeywordQuery(_ searchStr: String?) -> NewlyCoinedKeyword? {
     guard let searchStr = searchStr else { return nil }
     let index = newlyCoinedKeywords.firstIndex { i in
       i.name == searchStr
@@ -95,6 +111,15 @@ final class NewlyCoinedWordViewController: UIViewController {
     guard let index = index else { return nil }
     return newlyCoinedKeywords[index]
   }
+  
+  // 알림 표시
+  func showAlert() {
+    let alert = UIAlertController(title: "알림", message: "검색어를 입력하세요.", preferredStyle: .alert)
+    let ok = UIAlertAction(title: "확인", style: .default)
+    alert.addAction(ok)
+    present(alert, animated: true)
+  }
+  
   
   //MARK: - Action
   
@@ -110,11 +135,7 @@ final class NewlyCoinedWordViewController: UIViewController {
   
   // 검색 버튼 탭 메소드
   @IBAction func searchButtonTapped(_ sender: UIButton) {
-    if let keyword = searchKeyword(searchTextField.text) {
-      updateKeywordDetail(keyword)
-    } else {
-      keywordDetailLabel.text = "조회 결과 없음"
-    }
+    searchKeyword()
     view.endEditing(true)
   }
 }
@@ -123,13 +144,7 @@ final class NewlyCoinedWordViewController: UIViewController {
 extension NewlyCoinedWordViewController: UITextFieldDelegate {
   // 키보드 Return 클릭 시 실행 메소드
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-   
-    // 검색한 키워드가 존재하는 경우
-    if let keyword = searchKeyword(textField.text) {
-      updateKeywordDetail(keyword)
-    } else {
-      keywordDetailLabel.text = "조회 결과 없음"
-    }
+    searchKeyword()
     
     // 키보드 내리기
     textField.resignFirstResponder()
