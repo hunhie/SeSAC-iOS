@@ -12,7 +12,7 @@ final class ViewController: UIViewController {
   
   @IBOutlet weak var boardLabel: UILabel!
   @IBOutlet weak var boardTextInputView: UIView!
-  @IBOutlet weak var boradTextField: UITextField!
+  @IBOutlet weak var boardTextField: UITextField!
   @IBOutlet weak var boardTextFieldReturn: UIButton!
   @IBOutlet weak var boardTextColorChanger: UIButton!
   
@@ -26,7 +26,7 @@ final class ViewController: UIViewController {
     configureUI()
   }
   
-  //MARK: - Private Function
+  //MARK: - UI
   
   /// ViewController의 UI 설정 메소드
   ///
@@ -42,7 +42,8 @@ final class ViewController: UIViewController {
   private func setupBoardLabel() {
     boardLabel.text = "키워드를 입력하세요."
     boardLabel.textAlignment = .center
-    boardLabel.font = .systemFont(ofSize: 50)
+    boardLabel.font = .boldSystemFont(ofSize: 60)
+    boardLabel.textColor = .red
   }
   
   /// BoardTextInputView UI 설정
@@ -57,8 +58,9 @@ final class ViewController: UIViewController {
   /// boradTextField UI 설정
   private func setupBoardTextField() {
     let paddingView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 16.0, height: 0.0))
-    boradTextField.leftView = paddingView
-    boradTextField.leftViewMode = .always
+    boardTextField.leftView = paddingView
+    boardTextField.leftViewMode = .always
+    boardTextField.delegate = self
   }
   
   /// boardTextInputView Buttons UI 설정
@@ -67,7 +69,45 @@ final class ViewController: UIViewController {
     boardTextColorChanger.tintColor = .red
   }
   
-  //MARK: - Action
+  //MARK: - Private function
   
+  private func updateBoardLabelText(_ text: String?) {
+    if let text = boardTextField.text,
+       text.count > 0 {
+      boardLabel.text = text
+    }
+    
+    view.endEditing(true)
+  }
+  
+  private func randomColorPick(_ color: UIColor) -> UIColor {
+    let randomColor: [UIColor] = [.blue, .green, .orange, .red, .purple, .white, .magenta]
+    guard let random = randomColor.randomElement(),
+          random != color else {
+      return randomColorPick(color)
+    }
+    return random
+  }
+  
+  //MARK: - Action
+  @IBAction func textFieldReturnButtonTapped(_ sender: UIButton) {
+    updateBoardLabelText(boardTextField.text)
+  }
+  
+  @IBAction func boardTextColorChangerTapped(_ sender: UIButton) {
+    boardLabel.textColor = randomColorPick(boardLabel.textColor)
+  }
+  
+  @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
+    boardTextInputView.isHidden.toggle()
+  }
 }
 
+extension ViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    updateBoardLabelText(textField.text)
+    
+    textField.resignFirstResponder()
+    return true
+  }
+}

@@ -16,8 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jec-7G-bNc">
-                                <rect key="frame" x="0.0" y="0.0" width="852" height="372"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jec-7G-bNc">
+                                <rect key="frame" x="59" y="0.0" width="777" height="372"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -37,11 +38,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="55"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="입력"/>
+                                                <connections>
+                                                    <action selector="textFieldReturnButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R39-fU-DeF"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkH-Yt-ped">
                                                 <rect key="frame" x="58.666666666666742" y="0.0" width="53.666666666666657" height="55"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Aa"/>
+                                                <connections>
+                                                    <action selector="boardTextColorChangerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="png-TZ-XIL"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -61,27 +68,36 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="jec-7G-bNc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="52z-jC-sby"/>
+                            <constraint firstItem="jec-7G-bNc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="52z-jC-sby"/>
                             <constraint firstItem="3AX-hK-tMw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Nau-08-TnI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jec-7G-bNc" secondAttribute="bottom" id="TYW-6t-DRi"/>
                             <constraint firstItem="3AX-hK-tMw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="ZPP-Hk-sUV"/>
                             <constraint firstItem="jec-7G-bNc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fSP-w2-DXj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3AX-hK-tMw" secondAttribute="trailing" constant="16" id="nuC-Ua-Ytv"/>
-                            <constraint firstAttribute="trailing" secondItem="jec-7G-bNc" secondAttribute="trailing" id="t3i-Jp-PM8"/>
+                            <constraint firstAttribute="trailing" secondItem="jec-7G-bNc" secondAttribute="trailing" constant="16" id="t3i-Jp-PM8"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="SJk-Ge-zqT" appends="YES" id="g4I-ZA-Rau"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="boardLabel" destination="jec-7G-bNc" id="Hrz-wA-hue"/>
                         <outlet property="boardTextColorChanger" destination="jkH-Yt-ped" id="P2W-js-HY3"/>
+                        <outlet property="boardTextField" destination="3YX-kx-mAm" id="i8x-pr-KKc"/>
                         <outlet property="boardTextFieldReturn" destination="Kzx-56-2Tv" id="fF1-5M-t7K"/>
                         <outlet property="boardTextInputView" destination="3AX-hK-tMw" id="NR7-wT-HEj"/>
-                        <outlet property="boradTextField" destination="3YX-kx-mAm" id="i8x-pr-KKc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SJk-Ge-zqT">
+                    <connections>
+                        <action selector="tapGesture:" destination="BYZ-38-t0r" id="897-fC-8kC"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="114" y="-27"/>
+            <point key="canvasLocation" x="478" y="-37"/>
         </scene>
     </scenes>
     <resources>
