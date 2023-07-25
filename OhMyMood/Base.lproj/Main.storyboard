@@ -150,7 +150,17 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5R0-Ln-aCD" secondAttribute="trailing" id="2io-LH-n1F"/>
+                                    <constraint firstItem="mMh-XI-k0u" firstAttribute="leading" secondItem="PLx-ZW-QuC" secondAttribute="leading" id="89G-sI-W5N"/>
+                                    <constraint firstItem="5R0-Ln-aCD" firstAttribute="leading" secondItem="PLx-ZW-QuC" secondAttribute="leading" id="8QV-kP-jD5"/>
+                                    <constraint firstAttribute="trailing" secondItem="EuJ-6k-XFS" secondAttribute="trailing" id="8rj-E1-5mr"/>
+                                    <constraint firstItem="EuJ-6k-XFS" firstAttribute="leading" secondItem="PLx-ZW-QuC" secondAttribute="leading" id="Djz-Uf-cwU"/>
+                                    <constraint firstAttribute="trailing" secondItem="u35-1b-1Ky" secondAttribute="trailing" id="Gvw-Sx-2Bg"/>
+                                    <constraint firstItem="u35-1b-1Ky" firstAttribute="leading" secondItem="PLx-ZW-QuC" secondAttribute="leading" id="H0M-VD-PQi"/>
+                                    <constraint firstAttribute="trailing" secondItem="fBx-gt-n4q" secondAttribute="trailing" id="Rgs-Q9-X4m"/>
+                                    <constraint firstAttribute="trailing" secondItem="mMh-XI-k0u" secondAttribute="trailing" id="ffn-yV-Vox"/>
                                     <constraint firstAttribute="width" secondItem="PLx-ZW-QuC" secondAttribute="height" multiplier="7:8" id="o3V-A0-pFy"/>
+                                    <constraint firstItem="fBx-gt-n4q" firstAttribute="leading" secondItem="PLx-ZW-QuC" secondAttribute="leading" id="xU0-DP-JAG"/>
                                 </constraints>
                             </stackView>
                         </subviews>
