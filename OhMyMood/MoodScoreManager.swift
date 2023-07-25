@@ -27,7 +27,8 @@ class MoodScoreManager {
   var moodScoreDic: [Mood: Int] = [.happy: 0, .smile: 0, .soso: 0, .sad: 0, .bad: 0]
   
   func increaseScore(_ mood: Int) {
-    self.moodScoreDic.updateValue(moodScoreDic[Mood(rawValue: mood)!]! + 1, forKey: Mood(rawValue: mood)!)
+    let key = Mood(rawValue: mood)!
+    self.moodScoreDic.updateValue(moodScoreDic[key]! + 1, forKey: key)
   }
   
   func getScore(_ mood: Int) -> Int {
