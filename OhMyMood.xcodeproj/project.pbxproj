@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B63DE1312A70633A00BEE9CE /* MoodScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63DE1302A70633A00BEE9CE /* MoodScoreViewController.swift */; };
+		B63DE1332A70651200BEE9CE /* MoodScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63DE1322A70651200BEE9CE /* MoodScoreManager.swift */; };
 		B67A1A4C2A6FBDAE0089F063 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A1A4B2A6FBDAE0089F063 /* AppDelegate.swift */; };
 		B67A1A4E2A6FBDAE0089F063 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A1A4D2A6FBDAE0089F063 /* SceneDelegate.swift */; };
-		B67A1A502A6FBDAE0089F063 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A1A4F2A6FBDAE0089F063 /* ViewController.swift */; };
+		B67A1A502A6FBDAE0089F063 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A1A4F2A6FBDAE0089F063 /* MoodViewController.swift */; };
 		B67A1A532A6FBDAE0089F063 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67A1A512A6FBDAE0089F063 /* Main.storyboard */; };
 		B67A1A552A6FBDAF0089F063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B67A1A542A6FBDAF0089F063 /* Assets.xcassets */; };
 		B67A1A582A6FBDAF0089F063 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67A1A562A6FBDAF0089F063 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B63DE1302A70633A00BEE9CE /* MoodScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodScoreViewController.swift; sourceTree = "<group>"; };
+		B63DE1322A70651200BEE9CE /* MoodScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodScoreManager.swift; sourceTree = "<group>"; };
 		B67A1A482A6FBDAE0089F063 /* OhMyMood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OhMyMood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67A1A4B2A6FBDAE0089F063 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B67A1A4D2A6FBDAE0089F063 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B67A1A4F2A6FBDAE0089F063 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B67A1A4F2A6FBDAE0089F063 /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		B67A1A522A6FBDAE0089F063 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B67A1A542A6FBDAF0089F063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B67A1A572A6FBDAF0089F063 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,7 +62,9 @@
 			children = (
 				B67A1A4B2A6FBDAE0089F063 /* AppDelegate.swift */,
 				B67A1A4D2A6FBDAE0089F063 /* SceneDelegate.swift */,
-				B67A1A4F2A6FBDAE0089F063 /* ViewController.swift */,
+				B67A1A4F2A6FBDAE0089F063 /* MoodViewController.swift */,
+				B63DE1302A70633A00BEE9CE /* MoodScoreViewController.swift */,
+				B63DE1322A70651200BEE9CE /* MoodScoreManager.swift */,
 				B67A1A512A6FBDAE0089F063 /* Main.storyboard */,
 				B67A1A542A6FBDAF0089F063 /* Assets.xcassets */,
 				B67A1A562A6FBDAF0089F063 /* LaunchScreen.storyboard */,
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B67A1A502A6FBDAE0089F063 /* ViewController.swift in Sources */,
+				B67A1A502A6FBDAE0089F063 /* MoodViewController.swift in Sources */,
 				B67A1A4C2A6FBDAE0089F063 /* AppDelegate.swift in Sources */,
+				B63DE1332A70651200BEE9CE /* MoodScoreManager.swift in Sources */,
+				B63DE1312A70633A00BEE9CE /* MoodScoreViewController.swift in Sources */,
 				B67A1A4E2A6FBDAE0089F063 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
