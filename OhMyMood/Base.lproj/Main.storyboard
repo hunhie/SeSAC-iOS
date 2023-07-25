@@ -1,24 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R6H-B6-lwF">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--통계보기-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OhMyMood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OH MY MOOD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYm-Gl-8wS">
+                                <rect key="frame" x="0.0" y="59" width="393" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="pu2-ka-6hv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aYm-Gl-8wS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9g6-SS-aUd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aYm-Gl-8wS" secondAttribute="trailing" id="UD4-Lq-hSh"/>
+                            <constraint firstItem="aYm-Gl-8wS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fM4-3a-VKe"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="통계보기" image="chart.bar" catalog="system" id="RFc-SK-lhE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1008.3969465648854" y="-34.507042253521128"/>
+        </scene>
+        <!--작성하기-->
+        <scene sceneID="ryf-2q-HJo">
+            <objects>
+                <viewController id="uyW-hW-Hrv" customClass="ViewController" customModule="OhMyMood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S6X-yG-kZD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OH MY MOOD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANg-zf-hYc">
+                                <rect key="frame" x="0.0" y="59" width="393" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FYl-KY-opp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Dos-54-uPp">
+                                <rect key="frame" x="0.0" y="89" width="393" height="680"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L82-hL-vJa">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="136"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji1" translatesAutoresizingMaskIntoConstraints="NO" id="Mxd-A2-z1l">
+                                                <rect key="frame" x="170" y="0.0" width="53" height="136"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.96862745098039216" green="0.37254901960784315" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Mxd-A2-z1l" firstAttribute="centerX" secondItem="L82-hL-vJa" secondAttribute="centerX" id="Sdq-IS-u2x"/>
+                                            <constraint firstItem="Mxd-A2-z1l" firstAttribute="centerY" secondItem="L82-hL-vJa" secondAttribute="centerY" id="lJv-5C-de6"/>
+                                            <constraint firstItem="Mxd-A2-z1l" firstAttribute="top" secondItem="L82-hL-vJa" secondAttribute="top" id="tJ1-J2-sls"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fU9-tu-JWA">
+                                        <rect key="frame" x="0.0" y="136" width="393" height="136"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji2" translatesAutoresizingMaskIntoConstraints="NO" id="I9U-i7-5Hh">
+                                                <rect key="frame" x="170.66666666666666" y="0.0" width="52" height="136"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.96862745098039216" green="0.84313725490196079" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="I9U-i7-5Hh" firstAttribute="top" secondItem="fU9-tu-JWA" secondAttribute="top" id="9F5-i7-09Z"/>
+                                            <constraint firstItem="I9U-i7-5Hh" firstAttribute="centerX" secondItem="fU9-tu-JWA" secondAttribute="centerX" id="URb-Zj-3A7"/>
+                                            <constraint firstItem="I9U-i7-5Hh" firstAttribute="centerY" secondItem="fU9-tu-JWA" secondAttribute="centerY" id="eXp-ME-q6U"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cv-H3-VKZ">
+                                        <rect key="frame" x="0.0" y="272" width="393" height="136"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji3" translatesAutoresizingMaskIntoConstraints="NO" id="IHw-C3-aV0">
+                                                <rect key="frame" x="171.66666666666666" y="0.0" width="50" height="136"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.96862745098039216" green="0.97647058823529409" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="IHw-C3-aV0" firstAttribute="top" secondItem="4cv-H3-VKZ" secondAttribute="top" id="9bb-bf-1sK"/>
+                                            <constraint firstItem="IHw-C3-aV0" firstAttribute="centerX" secondItem="4cv-H3-VKZ" secondAttribute="centerX" id="een-gZ-3VF"/>
+                                            <constraint firstItem="IHw-C3-aV0" firstAttribute="centerY" secondItem="4cv-H3-VKZ" secondAttribute="centerY" id="reW-t9-llQ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEq-Zp-tgO">
+                                        <rect key="frame" x="0.0" y="408" width="393" height="136"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji4" translatesAutoresizingMaskIntoConstraints="NO" id="ao7-bJ-ejf">
+                                                <rect key="frame" x="170.66666666666666" y="0.0" width="52" height="136"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.63137254901960782" green="0.93333333333333335" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="ao7-bJ-ejf" firstAttribute="centerY" secondItem="GEq-Zp-tgO" secondAttribute="centerY" id="W5K-Jd-XFd"/>
+                                            <constraint firstItem="ao7-bJ-ejf" firstAttribute="centerX" secondItem="GEq-Zp-tgO" secondAttribute="centerX" id="iFl-h9-nUx"/>
+                                            <constraint firstItem="ao7-bJ-ejf" firstAttribute="top" secondItem="GEq-Zp-tgO" secondAttribute="top" id="joQ-6I-gPj"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qj9-cR-vMn">
+                                        <rect key="frame" x="0.0" y="544" width="393" height="136"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji5" translatesAutoresizingMaskIntoConstraints="NO" id="11M-DW-ytr">
+                                                <rect key="frame" x="169.66666666666666" y="0.0" width="54" height="136"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.16078431372549018" green="0.36078431372549019" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="11M-DW-ytr" firstAttribute="centerY" secondItem="qj9-cR-vMn" secondAttribute="centerY" id="Od3-dy-6gZ"/>
+                                            <constraint firstItem="11M-DW-ytr" firstAttribute="centerX" secondItem="qj9-cR-vMn" secondAttribute="centerX" id="QWm-vZ-qlf"/>
+                                            <constraint firstItem="11M-DW-ytr" firstAttribute="top" secondItem="qj9-cR-vMn" secondAttribute="top" id="ugY-Ce-WiG"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TqP-ZO-XGd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TqP-ZO-XGd" firstAttribute="trailing" secondItem="ANg-zf-hYc" secondAttribute="trailing" id="5bf-Ys-YJe"/>
+                            <constraint firstItem="ANg-zf-hYc" firstAttribute="leading" secondItem="TqP-ZO-XGd" secondAttribute="leading" id="Bx4-vT-8od"/>
+                            <constraint firstItem="Dos-54-uPp" firstAttribute="top" secondItem="ANg-zf-hYc" secondAttribute="bottom" id="KkK-dK-FZS"/>
+                            <constraint firstItem="Dos-54-uPp" firstAttribute="top" secondItem="ANg-zf-hYc" secondAttribute="bottom" id="TRD-Sx-b6z"/>
+                            <constraint firstItem="Dos-54-uPp" firstAttribute="trailing" secondItem="TqP-ZO-XGd" secondAttribute="trailing" id="aG6-XY-3dh"/>
+                            <constraint firstItem="Dos-54-uPp" firstAttribute="leading" secondItem="TqP-ZO-XGd" secondAttribute="leading" id="b3q-au-n6E"/>
+                            <constraint firstItem="ANg-zf-hYc" firstAttribute="top" secondItem="TqP-ZO-XGd" secondAttribute="top" id="jkV-Ut-NRj"/>
+                            <constraint firstItem="TqP-ZO-XGd" firstAttribute="bottom" secondItem="Dos-54-uPp" secondAttribute="bottom" id="o3l-Pq-iAI"/>
+                            <constraint firstItem="TqP-ZO-XGd" firstAttribute="bottom" secondItem="Dos-54-uPp" secondAttribute="bottom" id="ui5-5z-JzJ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="작성하기" image="pencil.circle" catalog="system" id="oQy-vv-Rpm"/>
+                    <navigationItem key="navigationItem" id="lX9-Uy-Utd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ajm-v9-im1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008" y="-711"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="rR8-0B-9hQ">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="R6H-B6-lwF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="If2-Hq-JgB">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="uyW-hW-Hrv" kind="relationship" relationship="viewControllers" id="xUQ-dA-d7y"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="T8I-SI-H7A"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jgK-aN-fhx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="81.679389312977094" y="-376.76056338028172"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chart.bar" catalog="system" width="128" height="89"/>
+        <image name="emoji1" width="53" height="51"/>
+        <image name="emoji2" width="52" height="48"/>
+        <image name="emoji3" width="50" height="38"/>
+        <image name="emoji4" width="52" height="48"/>
+        <image name="emoji5" width="54" height="50"/>
+        <image name="pencil.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
