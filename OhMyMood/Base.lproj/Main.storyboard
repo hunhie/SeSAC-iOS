@@ -52,7 +52,7 @@
                                             <constraint firstAttribute="trailing" secondItem="OWk-K2-xJr" secondAttribute="trailing" constant="10" id="wiR-BX-uRz"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBx-gt-n4q">
+                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBx-gt-n4q">
                                         <rect key="frame" x="0.0" y="84.666666666666657" width="353" height="64.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="적당미소지수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75a-X8-sfc">
@@ -61,7 +61,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RY-Th-N0x">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RY-Th-N0x">
                                                 <rect key="frame" x="343" y="32.333333333333343" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
@@ -76,7 +76,7 @@
                                             <constraint firstItem="5RY-Th-N0x" firstAttribute="centerY" secondItem="fBx-gt-n4q" secondAttribute="centerY" id="zd8-V7-ZiW"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5R0-Ln-aCD">
+                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5R0-Ln-aCD">
                                         <rect key="frame" x="0.0" y="169.33333333333331" width="353" height="64.666666666666686"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="그냥그냥지수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dkj-vy-lyP">
@@ -85,7 +85,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiy-E2-ZpI">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiy-E2-ZpI">
                                                 <rect key="frame" x="343" y="32.333333333333371" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
@@ -100,7 +100,7 @@
                                             <constraint firstItem="Dkj-vy-lyP" firstAttribute="centerY" secondItem="5R0-Ln-aCD" secondAttribute="centerY" id="wtZ-1v-acl"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMh-XI-k0u">
+                                    <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMh-XI-k0u">
                                         <rect key="frame" x="0.0" y="253.99999999999997" width="353" height="64.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좀속상한지수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmx-fg-mNf">
@@ -109,7 +109,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vq-nU-fdK">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vq-nU-fdK">
                                                 <rect key="frame" x="343" y="32.333333333333314" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
@@ -124,7 +124,7 @@
                                             <constraint firstItem="7vq-nU-fdK" firstAttribute="centerY" secondItem="mMh-XI-k0u" secondAttribute="centerY" id="wSV-ae-v30"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EuJ-6k-XFS">
+                                    <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EuJ-6k-XFS">
                                         <rect key="frame" x="0.0" y="338.66666666666669" width="353" height="64.666666666666686"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="많이슬픈지수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHl-du-cUt">
@@ -133,7 +133,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMe-6W-bQ7">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMe-6W-bQ7">
                                                 <rect key="frame" x="343" y="32.333333333333314" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -166,6 +166,17 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="통계보기" image="chart.bar" catalog="system" id="RFc-SK-lhE"/>
+                    <connections>
+                        <outletCollection property="moodScoreLabels" destination="OWk-K2-xJr" collectionClass="NSMutableArray" id="vg2-15-x2g"/>
+                        <outletCollection property="moodScoreLabels" destination="5RY-Th-N0x" collectionClass="NSMutableArray" id="J9I-Bu-a1b"/>
+                        <outletCollection property="moodScoreLabels" destination="uiy-E2-ZpI" collectionClass="NSMutableArray" id="FEu-YO-Ps3"/>
+                        <outletCollection property="moodScoreLabels" destination="7vq-nU-fdK" collectionClass="NSMutableArray" id="NMg-AW-Dtc"/>
+                        <outletCollection property="moodScoreLabels" destination="IMe-6W-bQ7" collectionClass="NSMutableArray" id="Kgg-Bs-WiN"/>
+                        <outletCollection property="moodScoreViews" destination="u35-1b-1Ky" collectionClass="NSMutableArray" id="aCw-tO-otl"/>
+                        <outletCollection property="moodScoreViews" destination="fBx-gt-n4q" collectionClass="NSMutableArray" id="6XK-DK-gcN"/>
+                        <outletCollection property="moodScoreViews" destination="5R0-Ln-aCD" collectionClass="NSMutableArray" id="A1E-Gh-hKJ"/>
+                        <outletCollection property="moodScoreViews" destination="mMh-XI-k0u" collectionClass="NSMutableArray" id="rYm-6r-LKd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -300,6 +311,11 @@
                         <outletCollection property="moods" destination="4cv-H3-VKZ" collectionClass="NSMutableArray" id="fsW-Tq-uHD"/>
                         <outletCollection property="moods" destination="GEq-Zp-tgO" collectionClass="NSMutableArray" id="jFA-st-gA2"/>
                         <outletCollection property="moods" destination="qj9-cR-vMn" collectionClass="NSMutableArray" id="Dq1-xk-hSa"/>
+                        <outletCollection property="emojis" destination="Mxd-A2-z1l" collectionClass="NSMutableArray" id="Jm8-OF-N9K"/>
+                        <outletCollection property="emojis" destination="I9U-i7-5Hh" collectionClass="NSMutableArray" id="r5u-CP-3wY"/>
+                        <outletCollection property="emojis" destination="IHw-C3-aV0" collectionClass="NSMutableArray" id="4uo-vM-rxc"/>
+                        <outletCollection property="emojis" destination="ao7-bJ-ejf" collectionClass="NSMutableArray" id="Glq-cn-sHQ"/>
+                        <outletCollection property="emojis" destination="11M-DW-ytr" collectionClass="NSMutableArray" id="z1W-0d-vlf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ajm-v9-im1" sceneMemberID="firstResponder"/>
