@@ -16,8 +16,6 @@ final class ViewController: UIViewController {
   @IBOutlet weak var boardTextFieldReturn: UIButton!
   @IBOutlet weak var boardTextColorChanger: UIButton!
   
-  //MARK: - Onother Property
-  
   //MARK: - Life Cycle
   
   override func viewDidLoad() {
