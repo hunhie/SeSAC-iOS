@@ -11,7 +11,7 @@
         <!--통계보기-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MoodViewController" customModule="OhMyMood" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MoodScoreViewController" customModule="OhMyMood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,73 +195,86 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="136"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji1" translatesAutoresizingMaskIntoConstraints="NO" id="Mxd-A2-z1l">
-                                                <rect key="frame" x="170" y="0.0" width="53" height="136"/>
+                                                <rect key="frame" x="170" y="42.666666666666657" width="53" height="51"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96862745098039216" green="0.37254901960784315" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="Mxd-A2-z1l" firstAttribute="centerX" secondItem="L82-hL-vJa" secondAttribute="centerX" id="Sdq-IS-u2x"/>
                                             <constraint firstItem="Mxd-A2-z1l" firstAttribute="centerY" secondItem="L82-hL-vJa" secondAttribute="centerY" id="lJv-5C-de6"/>
-                                            <constraint firstItem="Mxd-A2-z1l" firstAttribute="top" secondItem="L82-hL-vJa" secondAttribute="top" id="tJ1-J2-sls"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fU9-tu-JWA">
+                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fU9-tu-JWA">
                                         <rect key="frame" x="0.0" y="136" width="393" height="136"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji2" translatesAutoresizingMaskIntoConstraints="NO" id="I9U-i7-5Hh">
-                                                <rect key="frame" x="170.66666666666666" y="0.0" width="52" height="136"/>
+                                                <rect key="frame" x="170.66666666666666" y="44" width="52" height="48"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96862745098039216" green="0.84313725490196079" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="I9U-i7-5Hh" firstAttribute="top" secondItem="fU9-tu-JWA" secondAttribute="top" id="9F5-i7-09Z"/>
                                             <constraint firstItem="I9U-i7-5Hh" firstAttribute="centerX" secondItem="fU9-tu-JWA" secondAttribute="centerX" id="URb-Zj-3A7"/>
                                             <constraint firstItem="I9U-i7-5Hh" firstAttribute="centerY" secondItem="fU9-tu-JWA" secondAttribute="centerY" id="eXp-ME-q6U"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cv-H3-VKZ">
+                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cv-H3-VKZ">
                                         <rect key="frame" x="0.0" y="272" width="393" height="136"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji3" translatesAutoresizingMaskIntoConstraints="NO" id="IHw-C3-aV0">
-                                                <rect key="frame" x="171.66666666666666" y="0.0" width="50" height="136"/>
+                                                <rect key="frame" x="171.66666666666666" y="49" width="50" height="38"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96862745098039216" green="0.97647058823529409" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="IHw-C3-aV0" firstAttribute="top" secondItem="4cv-H3-VKZ" secondAttribute="top" id="9bb-bf-1sK"/>
                                             <constraint firstItem="IHw-C3-aV0" firstAttribute="centerX" secondItem="4cv-H3-VKZ" secondAttribute="centerX" id="een-gZ-3VF"/>
                                             <constraint firstItem="IHw-C3-aV0" firstAttribute="centerY" secondItem="4cv-H3-VKZ" secondAttribute="centerY" id="reW-t9-llQ"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEq-Zp-tgO">
+                                    <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEq-Zp-tgO">
                                         <rect key="frame" x="0.0" y="408" width="393" height="136"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji4" translatesAutoresizingMaskIntoConstraints="NO" id="ao7-bJ-ejf">
-                                                <rect key="frame" x="170.66666666666666" y="0.0" width="52" height="136"/>
+                                                <rect key="frame" x="170.66666666666666" y="44" width="52" height="48"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.63137254901960782" green="0.93333333333333335" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="ao7-bJ-ejf" firstAttribute="centerY" secondItem="GEq-Zp-tgO" secondAttribute="centerY" id="W5K-Jd-XFd"/>
                                             <constraint firstItem="ao7-bJ-ejf" firstAttribute="centerX" secondItem="GEq-Zp-tgO" secondAttribute="centerX" id="iFl-h9-nUx"/>
-                                            <constraint firstItem="ao7-bJ-ejf" firstAttribute="top" secondItem="GEq-Zp-tgO" secondAttribute="top" id="joQ-6I-gPj"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qj9-cR-vMn">
+                                    <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qj9-cR-vMn">
                                         <rect key="frame" x="0.0" y="544" width="393" height="136"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji5" translatesAutoresizingMaskIntoConstraints="NO" id="11M-DW-ytr">
-                                                <rect key="frame" x="169.66666666666666" y="0.0" width="54" height="136"/>
+                                                <rect key="frame" x="169.66666666666666" y="43" width="54" height="50"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.16078431372549018" green="0.36078431372549019" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="11M-DW-ytr" firstAttribute="centerY" secondItem="qj9-cR-vMn" secondAttribute="centerY" id="Od3-dy-6gZ"/>
                                             <constraint firstItem="11M-DW-ytr" firstAttribute="centerX" secondItem="qj9-cR-vMn" secondAttribute="centerX" id="QWm-vZ-qlf"/>
-                                            <constraint firstItem="11M-DW-ytr" firstAttribute="top" secondItem="qj9-cR-vMn" secondAttribute="top" id="ugY-Ce-WiG"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="L82-hL-vJa" firstAttribute="leading" secondItem="Dos-54-uPp" secondAttribute="leading" id="2TE-l8-6n2"/>
+                                    <constraint firstItem="fU9-tu-JWA" firstAttribute="top" secondItem="L82-hL-vJa" secondAttribute="bottom" id="7a9-ai-shE"/>
+                                    <constraint firstItem="qj9-cR-vMn" firstAttribute="top" secondItem="GEq-Zp-tgO" secondAttribute="bottom" id="Guc-10-eYL"/>
+                                    <constraint firstItem="4cv-H3-VKZ" firstAttribute="top" secondItem="fU9-tu-JWA" secondAttribute="bottom" id="Guo-VQ-hrg"/>
+                                    <constraint firstItem="fU9-tu-JWA" firstAttribute="leading" secondItem="Dos-54-uPp" secondAttribute="leading" id="KzI-pA-wBK"/>
+                                    <constraint firstAttribute="trailing" secondItem="GEq-Zp-tgO" secondAttribute="trailing" id="QHv-T4-SFv"/>
+                                    <constraint firstAttribute="trailing" secondItem="4cv-H3-VKZ" secondAttribute="trailing" id="RhP-1Y-PT4"/>
+                                    <constraint firstAttribute="trailing" secondItem="L82-hL-vJa" secondAttribute="trailing" id="Tzu-4X-pg0"/>
+                                    <constraint firstItem="GEq-Zp-tgO" firstAttribute="leading" secondItem="Dos-54-uPp" secondAttribute="leading" id="W3l-i5-jDr"/>
+                                    <constraint firstItem="L82-hL-vJa" firstAttribute="top" secondItem="Dos-54-uPp" secondAttribute="top" id="g1O-h5-zsg"/>
+                                    <constraint firstAttribute="bottom" secondItem="qj9-cR-vMn" secondAttribute="bottom" id="gd8-4z-4D7"/>
+                                    <constraint firstAttribute="trailing" secondItem="qj9-cR-vMn" secondAttribute="trailing" id="lw6-GF-NUx"/>
+                                    <constraint firstItem="qj9-cR-vMn" firstAttribute="leading" secondItem="Dos-54-uPp" secondAttribute="leading" id="m9b-Lf-Wc2"/>
+                                    <constraint firstItem="4cv-H3-VKZ" firstAttribute="leading" secondItem="Dos-54-uPp" secondAttribute="leading" id="mgk-TH-8oP"/>
+                                    <constraint firstAttribute="trailing" secondItem="fU9-tu-JWA" secondAttribute="trailing" id="v86-91-QEx"/>
+                                    <constraint firstItem="GEq-Zp-tgO" firstAttribute="top" secondItem="4cv-H3-VKZ" secondAttribute="bottom" id="wUP-fN-NWb"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TqP-ZO-XGd"/>
@@ -280,6 +293,14 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="작성하기" image="pencil.circle" catalog="system" id="oQy-vv-Rpm"/>
                     <navigationItem key="navigationItem" id="lX9-Uy-Utd"/>
+                    <connections>
+                        <outletCollection property="moods" destination="L82-hL-vJa" collectionClass="NSMutableArray" id="ePm-b5-Bbc"/>
+                        <outletCollection property="moods" destination="I9U-i7-5Hh" collectionClass="NSMutableArray" id="5DB-sV-sSJ"/>
+                        <outletCollection property="moods" destination="fU9-tu-JWA" collectionClass="NSMutableArray" id="a0W-Xe-6Hu"/>
+                        <outletCollection property="moods" destination="4cv-H3-VKZ" collectionClass="NSMutableArray" id="fsW-Tq-uHD"/>
+                        <outletCollection property="moods" destination="GEq-Zp-tgO" collectionClass="NSMutableArray" id="jFA-st-gA2"/>
+                        <outletCollection property="moods" destination="qj9-cR-vMn" collectionClass="NSMutableArray" id="Dq1-xk-hSa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ajm-v9-im1" sceneMemberID="firstResponder"/>
             </objects>
