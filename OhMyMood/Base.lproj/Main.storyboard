@@ -176,6 +176,7 @@
                         <outletCollection property="moodScoreViews" destination="fBx-gt-n4q" collectionClass="NSMutableArray" id="6XK-DK-gcN"/>
                         <outletCollection property="moodScoreViews" destination="5R0-Ln-aCD" collectionClass="NSMutableArray" id="A1E-Gh-hKJ"/>
                         <outletCollection property="moodScoreViews" destination="mMh-XI-k0u" collectionClass="NSMutableArray" id="rYm-6r-LKd"/>
+                        <outletCollection property="moodScoreViews" destination="EuJ-6k-XFS" collectionClass="NSMutableArray" id="SBU-hp-74h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
