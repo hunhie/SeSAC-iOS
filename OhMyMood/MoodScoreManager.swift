@@ -16,6 +16,22 @@ enum Mood: Int {
   case soso
   case sad
   case bad
+  
+  // case를 String 타입으로 반환하는 연산 프로퍼티
+  var getString: String {
+    switch self {
+    case .happy:
+      return "happy"
+    case .smile:
+      return "smile"
+    case .soso:
+      return "soso"
+    case .sad:
+      return "sad"
+    case .bad:
+      return "bad"
+    }
+  }
 }
 
 // Mood 점수 매니저(싱글톤)
@@ -24,14 +40,25 @@ class MoodScoreManager {
   
   private init() {}
   
-  var moodScoreDic: [Mood: Int] = [.happy: 0, .smile: 0, .soso: 0, .sad: 0, .bad: 0]
+  // 데이터 저장 딕셔너리
+  //var moodScoreDic: [Mood: Int] = [.happy: 0, .smile: 0, .soso: 0, .sad: 0, .bad: 0]
   
   func increaseScore(_ mood: Int) {
     let key = Mood(rawValue: mood)!
-    self.moodScoreDic.updateValue(moodScoreDic[key]! + 1, forKey: key)
+    //self.moodScoreDic.updateValue(moodScoreDic[key]! + 1, forKey: key)
+    
+    // UserDefault에 저장된 값 불러오기, nil일 경우 0
+    let value = (UserDefaults.standard.value(forKey: key.getString) as? Int) ?? 0
+    
+    // UserDefault에 새로운 값 저장
+    UserDefaults.standard.setValue(value + 1, forKey: key.getString)
   }
   
   func getScore(_ mood: Int) -> Int {
-    return self.moodScoreDic[Mood(rawValue: mood)!]!
+    let key = Mood(rawValue: mood)!
+    //return self.moodScoreDic[Mood(rawValue: mood)!]!
+    
+    // UserDefault에 저장된 값 반환
+    return UserDefaults.standard.integer(forKey: key.getString)
   }
 }

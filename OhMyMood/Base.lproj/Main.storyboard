@@ -317,7 +317,6 @@
                     <navigationItem key="navigationItem" id="lX9-Uy-Utd"/>
                     <connections>
                         <outletCollection property="moods" destination="L82-hL-vJa" collectionClass="NSMutableArray" id="ePm-b5-Bbc"/>
-                        <outletCollection property="moods" destination="I9U-i7-5Hh" collectionClass="NSMutableArray" id="5DB-sV-sSJ"/>
                         <outletCollection property="moods" destination="fU9-tu-JWA" collectionClass="NSMutableArray" id="a0W-Xe-6Hu"/>
                         <outletCollection property="moods" destination="4cv-H3-VKZ" collectionClass="NSMutableArray" id="fsW-Tq-uHD"/>
                         <outletCollection property="moods" destination="GEq-Zp-tgO" collectionClass="NSMutableArray" id="jFA-st-gA2"/>
