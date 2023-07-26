@@ -163,20 +163,30 @@
                                     <constraint firstItem="fBx-gt-n4q" firstAttribute="leading" secondItem="PLx-ZW-QuC" secondAttribute="leading" id="xU0-DP-JAG"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yrY-ze-mRe">
+                                <rect key="frame" x="333.33333333333331" y="59" width="49.666666666666686" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ellipsis.circle" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="ellipsis.circle" catalog="system"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="aYm-Gl-8wS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9g6-SS-aUd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PLx-ZW-QuC" secondAttribute="trailing" constant="20" id="AZE-N6-81Z"/>
+                            <constraint firstItem="yrY-ze-mRe" firstAttribute="top" secondItem="aYm-Gl-8wS" secondAttribute="top" id="LW3-ne-AaM"/>
                             <constraint firstItem="PLx-ZW-QuC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="OFB-ZG-h3S"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aYm-Gl-8wS" secondAttribute="trailing" id="UD4-Lq-hSh"/>
+                            <constraint firstItem="yrY-ze-mRe" firstAttribute="bottom" secondItem="aYm-Gl-8wS" secondAttribute="bottom" id="WGM-fr-wWf"/>
                             <constraint firstItem="aYm-Gl-8wS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fM4-3a-VKe"/>
                             <constraint firstItem="PLx-ZW-QuC" firstAttribute="top" secondItem="aYm-Gl-8wS" secondAttribute="bottom" constant="20" id="i4W-o4-5BB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yrY-ze-mRe" secondAttribute="trailing" constant="10" id="nPj-C3-dVL"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="통계보기" image="chart.bar" catalog="system" id="RFc-SK-lhE"/>
                     <connections>
+                        <outlet property="moreButton" destination="yrY-ze-mRe" id="I7s-bU-4Ms"/>
                         <outletCollection property="moodScoreLabels" destination="OWk-K2-xJr" collectionClass="NSMutableArray" id="vg2-15-x2g"/>
                         <outletCollection property="moodScoreLabels" destination="5RY-Th-N0x" collectionClass="NSMutableArray" id="J9I-Bu-a1b"/>
                         <outletCollection property="moodScoreLabels" destination="uiy-E2-ZpI" collectionClass="NSMutableArray" id="FEu-YO-Ps3"/>
@@ -216,25 +226,49 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L82-hL-vJa">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="136"/>
                                         <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVW-TD-ZfY">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="136"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="moodTapped:" destination="uyW-hW-Hrv" eventType="touchUpInside" id="KfH-kZ-AXf"/>
+                                                </connections>
+                                            </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji1" translatesAutoresizingMaskIntoConstraints="NO" id="Mxd-A2-z1l">
                                                 <rect key="frame" x="170" y="42.666666666666657" width="53" height="51"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96862745098039216" green="0.37254901960784315" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="uVW-TD-ZfY" secondAttribute="trailing" id="A3V-pH-0qN"/>
+                                            <constraint firstAttribute="bottom" secondItem="uVW-TD-ZfY" secondAttribute="bottom" id="BW7-8s-mua"/>
                                             <constraint firstItem="Mxd-A2-z1l" firstAttribute="centerX" secondItem="L82-hL-vJa" secondAttribute="centerX" id="Sdq-IS-u2x"/>
+                                            <constraint firstItem="uVW-TD-ZfY" firstAttribute="top" secondItem="L82-hL-vJa" secondAttribute="top" id="gPv-4b-n8d"/>
                                             <constraint firstItem="Mxd-A2-z1l" firstAttribute="centerY" secondItem="L82-hL-vJa" secondAttribute="centerY" id="lJv-5C-de6"/>
+                                            <constraint firstItem="uVW-TD-ZfY" firstAttribute="leading" secondItem="L82-hL-vJa" secondAttribute="leading" id="npr-3C-iJk"/>
                                         </constraints>
                                     </view>
                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fU9-tu-JWA">
                                         <rect key="frame" x="0.0" y="136" width="393" height="136"/>
                                         <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaI-ra-mRF">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="136"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="moodTapped:" destination="uyW-hW-Hrv" eventType="touchUpInside" id="vEN-eU-JRs"/>
+                                                </connections>
+                                            </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji2" translatesAutoresizingMaskIntoConstraints="NO" id="I9U-i7-5Hh">
                                                 <rect key="frame" x="170.66666666666666" y="44" width="52" height="48"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96862745098039216" green="0.84313725490196079" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="SaI-ra-mRF" secondAttribute="trailing" id="Cml-a9-doI"/>
+                                            <constraint firstItem="SaI-ra-mRF" firstAttribute="top" secondItem="fU9-tu-JWA" secondAttribute="top" id="JL5-DA-FcJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="SaI-ra-mRF" secondAttribute="bottom" id="Lez-9D-2cL"/>
+                                            <constraint firstItem="SaI-ra-mRF" firstAttribute="leading" secondItem="fU9-tu-JWA" secondAttribute="leading" id="Q1m-22-R9w"/>
                                             <constraint firstItem="I9U-i7-5Hh" firstAttribute="centerX" secondItem="fU9-tu-JWA" secondAttribute="centerX" id="URb-Zj-3A7"/>
                                             <constraint firstItem="I9U-i7-5Hh" firstAttribute="centerY" secondItem="fU9-tu-JWA" secondAttribute="centerY" id="eXp-ME-q6U"/>
                                         </constraints>
@@ -242,40 +276,76 @@
                                     <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cv-H3-VKZ">
                                         <rect key="frame" x="0.0" y="272" width="393" height="136"/>
                                         <subviews>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wh6-Uz-b73">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="136"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="moodTapped:" destination="uyW-hW-Hrv" eventType="touchUpInside" id="Zh8-cD-fh8"/>
+                                                </connections>
+                                            </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji3" translatesAutoresizingMaskIntoConstraints="NO" id="IHw-C3-aV0">
                                                 <rect key="frame" x="171.66666666666666" y="49" width="50" height="38"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96862745098039216" green="0.97647058823529409" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="Wh6-Uz-b73" firstAttribute="top" secondItem="4cv-H3-VKZ" secondAttribute="top" id="MBt-kF-VL6"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wh6-Uz-b73" secondAttribute="trailing" id="XCC-Kb-u5Y"/>
                                             <constraint firstItem="IHw-C3-aV0" firstAttribute="centerX" secondItem="4cv-H3-VKZ" secondAttribute="centerX" id="een-gZ-3VF"/>
+                                            <constraint firstItem="Wh6-Uz-b73" firstAttribute="leading" secondItem="4cv-H3-VKZ" secondAttribute="leading" id="h5g-a7-gaS"/>
+                                            <constraint firstAttribute="bottom" secondItem="Wh6-Uz-b73" secondAttribute="bottom" id="kvr-9C-rdQ"/>
                                             <constraint firstItem="IHw-C3-aV0" firstAttribute="centerY" secondItem="4cv-H3-VKZ" secondAttribute="centerY" id="reW-t9-llQ"/>
                                         </constraints>
                                     </view>
                                     <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEq-Zp-tgO">
                                         <rect key="frame" x="0.0" y="408" width="393" height="136"/>
                                         <subviews>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLz-Pv-6SK">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="136"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="moodTapped:" destination="uyW-hW-Hrv" eventType="touchUpInside" id="6lZ-5c-tpr"/>
+                                                </connections>
+                                            </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji4" translatesAutoresizingMaskIntoConstraints="NO" id="ao7-bJ-ejf">
                                                 <rect key="frame" x="170.66666666666666" y="44" width="52" height="48"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.63137254901960782" green="0.93333333333333335" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="fLz-Pv-6SK" firstAttribute="leading" secondItem="GEq-Zp-tgO" secondAttribute="leading" id="DES-Is-Q7Y"/>
                                             <constraint firstItem="ao7-bJ-ejf" firstAttribute="centerY" secondItem="GEq-Zp-tgO" secondAttribute="centerY" id="W5K-Jd-XFd"/>
+                                            <constraint firstAttribute="bottom" secondItem="fLz-Pv-6SK" secondAttribute="bottom" id="eH1-IM-DM8"/>
                                             <constraint firstItem="ao7-bJ-ejf" firstAttribute="centerX" secondItem="GEq-Zp-tgO" secondAttribute="centerX" id="iFl-h9-nUx"/>
+                                            <constraint firstAttribute="trailing" secondItem="fLz-Pv-6SK" secondAttribute="trailing" id="pIx-TP-ZqA"/>
+                                            <constraint firstItem="fLz-Pv-6SK" firstAttribute="top" secondItem="GEq-Zp-tgO" secondAttribute="top" id="yB4-Td-3zV"/>
                                         </constraints>
                                     </view>
                                     <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qj9-cR-vMn">
                                         <rect key="frame" x="0.0" y="544" width="393" height="136"/>
                                         <subviews>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohg-03-dD7">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="136"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="moodTapped:" destination="uyW-hW-Hrv" eventType="touchUpInside" id="96a-rB-CND"/>
+                                                </connections>
+                                            </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji5" translatesAutoresizingMaskIntoConstraints="NO" id="11M-DW-ytr">
                                                 <rect key="frame" x="169.66666666666666" y="43" width="54" height="50"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.16078431372549018" green="0.36078431372549019" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="ohg-03-dD7" secondAttribute="bottom" id="8Q7-df-1kT"/>
+                                            <constraint firstItem="ohg-03-dD7" firstAttribute="leading" secondItem="qj9-cR-vMn" secondAttribute="leading" id="AyQ-Oa-jc9"/>
                                             <constraint firstItem="11M-DW-ytr" firstAttribute="centerY" secondItem="qj9-cR-vMn" secondAttribute="centerY" id="Od3-dy-6gZ"/>
                                             <constraint firstItem="11M-DW-ytr" firstAttribute="centerX" secondItem="qj9-cR-vMn" secondAttribute="centerX" id="QWm-vZ-qlf"/>
+                                            <constraint firstAttribute="trailing" secondItem="ohg-03-dD7" secondAttribute="trailing" id="WBf-0l-UIn"/>
+                                            <constraint firstItem="ohg-03-dD7" firstAttribute="top" secondItem="qj9-cR-vMn" secondAttribute="top" id="daB-Uc-QcO"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -326,6 +396,11 @@
                         <outletCollection property="emojis" destination="IHw-C3-aV0" collectionClass="NSMutableArray" id="4uo-vM-rxc"/>
                         <outletCollection property="emojis" destination="ao7-bJ-ejf" collectionClass="NSMutableArray" id="Glq-cn-sHQ"/>
                         <outletCollection property="emojis" destination="11M-DW-ytr" collectionClass="NSMutableArray" id="z1W-0d-vlf"/>
+                        <outletCollection property="moodButtons" destination="uVW-TD-ZfY" collectionClass="NSMutableArray" id="fGi-u3-Yqu"/>
+                        <outletCollection property="moodButtons" destination="SaI-ra-mRF" collectionClass="NSMutableArray" id="K5U-Hh-Mrx"/>
+                        <outletCollection property="moodButtons" destination="Wh6-Uz-b73" collectionClass="NSMutableArray" id="XTP-Of-cI0"/>
+                        <outletCollection property="moodButtons" destination="fLz-Pv-6SK" collectionClass="NSMutableArray" id="K5O-W2-md3"/>
+                        <outletCollection property="moodButtons" destination="ohg-03-dD7" collectionClass="NSMutableArray" id="nNo-fc-8n1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ajm-v9-im1" sceneMemberID="firstResponder"/>
@@ -354,6 +429,7 @@
     </scenes>
     <resources>
         <image name="chart.bar" catalog="system" width="128" height="89"/>
+        <image name="ellipsis.circle" catalog="system" width="128" height="123"/>
         <image name="emoji1" width="53" height="51"/>
         <image name="emoji2" width="52" height="48"/>
         <image name="emoji3" width="50" height="38"/>

@@ -44,7 +44,7 @@ class MoodScoreManager {
   //var moodScoreDic: [Mood: Int] = [.happy: 0, .smile: 0, .soso: 0, .sad: 0, .bad: 0]
   
   // 감정 카운트 증가 메소드
-  func increaseScore(_ mood: Int) {
+  func increaseScore(_ mood: Int, _ number: Int = 1) {
     let key = Mood(rawValue: mood)!
     //self.moodScoreDic.updateValue(moodScoreDic[key]! + 1, forKey: key)
     
@@ -52,7 +52,7 @@ class MoodScoreManager {
     let value = (UserDefaults.standard.value(forKey: key.getString) as? Int) ?? 0
     
     // UserDefault에 새로운 값 저장
-    UserDefaults.standard.setValue(value + 1, forKey: key.getString)
+    UserDefaults.standard.setValue(value + number, forKey: key.getString)
   }
   
   // 감정 카운트 조회 메소드
@@ -62,5 +62,18 @@ class MoodScoreManager {
     
     // UserDefault에 저장된 값 반환
     return UserDefaults.standard.integer(forKey: key.getString)
+  }
+  
+  // 감정 카운트 초기화 메소드
+  func resetScore(_ mood: Int? = nil) {
+    guard let tag = mood else {
+      (0...4).forEach { tag in
+        let key = Mood(rawValue: tag)!
+        UserDefaults.standard.removeObject(forKey: key.getString)
+      }
+      return
+    }
+    let key = Mood(rawValue: tag)!
+    UserDefaults.standard.removeObject(forKey: key.getString)
   }
 }
