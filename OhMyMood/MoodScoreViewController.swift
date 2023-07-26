@@ -21,6 +21,8 @@ class MoodScoreViewController: UIViewController {
     configureUI()
   }
   
+  // 뷰가 화면에 다시 나타날 때 데이터 적용
+  // 다른 탭으로 돌아갔다가 돌아왔을 때 데이터 새로고침
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
