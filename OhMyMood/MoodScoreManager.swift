@@ -43,6 +43,7 @@ class MoodScoreManager {
   // 데이터 저장 딕셔너리
   //var moodScoreDic: [Mood: Int] = [.happy: 0, .smile: 0, .soso: 0, .sad: 0, .bad: 0]
   
+  // 감정 카운트 증가 메소드
   func increaseScore(_ mood: Int) {
     let key = Mood(rawValue: mood)!
     //self.moodScoreDic.updateValue(moodScoreDic[key]! + 1, forKey: key)
@@ -54,6 +55,7 @@ class MoodScoreManager {
     UserDefaults.standard.setValue(value + 1, forKey: key.getString)
   }
   
+  // 감정 카운트 조회 메소드
   func getScore(_ mood: Int) -> Int {
     let key = Mood(rawValue: mood)!
     //return self.moodScoreDic[Mood(rawValue: mood)!]!
