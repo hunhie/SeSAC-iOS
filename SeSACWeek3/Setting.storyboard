@@ -302,6 +302,9 @@
                                         <state key="normal" title="추가">
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="searchButtonTapped:" destination="Oc2-M5-kwH" eventType="touchUpInside" id="B7q-GR-NZv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
