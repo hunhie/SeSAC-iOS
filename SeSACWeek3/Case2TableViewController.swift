@@ -31,11 +31,16 @@ class Case2TableViewController: UITableViewController {
     return sections[section].rows.count
   }
   
+  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return sections[section].title
+  }
+  
   // 로우 별 셀 설정
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "case2Cell")!
     
     cell.textLabel?.text = sections[indexPath.section].rows[indexPath.row]
+    cell.textLabel?.font = .systemFont(ofSize: 13)
     
     return cell
   }
