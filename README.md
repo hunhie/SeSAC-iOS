@@ -2,11 +2,11 @@
 
 ## Case1
 
-![](https://i.imgur.com/H5p0IBc.png)
+![](https://i.imgur.com/GCwtZ3g.png)
 
 ## Case2
 
-![](https://i.imgur.com/2JMAfiM.png)
+![](https://i.imgur.com/S6V4irE.png)
 
 ## Case3
 
