@@ -12,6 +12,9 @@
 		B6A204ED2A74DE5200874E8C /* Case3Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A204EB2A74DE5200874E8C /* Case3Cell.swift */; };
 		B6A204EF2A74E93E00874E8C /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A204EE2A74E93E00874E8C /* Todo.swift */; };
 		B6A204F12A74EC5900874E8C /* Movie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6A204F02A74EC5900874E8C /* Movie.storyboard */; };
+		B6A204F92A74F05400874E8C /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A204F82A74F05400874E8C /* MovieCell.swift */; };
+		B6A204FB2A74F1DE00874E8C /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A204FA2A74F1DE00874E8C /* MovieTableViewController.swift */; };
+		B6A204FD2A74F6D300874E8C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A204FC2A74F6D300874E8C /* Movie.swift */; };
 		B6BD55B72A72005C00C15C76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD55B62A72005C00C15C76 /* AppDelegate.swift */; };
 		B6BD55B92A72005C00C15C76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD55B82A72005C00C15C76 /* SceneDelegate.swift */; };
 		B6BD55BB2A72005C00C15C76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD55BA2A72005C00C15C76 /* ViewController.swift */; };
@@ -27,6 +30,9 @@
 		B6A204EB2A74DE5200874E8C /* Case3Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Case3Cell.swift; sourceTree = "<group>"; };
 		B6A204EE2A74E93E00874E8C /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		B6A204F02A74EC5900874E8C /* Movie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movie.storyboard; sourceTree = "<group>"; };
+		B6A204F82A74F05400874E8C /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		B6A204FA2A74F1DE00874E8C /* MovieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
+		B6A204FC2A74F6D300874E8C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		B6BD55B32A72005C00C15C76 /* SeSACWeek3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACWeek3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6BD55B62A72005C00C15C76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6BD55B82A72005C00C15C76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +60,7 @@
 			children = (
 				B672A5DB2A726A2300818B3B /* Section.swift */,
 				B6A204EE2A74E93E00874E8C /* Todo.swift */,
+				B6A204FC2A74F6D300874E8C /* Movie.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -64,6 +71,7 @@
 				B6BD55BA2A72005C00C15C76 /* ViewController.swift */,
 				B6EF3C7E2A72646E00C294CB /* Case2TableViewController.swift */,
 				B6A204EA2A74DE5200874E8C /* Case3ViewController.swift */,
+				B6A204FA2A74F1DE00874E8C /* MovieTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -72,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				B6A204EB2A74DE5200874E8C /* Case3Cell.swift */,
+				B6A204F82A74F05400874E8C /* MovieCell.swift */,
 			);
 			path = ViewComponent;
 			sourceTree = "<group>";
@@ -189,13 +198,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A204FB2A74F1DE00874E8C /* MovieTableViewController.swift in Sources */,
 				B6A204EF2A74E93E00874E8C /* Todo.swift in Sources */,
 				B6BD55BB2A72005C00C15C76 /* ViewController.swift in Sources */,
+				B6A204F92A74F05400874E8C /* MovieCell.swift in Sources */,
 				B6A204ED2A74DE5200874E8C /* Case3Cell.swift in Sources */,
 				B6A204EC2A74DE5200874E8C /* Case3ViewController.swift in Sources */,
 				B672A5DC2A726A2300818B3B /* Section.swift in Sources */,
 				B6BD55B72A72005C00C15C76 /* AppDelegate.swift in Sources */,
 				B6BD55B92A72005C00C15C76 /* SceneDelegate.swift in Sources */,
+				B6A204FD2A74F6D300874E8C /* Movie.swift in Sources */,
 				B6EF3C7F2A72646E00C294CB /* Case2TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
