@@ -270,6 +270,7 @@
                         <segue destination="zkp-yN-jiU" kind="show" identifier="toCase1" id="jMx-0E-ibq"/>
                         <segue destination="cbm-RQ-nUe" kind="show" identifier="toCase2" id="ZzI-e9-qBF"/>
                         <segue destination="Oc2-M5-kwH" kind="show" identifier="toCase3" id="Vfh-4l-a0v"/>
+                        <segue destination="1Ia-jf-DUe" kind="show" identifier="toMovie" id="lba-ba-iTN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhP-lj-d6l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -425,6 +426,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwd-ar-SJI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4420.6106870229005" y="350"/>
+        </scene>
+        <!--Movie-->
+        <scene sceneID="qz3-aU-Fl5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Movie" id="1Ia-jf-DUe" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="vWl-ic-VCv"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZNo-zt-NGb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2881" y="225"/>
         </scene>
     </scenes>
     <resources>
