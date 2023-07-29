@@ -9,8 +9,8 @@ import UIKit
 
 class ViewController: UITableViewController {
   
-  let segues = ["toCase1", "toCase2", "toCase3"]
-  let sectionData = Section(title: "과제 목록", rows: ["case 1", "case 2", "case 3"])
+  let segues = ["toCase1", "toCase2", "toCase3", "toMovie"]
+  let sectionData = Section(title: "과제 목록", rows: ["case 1", "case 2", "case 3", "영화 화면 만들기"])
 
   override func viewDidLoad() {
     super.viewDidLoad()

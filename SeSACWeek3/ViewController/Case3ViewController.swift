@@ -16,8 +16,6 @@ class Case3ViewController: UIViewController {
   @IBOutlet weak var searchTextField: UITextField!
   @IBOutlet weak var searchButton: UIButton!
   
-  var tasks: [String] = ["그립톡 구매하기", "맥북 거치대 구매하기", "애플 워치 구매하기", "아이폰 거치대 구매하기"]
-  
   // MARK: - Lifecycle Methods
   
   override func viewDidLoad() {
@@ -47,7 +45,7 @@ class Case3ViewController: UIViewController {
   @IBAction func searchButtonTapped(_ sender: UIButton) {
     guard let text = searchTextField.text,
           text.count > 0 else { return }
-    tasks.append(text)
+
     
     tableView.reloadData()
   }
@@ -71,7 +69,7 @@ extension Case3ViewController: UITableViewDelegate, UITableViewDataSource {
   
   // 섹션 내 로우 개수
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return tasks.count
+    return TodoInfo.todoData.count
   }
   
   // 로우 높이
@@ -82,15 +80,19 @@ extension Case3ViewController: UITableViewDelegate, UITableViewDataSource {
   
   // 로우 별 셀 설정
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    let todo = TodoInfo.todoData[indexPath.row]
     let cell = tableView.dequeueReusableCell(withIdentifier: "case3Cell", for: indexPath) as! Case3Cell
     
     cell.layer.cornerRadius = 8
     cell.clipsToBounds = true
-    cell.leftImageView.image = UIImage(systemName: "checkmark.square")
-    cell.leftImageView.tintColor = .black
-    cell.rowLabel.text = tasks[indexPath.row]
-    cell.rightImageView.image = UIImage(systemName: "star.fill")
-    cell.rightImageView.tintColor = .black
+    
+    cell.backView.layer.cornerRadius = 8
+    cell.backView.clipsToBounds = true
+    cell.checkboxImageView.image = UIImage(systemName: todo.done ? "checkmark.square.fill" : "checkmark.square")
+    cell.likeButton.setImage(UIImage(systemName: todo.like ? "star.fill" : "star"), for: .normal)
+    cell.maintitleLabel.text = todo.maintitle
+    cell.subtitleLabel.text = todo.subtitle
     
     return cell
   }
