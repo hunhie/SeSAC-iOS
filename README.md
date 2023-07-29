@@ -11,3 +11,7 @@
 ## Case3
 
 ![](https://i.imgur.com/SeB2RDJ.gif)
+
+
+## 영화 화면 만들기
+![](https://i.imgur.com/JpdIW6d.gif)
