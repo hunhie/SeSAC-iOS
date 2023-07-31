@@ -13,6 +13,7 @@
 		B6887DD02A7799FC002764A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6887DCE2A7799FC002764A2 /* Main.storyboard */; };
 		B6887DD22A7799FD002764A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6887DD12A7799FD002764A2 /* Assets.xcassets */; };
 		B6887DD52A7799FD002764A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6887DD32A7799FD002764A2 /* LaunchScreen.storyboard */; };
+		B6887DDD2A779A32002764A2 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6887DDC2A779A32002764A2 /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B6887DD12A7799FD002764A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6887DD42A7799FD002764A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6887DD62A7799FD002764A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6887DDC2A779A32002764A2 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,40 @@
 		B6887DC72A7799FC002764A2 /* BOOKWARM */ = {
 			isa = PBXGroup;
 			children = (
+				B6887DE02A779A51002764A2 /* ViewController */,
+				B6887DDF2A779A3E002764A2 /* Storyboard */,
+				B6887DDE2A779A37002764A2 /* Model */,
 				B6887DC82A7799FC002764A2 /* AppDelegate.swift */,
 				B6887DCA2A7799FC002764A2 /* SceneDelegate.swift */,
-				B6887DCC2A7799FC002764A2 /* ViewController.swift */,
-				B6887DCE2A7799FC002764A2 /* Main.storyboard */,
 				B6887DD12A7799FD002764A2 /* Assets.xcassets */,
-				B6887DD32A7799FD002764A2 /* LaunchScreen.storyboard */,
 				B6887DD62A7799FD002764A2 /* Info.plist */,
 			);
 			path = BOOKWARM;
+			sourceTree = "<group>";
+		};
+		B6887DDE2A779A37002764A2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B6887DDC2A779A32002764A2 /* Book.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B6887DDF2A779A3E002764A2 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B6887DCE2A7799FC002764A2 /* Main.storyboard */,
+				B6887DD32A7799FD002764A2 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		B6887DE02A779A51002764A2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B6887DCC2A7799FC002764A2 /* ViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6887DDD2A779A32002764A2 /* Book.swift in Sources */,
 				B6887DCD2A7799FC002764A2 /* ViewController.swift in Sources */,
 				B6887DC92A7799FC002764A2 /* AppDelegate.swift in Sources */,
 				B6887DCB2A7799FC002764A2 /* SceneDelegate.swift in Sources */,
@@ -290,11 +318,13 @@
 				DEVELOPMENT_TEAM = HL89CPH3NA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BOOKWARM/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "책벌레";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +332,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.walkerhilla.BOOKWARM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -318,11 +351,13 @@
 				DEVELOPMENT_TEAM = HL89CPH3NA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BOOKWARM/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "책벌레";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +365,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.walkerhilla.BOOKWARM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
