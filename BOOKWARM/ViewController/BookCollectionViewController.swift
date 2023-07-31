@@ -40,25 +40,40 @@ class BookCollectionViewController: UICollectionViewController {
     collectionView.collectionViewLayout = layout
   }
   
+  // 컬렉션 뷰 섹션 갯수
   override func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 1
   }
   
+  // 섹션 내 아이템 갯수
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return BookInfo.dataCount
   }
   
+  // 아이템 Cell 설정
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let book = BookInfo.bookData[indexPath.row]
     
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as? BookCollectionViewCell else { return UICollectionViewCell() }
     
-    cell.backView.backgroundColor = .gray
+    // cell 배경 설정
+    cell.backView.backgroundColor = .lightGray
     cell.backView.layer.cornerRadius = 8
     cell.backView.clipsToBounds = true
+    
+    // cell 책 제목 레이블 설정
     cell.bookTitleLabel.text = book.title
-    cell.bookTitleLabel.textColor = .black
+    cell.bookTitleLabel.textColor = .white
     cell.bookTitleLabel.textAlignment = .natural
+    
+    // cell 책 평점 설정
+    cell.bookRateLabel.text = "\(book.rate)"
+    cell.bookRateLabel.textColor = .white
+    
+    // cell 책 표지 이미지 설정
+    if let url = book.bookImage {
+      cell.bookImageView.load(url: url)
+    }
     
     return cell
   }
