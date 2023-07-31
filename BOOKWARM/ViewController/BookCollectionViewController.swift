@@ -16,6 +16,16 @@ class BookCollectionViewController: UICollectionViewController {
     registerNib()
   }
   
+  @IBAction func searchBarButtonTapped(_ sender: UIBarButtonItem) {
+    let sb = UIStoryboard(name: "Main", bundle: nil)
+    let vc = sb.instantiateViewController(withIdentifier: "SearchTableViewController") as! SearchTableViewController
+    
+    let nav = UINavigationController(rootViewController: vc)
+    nav.modalPresentationStyle = .fullScreen
+    
+    present(nav, animated: true)
+  }
+  
   func registerNib() {
     let nib = UINib(nibName: "BookCollectionViewCell", bundle: nil)
     collectionView.register(nib, forCellWithReuseIdentifier: "BookCollectionViewCell")
@@ -76,6 +86,15 @@ class BookCollectionViewController: UICollectionViewController {
     }
     
     return cell
+  }
+  
+  override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let book = BookInfo.bookData[indexPath.row]
+    let sb = UIStoryboard(name: "Main", bundle: nil)
+    let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+    
+    vc.book = book
+    navigationController?.pushViewController(vc, animated: true)
   }
   
 }

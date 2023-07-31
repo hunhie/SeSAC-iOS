@@ -17,6 +17,8 @@
 		B6887DE62A779EC6002764A2 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6887DE42A779EC6002764A2 /* BookCollectionViewCell.swift */; };
 		B6887DE72A779EC6002764A2 /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6887DE52A779EC6002764A2 /* BookCollectionViewCell.xib */; };
 		B6887DEA2A77A0D5002764A2 /* BookCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6887DE92A77A0D5002764A2 /* BookCollectionViewController.swift */; };
+		B6887DEC2A77AB26002764A2 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6887DEB2A77AB26002764A2 /* SearchTableViewController.swift */; };
+		B6887DEE2A77AB76002764A2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6887DED2A77AB76002764A2 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		B6887DE42A779EC6002764A2 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		B6887DE52A779EC6002764A2 /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
 		B6887DE92A77A0D5002764A2 /* BookCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewController.swift; sourceTree = "<group>"; };
+		B6887DEB2A77AB26002764A2 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		B6887DED2A77AB76002764A2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				B6887DE92A77A0D5002764A2 /* BookCollectionViewController.swift */,
+				B6887DEB2A77AB26002764A2 /* SearchTableViewController.swift */,
+				B6887DED2A77AB76002764A2 /* DetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -194,9 +200,11 @@
 				B6887DDD2A779A32002764A2 /* Book.swift in Sources */,
 				B6887DE32A779CB4002764A2 /* Extension+UIImage.swift in Sources */,
 				B6887DE62A779EC6002764A2 /* BookCollectionViewCell.swift in Sources */,
+				B6887DEC2A77AB26002764A2 /* SearchTableViewController.swift in Sources */,
 				B6887DC92A7799FC002764A2 /* AppDelegate.swift in Sources */,
 				B6887DCB2A7799FC002764A2 /* SceneDelegate.swift in Sources */,
 				B6887DEA2A77A0D5002764A2 /* BookCollectionViewController.swift in Sources */,
+				B6887DEE2A77AB76002764A2 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
