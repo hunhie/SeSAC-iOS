@@ -96,5 +96,4 @@ class BookCollectionViewController: UICollectionViewController {
     vc.book = book
     navigationController?.pushViewController(vc, animated: true)
   }
-  
 }
