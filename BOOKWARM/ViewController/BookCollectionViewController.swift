@@ -16,6 +16,12 @@ class BookCollectionViewController: UICollectionViewController {
     registerNib()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    collectionView.reloadData()
+  }
+  
   @IBAction func searchBarButtonTapped(_ sender: UIBarButtonItem) {
     let sb = UIStoryboard(name: "Main", bundle: nil)
     let vc = sb.instantiateViewController(withIdentifier: "SearchTableViewController") as! SearchTableViewController
@@ -50,6 +56,8 @@ class BookCollectionViewController: UICollectionViewController {
     collectionView.collectionViewLayout = layout
   }
   
+  //MARK: - CollectionView Delegate, Datasource
+  
   // 컬렉션 뷰 섹션 갯수
   override func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 1
@@ -80,6 +88,12 @@ class BookCollectionViewController: UICollectionViewController {
     cell.bookRateLabel.text = "\(book.rate)"
     cell.bookRateLabel.textColor = .white
     
+    // cell 좋아요 버튼 설정
+    cell.likeButton.setImage(UIImage(systemName: book.like ? "heart.fill" : "heart"), for: .normal)
+    cell.likeButton.tag = indexPath.row
+    cell.likeButton.tintColor = .white
+    cell.likeButton.addTarget(self, action: #selector(liekButtonTapped(_:)), for: .touchUpInside)
+    
     // cell 책 표지 이미지 설정
     if let url = book.bookImage {
       cell.bookImageView.load(url: url)
@@ -94,6 +108,14 @@ class BookCollectionViewController: UICollectionViewController {
     let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
     
     vc.book = book
+    vc.indexPath = indexPath
     navigationController?.pushViewController(vc, animated: true)
+  }
+  
+  //MARK: - Action
+  
+  @objc func liekButtonTapped(_ sender: UIButton) {
+    BookInfo.bookData[sender.tag].like.toggle()
+    collectionView.reloadItems(at: [IndexPath(row: sender.tag, section: 0)])
   }
 }

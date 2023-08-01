@@ -67,6 +67,12 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem image="trash" catalog="system" id="qpr-eV-yX9"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="b3C-kj-SGf"/>
+                                    <barButtonItem image="heart" catalog="system" id="1Ns-qI-6IW">
+                                        <connections>
+                                            <action selector="likeBarButtonTapped:" destination="tVm-vK-fu1" id="Qm9-iS-HFD"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tmh-kA-fLW">
@@ -141,6 +147,7 @@
                         <outlet property="bookPriceLabel" destination="idW-mt-Prq" id="OgR-vU-X3d"/>
                         <outlet property="bookRateLabel" destination="g9b-bg-FQy" id="9hd-0f-Ihb"/>
                         <outlet property="bookTitleLabel" destination="gvr-l5-aYI" id="IoD-KA-ljV"/>
+                        <outlet property="likeBarButton" destination="1Ns-qI-6IW" id="xLM-fR-KID"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9o2-Ed-xcB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -195,6 +202,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="trash" catalog="system" width="117" height="128"/>
         <systemColor name="systemBackgroundColor">

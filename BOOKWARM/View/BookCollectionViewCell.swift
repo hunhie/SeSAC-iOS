@@ -13,6 +13,7 @@ class BookCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var bookTitleLabel: UILabel!
   @IBOutlet weak var bookRateLabel: UILabel!
   @IBOutlet weak var bookImageView: UIImageView!
+  @IBOutlet weak var likeButton: UIButton!
   
   override func awakeFromNib() {
         super.awakeFromNib()
