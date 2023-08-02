@@ -185,11 +185,11 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="DOu-yS-1qT">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="148"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="172"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NRZ-bi-Q8F">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="148"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="172"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SpK-wb-Cus">
                                                 <size key="itemSize" width="128" height="128"/>
@@ -230,6 +230,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="둘러보기" id="3A9-Gm-7ax"/>
                     <connections>
+                        <outlet property="backView" destination="DOu-yS-1qT" id="2m1-jR-Yei"/>
                         <outlet property="bestTableVIew" destination="P4Y-jF-Mg0" id="hbo-My-5Mr"/>
                         <outlet property="recentBookCollectionView" destination="NRZ-bi-Q8F" id="Q7H-bg-csu"/>
                     </connections>

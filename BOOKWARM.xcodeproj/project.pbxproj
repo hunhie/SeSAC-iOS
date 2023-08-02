@@ -12,6 +12,8 @@
 		B64495402A7A3A5500FBDCC6 /* FinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B644953F2A7A3A5500FBDCC6 /* FinderViewController.swift */; };
 		B64495432A7A3D2500FBDCC6 /* RecentBookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64495412A7A3D2500FBDCC6 /* RecentBookCollectionViewCell.swift */; };
 		B64495442A7A3D2500FBDCC6 /* RecentBookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B64495422A7A3D2500FBDCC6 /* RecentBookCollectionViewCell.xib */; };
+		B64495472A7A551E00FBDCC6 /* RecentCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64495452A7A551E00FBDCC6 /* RecentCollectionReusableView.swift */; };
+		B64495482A7A551E00FBDCC6 /* RecentCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B64495462A7A551E00FBDCC6 /* RecentCollectionReusableView.xib */; };
 		B6887DC92A7799FC002764A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6887DC82A7799FC002764A2 /* AppDelegate.swift */; };
 		B6887DCB2A7799FC002764A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6887DCA2A7799FC002764A2 /* SceneDelegate.swift */; };
 		B6887DD02A7799FC002764A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6887DCE2A7799FC002764A2 /* Main.storyboard */; };
@@ -33,6 +35,8 @@
 		B644953F2A7A3A5500FBDCC6 /* FinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderViewController.swift; sourceTree = "<group>"; };
 		B64495412A7A3D2500FBDCC6 /* RecentBookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBookCollectionViewCell.swift; sourceTree = "<group>"; };
 		B64495422A7A3D2500FBDCC6 /* RecentBookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentBookCollectionViewCell.xib; sourceTree = "<group>"; };
+		B64495452A7A551E00FBDCC6 /* RecentCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCollectionReusableView.swift; sourceTree = "<group>"; };
+		B64495462A7A551E00FBDCC6 /* RecentCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentCollectionReusableView.xib; sourceTree = "<group>"; };
 		B6887DC52A7799FC002764A2 /* BOOKWARM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BOOKWARM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6887DC82A7799FC002764A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6887DCA2A7799FC002764A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,9 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				B6887DCE2A7799FC002764A2 /* Main.storyboard */,
-				B6887DE52A779EC6002764A2 /* BookCollectionViewCell.xib */,
-				B644953C2A7A374800FBDCC6 /* BestBookTableViewCell.xib */,
-				B64495422A7A3D2500FBDCC6 /* RecentBookCollectionViewCell.xib */,
 				B6887DD32A7799FD002764A2 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
@@ -139,6 +140,11 @@
 				B6887DE42A779EC6002764A2 /* BookCollectionViewCell.swift */,
 				B644953B2A7A374800FBDCC6 /* BestBookTableViewCell.swift */,
 				B64495412A7A3D2500FBDCC6 /* RecentBookCollectionViewCell.swift */,
+				B64495452A7A551E00FBDCC6 /* RecentCollectionReusableView.swift */,
+				B6887DE52A779EC6002764A2 /* BookCollectionViewCell.xib */,
+				B644953C2A7A374800FBDCC6 /* BestBookTableViewCell.xib */,
+				B64495422A7A3D2500FBDCC6 /* RecentBookCollectionViewCell.xib */,
+				B64495462A7A551E00FBDCC6 /* RecentCollectionReusableView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,6 +212,7 @@
 				B64495442A7A3D2500FBDCC6 /* RecentBookCollectionViewCell.xib in Resources */,
 				B644953E2A7A374800FBDCC6 /* BestBookTableViewCell.xib in Resources */,
 				B6887DD22A7799FD002764A2 /* Assets.xcassets in Resources */,
+				B64495482A7A551E00FBDCC6 /* RecentCollectionReusableView.xib in Resources */,
 				B6887DD02A7799FC002764A2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +236,7 @@
 				B6887DCB2A7799FC002764A2 /* SceneDelegate.swift in Sources */,
 				B6887DEA2A77A0D5002764A2 /* BookCollectionViewController.swift in Sources */,
 				B6887DEE2A77AB76002764A2 /* DetailViewController.swift in Sources */,
+				B64495472A7A551E00FBDCC6 /* RecentCollectionReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

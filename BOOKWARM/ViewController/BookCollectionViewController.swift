@@ -74,26 +74,12 @@ class BookCollectionViewController: UICollectionViewController {
     
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as? BookCollectionViewCell else { return UICollectionViewCell() }
     
-    // cell 배경 설정
-    cell.backView.backgroundColor = .lightGray
-    cell.backView.layer.cornerRadius = 8
-    cell.backView.clipsToBounds = true
+    cell.book = book
+    cell.indexPath = indexPath
+    cell.configureCell()
     
-    // cell 책 제목 레이블 설정
-    cell.bookTitleLabel.text = book.title
-    cell.bookTitleLabel.textColor = .white
-    cell.bookTitleLabel.textAlignment = .natural
-    
-    // cell 책 평점 설정
-    cell.bookRateLabel.text = "\(book.rate)"
-    cell.bookRateLabel.textColor = .white
-    
-    // cell 좋아요 버튼 설정
-    cell.likeButton.setImage(UIImage(systemName: book.like ? "heart.fill" : "heart"), for: .normal)
-    cell.likeButton.tag = indexPath.row
-    cell.likeButton.tintColor = .white
     cell.likeButton.addTarget(self, action: #selector(liekButtonTapped(_:)), for: .touchUpInside)
-    
+    cell.likeButton.setImage(UIImage(systemName: book.like ? "heart.fill" : "heart"), for: .normal)
     // cell 책 표지 이미지 설정
     if let url = book.bookImage {
       cell.bookImageView.load(url: url)

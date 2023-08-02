@@ -11,7 +11,8 @@ class FinderViewController: UIViewController {
   
   @IBOutlet weak var bestTableVIew: UITableView!
   @IBOutlet weak var recentBookCollectionView: UICollectionView!
-
+  @IBOutlet weak var backView: UIView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -22,6 +23,8 @@ class FinderViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     recentBookCollectionView.reloadData()
+    
+    backView.frame.size.height = BookInfo.recentBookDataCount > 0 ? 165 : 0
   }
   
   func setTableView() {
@@ -82,6 +85,14 @@ extension FinderViewController: UITableViewDelegate, UITableViewDataSource {
     
     return cell
   }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let book = BookInfo.bookData[indexPath.row]
+    let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+    vc.book = book
+    present(vc, animated: true)
+  
+  }
 }
 
 extension FinderViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -102,5 +113,24 @@ extension FinderViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     return cell
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let book = BookInfo.recentBookData[indexPath.row]
+    let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+    vc.book = book
+    present(vc, animated: true)
+  
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    print(#function)
+    if kind == UICollectionView.elementKindSectionHeader {
+      let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! RecentCollectionReusableView
+      header.headerLabel.text = "최근 살펴본 작품"
+      return header
+    } else {
+      return UICollectionReusableView()
+    }
   }
 }
