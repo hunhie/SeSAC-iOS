@@ -16,7 +16,6 @@ class DetailViewController: UIViewController {
   @IBOutlet weak var bookDescLabel: UILabel!
   @IBOutlet weak var likeBarButton: UIBarButtonItem!
   
-  
   var indexPath: IndexPath?
   var book: Book?
   

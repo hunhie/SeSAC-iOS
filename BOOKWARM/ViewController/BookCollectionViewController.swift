@@ -106,7 +106,7 @@ class BookCollectionViewController: UICollectionViewController {
     let book = BookInfo.bookData[indexPath.row]
     let sb = UIStoryboard(name: "Main", bundle: nil)
     let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-    
+    BookInfo.appendRecentBook(book)
     vc.book = book
     vc.indexPath = indexPath
     navigationController?.pushViewController(vc, animated: true)
