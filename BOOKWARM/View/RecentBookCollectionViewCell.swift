@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecentBookCollectionViewCell: UICollectionViewCell {
+final class RecentBookCollectionViewCell: UICollectionViewCell {
 
   @IBOutlet weak var imageView: UIImageView!
   

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BestBookTableViewCell: UITableViewCell {
+final class BestBookTableViewCell: UITableViewCell {
   @IBOutlet weak var bookImageView: UIImageView!
   @IBOutlet weak var bookInfoStackView: UIStackView!
   @IBOutlet weak var bookTitleLabel: UILabel!

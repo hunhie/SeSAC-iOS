@@ -15,6 +15,7 @@ struct Book {
   let rate: Double
   var like: Bool
   let rank: Int
+  var memo: String?
 }
 
 class BookInfo {

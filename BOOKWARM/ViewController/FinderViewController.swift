@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FinderViewController: UIViewController {
+final class FinderViewController: UIViewController {
   
   @IBOutlet weak var bestTableVIew: UITableView!
   @IBOutlet weak var recentBookCollectionView: UICollectionView!
@@ -22,9 +22,8 @@ class FinderViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    recentBookCollectionView.reloadData()
     
-    backView.frame.size.height = BookInfo.recentBookDataCount > 0 ? 165 : 0
+    recentBookCollectionView.reloadData()
   }
   
   func setTableView() {
@@ -62,10 +61,6 @@ extension FinderViewController: UITableViewDelegate, UITableViewDataSource {
     return 90
   }
   
-  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return "요즘 인기 작품"
-  }
-  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // #warning Incomplete implementation, return the number of rows
     return BookInfo.dataCount
@@ -89,9 +84,11 @@ extension FinderViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let book = BookInfo.bookData[indexPath.row]
     let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+    let nav = UINavigationController(rootViewController: vc)
     vc.book = book
-    present(vc, animated: true)
-  
+    vc.type = .modal
+    nav.modalPresentationStyle = .fullScreen
+    present(nav, animated: true)
   }
 }
 
@@ -118,19 +115,11 @@ extension FinderViewController: UICollectionViewDelegate, UICollectionViewDataSo
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let book = BookInfo.recentBookData[indexPath.row]
     let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+    let nav = UINavigationController(rootViewController: vc)
     vc.book = book
-    present(vc, animated: true)
+    vc.type = .modal
+    nav.modalPresentationStyle = .fullScreen
+    present(nav, animated: true)
   
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-    print(#function)
-    if kind == UICollectionView.elementKindSectionHeader {
-      let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! RecentCollectionReusableView
-      header.headerLabel.text = "최근 살펴본 작품"
-      return header
-    } else {
-      return UICollectionReusableView()
-    }
   }
 }

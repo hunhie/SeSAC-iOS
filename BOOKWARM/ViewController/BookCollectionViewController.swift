@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BookCollectionViewController: UICollectionViewController {
+final class BookCollectionViewController: UICollectionViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -20,16 +20,17 @@ class BookCollectionViewController: UICollectionViewController {
     super.viewWillAppear(animated)
     
     collectionView.reloadData()
+    tabBarController?.tabBar.isHidden = false
   }
   
   @IBAction func searchBarButtonTapped(_ sender: UIBarButtonItem) {
     let sb = UIStoryboard(name: "Main", bundle: nil)
-    let vc = sb.instantiateViewController(withIdentifier: "SearchTableViewController") as! SearchTableViewController
+    let vc = sb.instantiateViewController(withIdentifier: "SearchCollectionViewController") as! SearchCollectionViewController
     
     let nav = UINavigationController(rootViewController: vc)
     nav.modalPresentationStyle = .fullScreen
     
-    present(nav, animated: true)
+    navigationController?.pushViewController(vc, animated: true)
   }
   
   func registerNib() {
@@ -95,6 +96,7 @@ class BookCollectionViewController: UICollectionViewController {
     BookInfo.appendRecentBook(book)
     vc.book = book
     vc.indexPath = indexPath
+    vc.type = .push
     navigationController?.pushViewController(vc, animated: true)
   }
   
