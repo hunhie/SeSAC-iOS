@@ -20,6 +20,7 @@
 		B699BD8F2A7D00C700DE2575 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699BD8E2A7D00C700DE2575 /* Strings.swift */; };
 		B699BD922A7D017100DE2575 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699BD912A7D017100DE2575 /* Extension+UIColor.swift */; };
 		B699BD982A7D03FE00DE2575 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699BD972A7D03FE00DE2575 /* Colors.swift */; };
+		B699BD9A2A7D0E2400DE2575 /* TamagotchiSelectedModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699BD992A7D0E2400DE2575 /* TamagotchiSelectedModalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		B699BD8E2A7D00C700DE2575 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		B699BD912A7D017100DE2575 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		B699BD972A7D03FE00DE2575 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B699BD992A7D0E2400DE2575 /* TamagotchiSelectedModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiSelectedModalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			children = (
 				B699BD6A2A7CE2BB00DE2575 /* TamagotchiMainViewController.swift */,
 				B699BD7A2A7CE43800DE2575 /* TamagotchiSelectViewController.swift */,
+				B699BD992A7D0E2400DE2575 /* TamagotchiSelectedModalViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				B699BD8A2A7CECB300DE2575 /* Tamagotchi.swift in Sources */,
 				B699BD8F2A7D00C700DE2575 /* Strings.swift in Sources */,
 				B699BD7B2A7CE43800DE2575 /* TamagotchiSelectViewController.swift in Sources */,
+				B699BD9A2A7D0E2400DE2575 /* TamagotchiSelectedModalViewController.swift in Sources */,
 				B699BD922A7D017100DE2575 /* Extension+UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

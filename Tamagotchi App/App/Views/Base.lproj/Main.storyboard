@@ -83,6 +83,36 @@
             </objects>
             <point key="canvasLocation" x="153" y="-2"/>
         </scene>
+        <!--Tamagotchi Selected Modal View Controller-->
+        <scene sceneID="egp-1c-ode">
+            <objects>
+                <viewController storyboardIdentifier="TamagotchiSelectedModalViewController" id="cVj-jb-Crh" customClass="TamagotchiSelectedModalViewController" customModule="Tamagotchi_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="00g-B7-fEK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jSV-eB-K85">
+                                <rect key="frame" x="39.333333333333343" y="213" width="314.33333333333326" height="426"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LUg-N3-Sut"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.19707160596026491" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jSV-eB-K85" firstAttribute="centerY" secondItem="00g-B7-fEK" secondAttribute="centerY" id="13o-MC-HCU"/>
+                            <constraint firstItem="jSV-eB-K85" firstAttribute="width" secondItem="00g-B7-fEK" secondAttribute="width" multiplier="0.8" id="OYm-vu-ojg"/>
+                            <constraint firstItem="jSV-eB-K85" firstAttribute="centerX" secondItem="00g-B7-fEK" secondAttribute="centerX" id="c0H-EY-tJm"/>
+                            <constraint firstItem="jSV-eB-K85" firstAttribute="height" secondItem="00g-B7-fEK" secondAttribute="height" multiplier="0.5" id="fnE-eu-j1u"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="modalBackView" destination="jSV-eB-K85" id="jXn-OZ-fTc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DLz-uh-kMq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1089" y="-2"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
