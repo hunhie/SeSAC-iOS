@@ -164,11 +164,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="157.33333333333334" height="58.666666666666664"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="cancelButtonTapped:" destination="cVj-jb-Crh" eventType="touchUpInside" id="WYt-29-3Dc"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eub-3k-f54">
                                                 <rect key="frame" x="157.33333333333331" y="0.0" width="157" height="58.666666666666664"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="startButtonTapped:" destination="cVj-jb-Crh" eventType="touchUpInside" id="3Sj-nU-e1V"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>

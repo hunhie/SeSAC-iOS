@@ -111,4 +111,12 @@ final class TamagotchiSelectedModalViewController: UIViewController {
   @IBAction func handleTapGesture(_ sender: UITapGestureRecognizer) {
     dismiss(animated: true)
   }
+  
+  @IBAction func cancelButtonTapped(_ sender: UIButton) {
+    
+  }
+  
+  @IBAction func startButtonTapped(_ sender: UIButton) {
+    
+  }
 }
