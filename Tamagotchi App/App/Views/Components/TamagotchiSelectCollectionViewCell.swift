@@ -27,17 +27,17 @@ final class TamagotchiSelectCollectionViewCell: UICollectionViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
     
-    tamagotchiBackView.backgroundColor = ColorConstant.primaryColor
+    tamagotchiBackView.backgroundColor = ColorConstant.backgroundColor
     
-    tamagotchiNameView.backgroundColor = ColorConstant.secondPrimaryColor
+    tamagotchiNameView.backgroundColor = ColorConstant.labelBackgroundColor
     tamagotchiNameView.layer.cornerRadius = 3
     tamagotchiNameView.layer.borderWidth = 1
-    tamagotchiNameView.layer.borderColor = ColorConstant.thirdPrimaryColor.cgColor
+    tamagotchiNameView.layer.borderColor = ColorConstant.textColor.cgColor
     tamagotchiNameView.clipsToBounds = true
     
     tamagotchiNameLabel.textAlignment = .center
     tamagotchiNameLabel.font = .boldSystemFont(ofSize: 11)
-    tamagotchiNameLabel.textColor = ColorConstant.thirdPrimaryColor
+    tamagotchiNameLabel.textColor = ColorConstant.textColor
     
   }
   
