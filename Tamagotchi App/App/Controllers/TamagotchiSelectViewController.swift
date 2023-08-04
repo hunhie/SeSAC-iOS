@@ -63,6 +63,7 @@ final class TamagotchiSelectViewController: UIViewController {
   }
   
   //MARK: - Actions
+
 }
 
 
@@ -91,5 +92,7 @@ extension TamagotchiSelectViewController: UICollectionViewDataSource, UICollecti
     return cell
   }
   
-  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+  }
 }
