@@ -27,6 +27,7 @@ final class TamagotchiSelectViewController: UIViewController {
   
   /// configure View Controller property
   private func configureView() {
+    
     view.backgroundColor = ColorConstant.primaryColor
     self.title = StringConstant.tamagotchiSelectTitle
   }
@@ -44,12 +45,14 @@ final class TamagotchiSelectViewController: UIViewController {
   
   /// Cell Register Method
   private func registerTamagotchiSelectCell() {
+    
     let nib = UINib(nibName: TamagotchiSelectCollectionViewCell.identifier, bundle: nil)
     tamagotchiSelectCollectionView.register(nib, forCellWithReuseIdentifier: TamagotchiSelectCollectionViewCell.identifier)
   }
   
   /// set up collectionView layout
   private func setupCollectionViewLayout() {
+    
     let layout = UICollectionViewFlowLayout()
     let spacing: CGFloat = 16
     let width = UIScreen.main.bounds.width - (spacing * 4)
@@ -61,9 +64,6 @@ final class TamagotchiSelectViewController: UIViewController {
     
     tamagotchiSelectCollectionView.collectionViewLayout = layout
   }
-  
-  //MARK: - Actions
-
 }
 
 
@@ -72,11 +72,13 @@ extension TamagotchiSelectViewController: UICollectionViewDataSource, UICollecti
   
   // section count
   func numberOfSections(in collectionView: UICollectionView) -> Int {
+    
     return 1
   }
   
   // item count
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
     return 20
   }
   
@@ -92,7 +94,9 @@ extension TamagotchiSelectViewController: UICollectionViewDataSource, UICollecti
     return cell
   }
   
+  // cell seleted
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
     guard TamagotchiInfo.shared.tamagotchis.count > indexPath.row else { return }
     let vc = storyboard?.instantiateViewController(withIdentifier: TamagotchiSelectedModalViewController.identifier) as! TamagotchiSelectedModalViewController
     vc.tamagotchi = TamagotchiInfo.shared.tamagotchis[indexPath.row]
