@@ -21,16 +21,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     window = UIWindow(windowScene: windowScene)
     
     // 앱 최초 실행 분기 로직
+    UserDefaults.standard.setValue(false, forKey: "isLaunched")
     let isLaunched = UserDefaults.standard.bool(forKey: "isLaunched")
     let sb = UIStoryboard(name: "Main", bundle: nil)
 
     if isLaunched {
-      let vc = sb.instantiateViewController(withIdentifier: "TamagotchiMainViewController") as! TamagotchiMainViewController
+      let vc = sb.instantiateViewController(withIdentifier: TamagotchiMainViewController.identifier) as! TamagotchiMainViewController
       let nav = UINavigationController(rootViewController: vc)
       window?.rootViewController = nav
     } else {
       UserDefaults.standard.setValue(true, forKey: "isLaunched")
-      let vc = sb.instantiateViewController(withIdentifier: "TamagotchiSelectViewController") as! TamagotchiSelectViewController
+      let vc = sb.instantiateViewController(withIdentifier: TamagotchiSelectViewController.identifier) as! TamagotchiSelectViewController
       window?.rootViewController = vc
     }
   
