@@ -93,6 +93,11 @@ extension TamagotchiSelectViewController: UICollectionViewDataSource, UICollecti
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+    guard TamagotchiInfo.shared.tamagotchis.count > indexPath.row else { return }
+    let vc = storyboard?.instantiateViewController(withIdentifier: TamagotchiSelectedModalViewController.identifier) as! TamagotchiSelectedModalViewController
+    vc.tamagotchi = TamagotchiInfo.shared.tamagotchis[indexPath.row]
+    let nav = UINavigationController(rootViewController: vc)
+    nav.modalPresentationStyle = .overFullScreen
+    present(nav,animated: true)
   }
 }
