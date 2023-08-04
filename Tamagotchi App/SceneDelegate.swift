@@ -18,13 +18,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     guard let windowScene = (scene as? UIWindowScene) else { return }
     
-    let isLaunched = UserDefaults.standard.bool(forKey: "isLaunched")
-    
-    let sb = UIStoryboard(name: "Main", bundle: nil)
-    let id = isLaunched ? "TamagotchiViewController" : "TamagotchiSelectViewController"
-    
-  
     window = UIWindow(windowScene: windowScene)
+    
+    // 앱 최초 실행 분기 로직
+    let isLaunched = UserDefaults.standard.bool(forKey: "isLaunched")
+    let sb = UIStoryboard(name: "Main", bundle: nil)
+
+    if isLaunched {
+      let vc = sb.instantiateViewController(withIdentifier: "TamagotchiMainViewController") as! TamagotchiMainViewController
+      let nav = UINavigationController(rootViewController: vc)
+      window?.rootViewController = nav
+    } else {
+      UserDefaults.standard.setValue(true, forKey: "isLaunched")
+      let vc = sb.instantiateViewController(withIdentifier: "TamagotchiSelectViewController") as! TamagotchiSelectViewController
+      window?.rootViewController = vc
+    }
+  
+    window?.makeKeyAndVisible()
     
   }
 
