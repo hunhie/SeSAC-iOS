@@ -13,4 +13,5 @@ struct ColorConstant {
   static let primaryColor = UIColor.init(hexCode: "f5fcfc")
   static let secondPrimaryColor = UIColor.init(hexCode: "eef9f9")
   static let thirdPrimaryColor = UIColor.init(hexCode: "4d6a78")
+  static let dividerColor = UIColor.init(hexCode: "c6d3d7")
 }
