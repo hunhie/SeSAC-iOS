@@ -22,25 +22,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="194" height="209"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="huh-bs-A9l">
-                                <rect key="frame" x="0.0" y="0.0" width="194" height="173.33333333333334"/>
+                                <rect key="frame" x="0.0" y="0.0" width="194" height="156.66666666666666"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QpA-sI-Mo1">
-                                <rect key="frame" x="0.0" y="178.33333333333334" width="194" height="30.666666666666657"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8FD-bN-AsA">
+                                <rect key="frame" x="69" y="161.66666666666666" width="56" height="47.333333333333343"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eN5-dd-tZO">
+                                        <rect key="frame" x="7" y="5" width="42" height="37.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="eN5-dd-tZO" secondAttribute="bottom" constant="5" id="94t-Of-34e"/>
+                                    <constraint firstItem="eN5-dd-tZO" firstAttribute="top" secondItem="8FD-bN-AsA" secondAttribute="top" constant="5" id="BmD-es-hx0"/>
+                                    <constraint firstItem="eN5-dd-tZO" firstAttribute="leading" secondItem="8FD-bN-AsA" secondAttribute="leading" constant="7" id="kMT-CH-VLB"/>
+                                    <constraint firstAttribute="trailing" secondItem="eN5-dd-tZO" secondAttribute="trailing" constant="7" id="spX-Lf-d1z"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="QpA-sI-Mo1" secondAttribute="bottom" id="3gS-Id-rtS"/>
+                            <constraint firstItem="8FD-bN-AsA" firstAttribute="top" secondItem="huh-bs-A9l" secondAttribute="bottom" constant="5" id="7N9-E8-63g"/>
                             <constraint firstItem="huh-bs-A9l" firstAttribute="top" secondItem="FMs-Hm-rTV" secondAttribute="top" id="CWC-a0-thi"/>
                             <constraint firstAttribute="trailing" secondItem="huh-bs-A9l" secondAttribute="trailing" id="E0M-Th-kAr"/>
                             <constraint firstItem="huh-bs-A9l" firstAttribute="leading" secondItem="FMs-Hm-rTV" secondAttribute="leading" id="Jva-49-LIy"/>
-                            <constraint firstAttribute="trailing" secondItem="QpA-sI-Mo1" secondAttribute="trailing" id="LfV-HS-xh6"/>
-                            <constraint firstItem="huh-bs-A9l" firstAttribute="height" secondItem="FMs-Hm-rTV" secondAttribute="height" multiplier="0.83" id="Osj-SV-OHf"/>
-                            <constraint firstItem="QpA-sI-Mo1" firstAttribute="leading" secondItem="FMs-Hm-rTV" secondAttribute="leading" id="iWY-Xl-icC"/>
-                            <constraint firstItem="QpA-sI-Mo1" firstAttribute="top" secondItem="huh-bs-A9l" secondAttribute="bottom" constant="5" id="nfi-mZ-cCS"/>
+                            <constraint firstItem="huh-bs-A9l" firstAttribute="height" secondItem="FMs-Hm-rTV" secondAttribute="height" multiplier="0.75" id="Osj-SV-OHf"/>
+                            <constraint firstItem="8FD-bN-AsA" firstAttribute="centerX" secondItem="FMs-Hm-rTV" secondAttribute="centerX" id="SZJ-as-LfN"/>
+                            <constraint firstItem="8FD-bN-AsA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FMs-Hm-rTV" secondAttribute="leading" id="UXm-3X-tF9"/>
+                            <constraint firstAttribute="bottom" secondItem="8FD-bN-AsA" secondAttribute="bottom" id="cFb-EI-tRt"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8FD-bN-AsA" secondAttribute="trailing" id="xmc-jC-6U3"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -54,8 +67,10 @@
             </constraints>
             <size key="customSize" width="194" height="209"/>
             <connections>
+                <outlet property="tamagotchiBackView" destination="FMs-Hm-rTV" id="f1l-N5-Oua"/>
                 <outlet property="tamagotchiImageView" destination="huh-bs-A9l" id="cHa-dM-2PO"/>
-                <outlet property="tamagotchiNameLabel" destination="QpA-sI-Mo1" id="MtN-33-JlJ"/>
+                <outlet property="tamagotchiNameLabel" destination="eN5-dd-tZO" id="ETC-AQ-de6"/>
+                <outlet property="tamagotchiNameView" destination="8FD-bN-AsA" id="ypS-ES-uNy"/>
             </connections>
             <point key="canvasLocation" x="100.76335877862596" y="75.704225352112687"/>
         </collectionViewCell>

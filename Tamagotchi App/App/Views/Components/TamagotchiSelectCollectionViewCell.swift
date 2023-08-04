@@ -16,11 +16,39 @@ final class TamagotchiSelectCollectionViewCell: UICollectionViewCell {
   
   static let identifier = "TamagotchiSelectCollectionViewCell"
   
+  @IBOutlet weak var tamagotchiBackView: UIView!
   @IBOutlet weak var tamagotchiImageView: UIImageView!
+  @IBOutlet weak var tamagotchiNameView: UIView!
   @IBOutlet weak var tamagotchiNameLabel: UILabel!
+  
+  
+  var tamagotchi: Tamagotchi?
   
   override func awakeFromNib() {
     super.awakeFromNib()
     
+    tamagotchiBackView.backgroundColor = ColorConstant.primaryColor
+    
+    tamagotchiNameView.backgroundColor = ColorConstant.secondPrimaryColor
+    tamagotchiNameView.layer.cornerRadius = 3
+    tamagotchiNameView.layer.borderWidth = 1
+    tamagotchiNameView.layer.borderColor = ColorConstant.thirdPrimaryColor.cgColor
+    tamagotchiNameView.clipsToBounds = true
+    
+    tamagotchiNameLabel.textAlignment = .center
+    tamagotchiNameLabel.font = .boldSystemFont(ofSize: 11)
+    tamagotchiNameLabel.textColor = ColorConstant.thirdPrimaryColor
+    
+  }
+  
+  func configureCell() {
+    
+    if let tamagotchi {
+      tamagotchiNameLabel.text = tamagotchi.name
+      tamagotchiImageView.image = UIImage(named: tamagotchi.imagePathToString)
+    } else {
+      tamagotchiNameLabel.text = StringConstant.tamagotchiPreparing
+      tamagotchiImageView.image = UIImage(named: "noImage")
+    }
   }
 }
