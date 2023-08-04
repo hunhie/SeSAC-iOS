@@ -7,13 +7,13 @@
 
 import Foundation
 
-enum tamagotchiImagePath: String {
+enum tamagotchiImagePath: String, Codable {
   case tingling = "1-"
   case smile = "2-"
   case sparkle = "3-"
 }
 
-struct Tamagotchi {
+struct Tamagotchi: Codable {
   let name: String
   let profileMessage: String
   var level: Int
