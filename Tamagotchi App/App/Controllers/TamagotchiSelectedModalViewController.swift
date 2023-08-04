@@ -113,10 +113,10 @@ final class TamagotchiSelectedModalViewController: UIViewController {
   }
   
   @IBAction func cancelButtonTapped(_ sender: UIButton) {
-    
+    dismiss(animated: true)
   }
   
   @IBAction func startButtonTapped(_ sender: UIButton) {
-    
+    let sb = storyboard?.instantiateViewController(identifier: TamagotchiMainViewController.iden)
   }
 }

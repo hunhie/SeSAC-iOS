@@ -12,6 +12,8 @@ final class TamagotchiSelectViewController: UIViewController {
   
   //MARK: - View Property
   
+  static let identifier = "TamagotchiSelectViewController"
+  
   @IBOutlet weak var tamagotchiSelectCollectionView: UICollectionView!
   
   //MARK: - View Controller Life Cycle
