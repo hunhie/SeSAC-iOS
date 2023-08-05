@@ -175,7 +175,8 @@ final class TamagotchiMainViewController: UIViewController {
   // MARK: - IBActions
   
   @objc func settingBarButtonTapped() {
-    
+    let vc = storyboard?.instantiateViewController(identifier: SettingViewController.identifier) as! SettingViewController
+    navigationController?.pushViewController(vc, animated: true)
   }
   
   @IBAction func riceGrainButtonTapped(_ sender: UIButton) {

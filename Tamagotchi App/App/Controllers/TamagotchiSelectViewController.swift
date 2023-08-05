@@ -31,7 +31,12 @@ final class TamagotchiSelectViewController: UIViewController {
   private func configureView() {
     
     view.backgroundColor = ColorConstant.backgroundColor
-    self.title = StringConstant.tamagotchiSelectTitle
+
+    let titleLabel = UILabel()
+    titleLabel.text = StringConstant.tamagotchiSelectTitle
+    titleLabel.textColor = ColorConstant.textColor
+    titleLabel.font = .monospacedDigitSystemFont(ofSize: 15, weight: .heavy)
+    navigationItem.titleView = titleLabel
   }
   
   /// set up collectionView
