@@ -30,14 +30,14 @@ final class TamagotchiSelectViewController: UIViewController {
   /// configure View Controller property
   private func configureView() {
     
-    view.backgroundColor = ColorConstant.primaryColor
+    view.backgroundColor = ColorConstant.backgroundColor
     self.title = StringConstant.tamagotchiSelectTitle
   }
   
   /// set up collectionView
   private func setupCollectionView() {
     
-    tamagotchiSelectCollectionView.backgroundColor = ColorConstant.primaryColor
+    tamagotchiSelectCollectionView.backgroundColor = ColorConstant.backgroundColor
     tamagotchiSelectCollectionView.dataSource = self
     tamagotchiSelectCollectionView.delegate = self
     
@@ -102,8 +102,7 @@ extension TamagotchiSelectViewController: UICollectionViewDataSource, UICollecti
     guard TamagotchiInfo.shared.tamagotchis.count > indexPath.row else { return }
     let vc = storyboard?.instantiateViewController(withIdentifier: TamagotchiSelectedModalViewController.identifier) as! TamagotchiSelectedModalViewController
     vc.tamagotchi = TamagotchiInfo.shared.tamagotchis[indexPath.row]
-    let nav = UINavigationController(rootViewController: vc)
-    nav.modalPresentationStyle = .overFullScreen
-    present(nav,animated: true)
+    vc.modalPresentationStyle = .overFullScreen
+    present(vc,animated: true)
   }
 }

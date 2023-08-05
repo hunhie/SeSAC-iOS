@@ -50,7 +50,7 @@ final class TamagotchiSelectedModalViewController: UIViewController {
   func setupModalBackView() {
     
     modalInnerView.backgroundColor = .clear
-    modalBackView.backgroundColor = ColorConstant.primaryColor
+    modalBackView.backgroundColor = ColorConstant.backgroundColor
     modalBackView.layer.cornerRadius = 8
     modalBackView.clipsToBounds = true
   }
@@ -65,13 +65,13 @@ final class TamagotchiSelectedModalViewController: UIViewController {
   func setupTamagotchiImageView() {
     
     guard let tamagotchi else { return }
-    tamagotchiImageView.image = UIImage(named: tamagotchi.imagePathToString)
+    tamagotchiImageView.image = UIImage(named: tamagotchi.defaultImagePathToString)
   }
   
   func setupTamagotchiNameView() {
     
-    tamagotchiNameView.backgroundColor = ColorConstant.secondPrimaryColor
-    tamagotchiNameView.layer.borderColor = ColorConstant.thirdPrimaryColor.cgColor
+    tamagotchiNameView.backgroundColor = ColorConstant.labelBackgroundColor
+    tamagotchiNameView.layer.borderColor = ColorConstant.textColor.cgColor
     tamagotchiNameView.layer.borderWidth = 0.7
     tamagotchiNameView.layer.cornerRadius = 5
     tamagotchiNameView.clipsToBounds = true
@@ -82,7 +82,7 @@ final class TamagotchiSelectedModalViewController: UIViewController {
     guard let tamagotchi else { return }
     tamagotchiNameLabel.text = tamagotchi.name
     tamagotchiNameLabel.font = .boldSystemFont(ofSize: 13)
-    tamagotchiNameLabel.textColor = ColorConstant.thirdPrimaryColor
+    tamagotchiNameLabel.textColor = ColorConstant.textColor
   }
   
   func setupTamagotchiMessageLabel() {
@@ -90,33 +90,46 @@ final class TamagotchiSelectedModalViewController: UIViewController {
     guard let tamagotchi else { return }
     tamagotchiMessageLabel.text = tamagotchi.profileMessage
     tamagotchiMessageLabel.font = .systemFont(ofSize: 13)
-    tamagotchiMessageLabel.textColor = ColorConstant.thirdPrimaryColor
+    tamagotchiMessageLabel.textColor = ColorConstant.textColor
     tamagotchiMessageLabel.textAlignment = .center
     tamagotchiMessageLabel.numberOfLines = 0
   }
   
   func setupButttons() {
     
-    startButton.titleLabel?.text = "시작하기"
-    cancelButton.titleLabel?.text = "취소"
-    cancelButton.titleLabel?.font = .systemFont(ofSize: 14)
-    cancelButton.titleLabel?.textColor = ColorConstant.thirdPrimaryColor
+    startButton.setTitle("시작하기", for: .normal)
+    startButton.setTitleColor(ColorConstant.textColor, for: .normal)
     startButton.titleLabel?.font = .systemFont(ofSize: 14)
-    startButton.titleLabel?.textColor = ColorConstant.thirdPrimaryColor
-    startButton.titleLabel?.text = "시작하기"
+    startButton.setBackgroundColor(ColorConstant.buttonSelectedColor, for: .highlighted)
+    
+    cancelButton.setTitle("취소", for: .normal)
+    cancelButton.setTitleColor(ColorConstant.textColor, for: .normal)
+    cancelButton.titleLabel?.font = .systemFont(ofSize: 14)
+    cancelButton.setBackgroundColor(ColorConstant.buttonSelectedColor, for: .highlighted)
   }
   
   
   // MARK: - IBActions
-  @IBAction func handleTapGesture(_ sender: UITapGestureRecognizer) {
-    dismiss(animated: true)
-  }
+
   
   @IBAction func cancelButtonTapped(_ sender: UIButton) {
     dismiss(animated: true)
   }
   
   @IBAction func startButtonTapped(_ sender: UIButton) {
-    let sb = storyboard?.instantiateViewController(identifier: TamagotchiMainViewController.iden)
+    UserDefaults.standard.setValue(true, forKey: "isLaunched")
+
+    if let encoded = try? JSONEncoder().encode(tamagotchi) {
+        UserDefaults.standard.setValue(encoded, forKey: "selectedTamagotchi")
+    }
+    
+    let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+    let sceneDelegate = windowScene?.delegate as? SceneDelegate
+    
+    let vc = storyboard?.instantiateViewController(identifier: TamagotchiMainViewController.identifier) as! TamagotchiMainViewController
+    vc.tamagotchi = self.tamagotchi
+    
+    sceneDelegate?.window?.rootViewController = vc
+    sceneDelegate?.window?.makeKeyAndVisible()
   }
 }
