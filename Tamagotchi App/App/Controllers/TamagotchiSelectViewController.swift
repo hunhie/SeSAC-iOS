@@ -81,7 +81,7 @@ extension TamagotchiSelectViewController: UICollectionViewDataSource, UICollecti
   // item count
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     
-    return 20
+    return 21
   }
   
   // configure Cell
