@@ -479,13 +479,20 @@
         <!--Setting Name View Controller-->
         <scene sceneID="EWt-di-q8r">
             <objects>
-                <viewController id="x5C-WL-iek" customClass="SettingNameViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingNameViewController" id="x5C-WL-iek" customClass="SettingNameViewController" customModule="Tamagotchi_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U1O-Di-byE">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vuS-Xr-aMB">
+                                <rect key="frame" x="0.0" y="47" width="428" height="1"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="eUj-fF-6Va"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RXC-Vn-7uq">
-                                <rect key="frame" x="20" y="67" width="388" height="54"/>
+                                <rect key="frame" x="20" y="63" width="388" height="54"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="50e-Iw-SKh">
                                         <rect key="frame" x="0.0" y="0.0" width="388" height="54"/>
@@ -519,10 +526,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="RXC-Vn-7uq" firstAttribute="leading" secondItem="KZE-0G-MpR" secondAttribute="leading" constant="20" id="Cm4-GM-mMk"/>
+                            <constraint firstItem="RXC-Vn-7uq" firstAttribute="top" secondItem="vuS-Xr-aMB" secondAttribute="top" constant="16" id="F1H-Mt-QHH"/>
                             <constraint firstItem="KZE-0G-MpR" firstAttribute="trailing" secondItem="RXC-Vn-7uq" secondAttribute="trailing" constant="20" id="JjC-uF-a4L"/>
-                            <constraint firstItem="RXC-Vn-7uq" firstAttribute="top" secondItem="KZE-0G-MpR" secondAttribute="top" constant="20" id="aFF-Wf-jCa"/>
+                            <constraint firstItem="vuS-Xr-aMB" firstAttribute="leading" secondItem="U1O-Di-byE" secondAttribute="leading" id="Ny1-4H-wWK"/>
+                            <constraint firstItem="KZE-0G-MpR" firstAttribute="trailing" secondItem="vuS-Xr-aMB" secondAttribute="trailing" id="Q9k-oY-Aga"/>
+                            <constraint firstItem="KZE-0G-MpR" firstAttribute="top" secondItem="vuS-Xr-aMB" secondAttribute="top" id="X04-Nm-25A"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="50e-Iw-SKh" id="PjM-DG-zvk"/>
+                        <outlet property="nameTextFieldView" destination="RXC-Vn-7uq" id="kDV-d0-L2i"/>
+                        <outlet property="nameTextFielddividerView" destination="f1q-dE-CvY" id="Uys-aM-W3a"/>
+                        <outlet property="navigationBarDivierView" destination="vuS-Xr-aMB" id="lNz-ff-hcS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gNA-89-ZRj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

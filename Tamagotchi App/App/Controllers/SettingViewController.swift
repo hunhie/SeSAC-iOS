@@ -16,9 +16,9 @@ final class SettingViewController: UIViewController {
   @IBOutlet weak var settingTableView: UITableView!
 
   lazy var menuList: [Menu] = [
-    Menu(name: "내 이름 설정하기", image: "pencil", detail: User.shared.name),
-    Menu(name: "다마고치 변경하기", image: "moon.fill"),
-    Menu(name: "데이터 초기화", image: "arrow.clockwise")
+    Menu(name: "내 이름 설정하기", image: "pencil", detail: User.shared.name, type: .push(SettingNameViewController.identifier)),
+    Menu(name: "다마고치 변경하기", image: "moon.fill", type: .push("")),
+    Menu(name: "데이터 초기화", image: "arrow.clockwise", type: .alert)
   ]
   
   // MARK: - Lifecycle Methods
@@ -37,6 +37,7 @@ final class SettingViewController: UIViewController {
     
     view.backgroundColor = ColorConstant.backgroundColor
     
+    self.title = StringConstant.setting
     let titleLabel = UILabel()
     titleLabel.text = StringConstant.setting
     titleLabel.textColor = ColorConstant.textColor
@@ -89,5 +90,15 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     cell.configureCell()
     
     return cell
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    switch menuList[indexPath.row].type {
+    case .alert:
+      print()
+    case .push(let identifier):
+      guard let vc = storyboard?.instantiateViewController(identifier: identifier) else { return }
+      navigationController?.pushViewController(vc, animated: true)
+    }
   }
 }
