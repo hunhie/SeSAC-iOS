@@ -7,10 +7,27 @@
 
 import Foundation
 
-enum tamagotchiImagePath: String, Codable {
-  case tingling = "1-"
-  case smile = "2-"
-  case sparkle = "3-"
+enum TamagotchiType: String, Codable {
+  case tingling
+  case smile
+  case sparkle
+  
+  var imagePath: String {
+    switch self {
+    case .tingling:
+      return "1-"
+    case .smile:
+      return "2-"
+    case .sparkle:
+      return "3-"
+    }
+  }
+}
+
+enum MessageType {
+  case common
+  case levelUp
+  case full
 }
 
 struct Tamagotchi: Codable {
@@ -20,17 +37,35 @@ struct Tamagotchi: Codable {
   }
   static var riceGrain: Int = 0
   static var waterDroplets: Int = 0
+  static let statusMessage: [MessageType: [String]] = [
+    .common : [
+      "\(User.shared.name)님 과제는 다 하신거에요?",
+      "날씨가 좋네요. \n \(User.shared.name)님 동네도 화창한가요~?",
+      "블로그 글은 매일 쓰고 계신가요? \n 나중에 \(User.shared.name)님 블로그 구경해볼래요!",
+      "\(User.shared.name)님 목이 너무 말라요. 물 주세요",
+    ],
+    .levelUp : [
+      "\(User.shared.name)님 덕분에 레벨이 올랐어요! \n 이제 \(Self.level)레벨이에요~~",
+      "앗 레벨이 올랐어요!n \(User.shared.name)님이 밥과 물을 잘 챙겨주신 덕분이에요.",
+      "짜잔!! \(Self.level)레벨로 올랐답니다!"
+    ],
+    .full : [
+    "배가 불러서 더 이상 먹을 수 없어요..",
+    "그만!.. 그만 주세요. 먹고 싶지 않아요!",
+    "\(User.shared.name)님.. 저 배불러요!"
+    ]
+  ]
   
   let name: String
   let profileMessage: String
-  let imagePath: tamagotchiImagePath
+  let imagePath: TamagotchiType
   
   var imagePathToString: String {
-    imagePath.rawValue+"\(Self.level < 10 ? Self.level : 9)"
+    imagePath.imagePath+"\(Self.level < 10 ? Self.level : 9)"
   }
   
   var defaultImagePathToString: String {
-    imagePath.rawValue+"6"
+    imagePath.imagePath+"6"
   }
 }
 
