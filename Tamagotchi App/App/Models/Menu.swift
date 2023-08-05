@@ -7,8 +7,14 @@
 
 import Foundation
 
+enum MenuType {
+  case alert
+  case push(String)
+}
+
 struct Menu {
   let name: String
   let image: String
   var detail: String?
+  let type: MenuType
 }

@@ -29,6 +29,7 @@ enum StringConstant {
   
   // set name Screen
   static let setNameTitle = "님 이름 정하기"
+  static let saveName = "저장"
   
   // reset Screen
   static let resetAlertTitle = "데이터 초기화"
