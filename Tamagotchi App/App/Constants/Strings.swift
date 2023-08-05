@@ -22,6 +22,7 @@ enum StringConstant {
   static let waterDroplets = "물방울"
   
   // settings
+  static let setting = "설정"
   static let setName = "내 이름 설정하기"
   static let changeTamagotchi = "다마고치 변경하기"
   static let reset = "데이터 초기화"
