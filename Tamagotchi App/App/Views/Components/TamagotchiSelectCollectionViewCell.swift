@@ -30,7 +30,7 @@ final class TamagotchiSelectCollectionViewCell: UICollectionViewCell {
     tamagotchiBackView.backgroundColor = ColorConstant.backgroundColor
     
     tamagotchiNameView.backgroundColor = ColorConstant.labelBackgroundColor
-    tamagotchiNameView.layer.cornerRadius = 3
+    tamagotchiNameView.layer.cornerRadius = 5
     tamagotchiNameView.layer.borderWidth = 1
     tamagotchiNameView.layer.borderColor = ColorConstant.textColor.cgColor
     tamagotchiNameView.clipsToBounds = true
