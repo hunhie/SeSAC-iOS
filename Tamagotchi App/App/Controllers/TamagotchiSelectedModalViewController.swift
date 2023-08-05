@@ -120,7 +120,7 @@ final class TamagotchiSelectedModalViewController: UIViewController {
     UserDefaults.standard.setValue(true, forKey: "isLaunched")
 
     if let encoded = try? JSONEncoder().encode(tamagotchi) {
-        UserDefaults.standard.setValue(encoded, forKey: "selectedTamagotchi")
+      UserDefaults.standard.setValue(encoded, forKey: StringConstant.selectedTamagotchi)
     }
     
     let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
@@ -128,8 +128,9 @@ final class TamagotchiSelectedModalViewController: UIViewController {
     
     let vc = storyboard?.instantiateViewController(identifier: TamagotchiMainViewController.identifier) as! TamagotchiMainViewController
     vc.tamagotchi = self.tamagotchi
+    let nav = UINavigationController(rootViewController: vc)
     
-    sceneDelegate?.window?.rootViewController = vc
+    sceneDelegate?.window?.rootViewController = nav
     sceneDelegate?.window?.makeKeyAndVisible()
   }
 }
