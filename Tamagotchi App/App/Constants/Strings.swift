@@ -5,10 +5,10 @@
 //  Created by walkerhilla on 2023/08/04.
 //
 
-import UIKit
+import Foundation
 
 /// String Constants
-struct StringConstant {
+enum StringConstant {
   
   // select Screen
   static let tamagotchiSelectTitle = "다마고치 선택하기"
@@ -32,4 +32,11 @@ struct StringConstant {
   // reset Screen
   static let resetAlertTitle = "데이터 초기화"
   static let resetAlertMessage = "정말 다시 처음부터 시작하실거에요?"
+  
+  // UserDefault Identifier
+  static let selectedTamagotchi = "selectedTamagotchi"
+  
+  // Main Screen Image Path
+  static let bubble = "bubble"
+  static let noImage = "noImage"
 }

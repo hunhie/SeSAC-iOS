@@ -8,7 +8,7 @@
 import UIKit
 
 /// Color Constants
-struct ColorConstant {
+enum ColorConstant {
   
   static let backgroundColor = UIColor.init(hexCode: "f5fcfc")
   static let labelBackgroundColor = UIColor.init(hexCode: "eef9f9")
