@@ -45,7 +45,7 @@ final class TamagotchiSelectCollectionViewCell: UICollectionViewCell {
     
     if let tamagotchi {
       tamagotchiNameLabel.text = tamagotchi.name
-      tamagotchiImageView.image = UIImage(named: tamagotchi.imagePathToString)
+      tamagotchiImageView.image = UIImage(named: tamagotchi.defaultImagePathToString)
     } else {
       tamagotchiNameLabel.text = StringConstant.tamagotchiPreparing
       tamagotchiImageView.image = UIImage(named: "noImage")
