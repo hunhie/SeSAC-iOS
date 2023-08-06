@@ -57,12 +57,24 @@ final class SettingNameViewController: UIViewController {
     navigationItem.rightBarButtonItem = saveBarButtonItem
     
     navigationBarDivierView.backgroundColor = ColorConstant.dividerColor
+    
+    checkSaveBarButtonItem()
   }
   
   func setupNameTextField() {
     
     nameTextFieldView.backgroundColor = .clear
+    nameTextField.addTarget(self, action: #selector(nameTextFieldDidChange(_:)), for: .editingChanged)
     nameTextFielddividerView.backgroundColor = ColorConstant.textColor
+  }
+  
+  func checkSaveBarButtonItem() {
+    guard let text = nameTextField.text,
+          text.count > 0 && text != User.shared.name else {
+      navigationItem.rightBarButtonItem?.isEnabled = false
+      return
+    }
+    navigationItem.rightBarButtonItem?.isEnabled = true
   }
   
   
@@ -71,7 +83,14 @@ final class SettingNameViewController: UIViewController {
   // MARK: - IBActions
   
   @objc func saveBarButtonItemTapped() {
-    
+    print(#function)
+    guard let text = nameTextField.text else { return }
+    User.shared.name = text
+    navigationController?.popViewController(animated: true)
+  }
+  
+  @objc func nameTextFieldDidChange(_ sender: UITextField) {
+    checkSaveBarButtonItem()
   }
   
   // MARK: - Public Methods
