@@ -30,6 +30,12 @@ final class SettingViewController: UIViewController {
     settingTableView.reloadData()
   }
   
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    TamagotchiManager.shared.saveData(tamagotchi: nil)
+  }
+  
   // MARK: - UI Setup
   
   func configureUI() {

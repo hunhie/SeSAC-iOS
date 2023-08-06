@@ -14,6 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    
+    if let name = UserDefaults.standard.string(forKey: StringConstant.userName) {
+      User.shared.name = name
+    }
+    
     return true
   }
 
