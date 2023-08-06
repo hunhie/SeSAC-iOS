@@ -33,6 +33,7 @@ final class SettingTableViewCell: UITableViewCell {
     
     titleLabel.text = menu.name
     menuImageView.image = UIImage(systemName: menu.image)
-    detailLabel.text = menu.detail ?? nil
+   
+    detailLabel.text = menu.detail != nil ? menu.detail : ""
   }
 }

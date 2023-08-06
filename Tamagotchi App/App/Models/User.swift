@@ -13,4 +13,8 @@ final class User {
   private init() {}
   
   var name: String = "대장"
+  
+  func getName() -> String {
+    self.name
+  }
 }

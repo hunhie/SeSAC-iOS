@@ -8,7 +8,7 @@
 import UIKit
 
 final class TamagotchiMainViewController: UIViewController {
-
+  
   // MARK: - Properties
   
   static let identifier = "TamagotchiMainViewController"
@@ -42,12 +42,8 @@ final class TamagotchiMainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    if let savedData = UserDefaults.standard.object(forKey: StringConstant.selectedTamagotchi) as? Data {
-        let decoder = JSONDecoder()
-        if let savedObject = try? decoder.decode(Tamagotchi.self, from: savedData) {
-          self.tamagotchi = savedObject
-        }
-    }
+    guard let tamagotchi = TamagotchiManager.shared.loadData() else { return }
+    self.tamagotchi = tamagotchi
     
     configureUI()
   }
@@ -55,6 +51,14 @@ final class TamagotchiMainViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
+    setupNavigationTitleView()
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    guard let tamagotchi else { return }
+    TamagotchiManager.shared.saveData(tamagotchi: tamagotchi)
   }
   
   // MARK: - UI Setup
@@ -65,7 +69,7 @@ final class TamagotchiMainViewController: UIViewController {
     
     setupNavigationBar()
     setupDivider()
-    setupMessageView()
+    setupMessageView(type: Tamagotchi.tamagotchiAction(riceGrain: nil, waterDroplets: nil))
     setupTamagotchiImageView()
     setupTamagotchiNameView()
     setupTamagotchiStatusLabel()
@@ -75,15 +79,19 @@ final class TamagotchiMainViewController: UIViewController {
   
   func setupNavigationBar() {
     
+    setupNavigationTitleView()
+    
+    let settingBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .done, target: self, action: #selector(settingBarButtonTapped))
+    settingBarButtonItem.tintColor = ColorConstant.textColor
+    navigationItem.rightBarButtonItem = settingBarButtonItem
+  }
+  
+  func setupNavigationTitleView() {
     let titleLabel = UILabel()
     titleLabel.text = User.shared.name+StringConstant.yourTamagotchi
     titleLabel.textColor = ColorConstant.textColor
     titleLabel.font = .monospacedDigitSystemFont(ofSize: 15, weight: .heavy)
     navigationItem.titleView = titleLabel
-
-    let settingBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .done, target: self, action: #selector(settingBarButtonTapped))
-    settingBarButtonItem.tintColor = ColorConstant.textColor
-    navigationItem.rightBarButtonItem = settingBarButtonItem
   }
   
   func setupDivider() {
@@ -91,10 +99,10 @@ final class TamagotchiMainViewController: UIViewController {
     divider.backgroundColor = ColorConstant.dividerColor
   }
   
-  func setupMessageView() {
+  func setupMessageView(type: MessageType) {
     
     messageBubbleView.image = UIImage(named: StringConstant.bubble)
-    messageLabel.text = Tamagotchi.statusMessage[.common]?.randomElement()
+    messageLabel.text = Tamagotchi.statusMessage(type: type)
     messageLabel.font = .monospacedDigitSystemFont(ofSize: 13, weight: .bold)
     messageLabel.textAlignment = .center
     messageLabel.textColor = ColorConstant.textColor
@@ -175,16 +183,39 @@ final class TamagotchiMainViewController: UIViewController {
   // MARK: - IBActions
   
   @objc func settingBarButtonTapped() {
+    
     let vc = storyboard?.instantiateViewController(identifier: SettingViewController.identifier) as! SettingViewController
     navigationController?.pushViewController(vc, animated: true)
   }
   
   @IBAction func riceGrainButtonTapped(_ sender: UIButton) {
     
+    if let text = riceGrainTextField.text {
+      let count = Int(text) ?? 1
+      guard count <= 100 else { return }
+      let messageType = Tamagotchi.tamagotchiAction(riceGrain: count, waterDroplets: nil)
+      
+      if messageType == .levelUp {
+        setupTamagotchiImageView()
+      }
+      setupMessageView(type: messageType)
+      setupTamagotchiStatusLabel()
+    }
   }
   
   @IBAction func waterDropletsButtonTapped(_ sender: UIButton) {
     
+    if let text = waterDropletsTextField.text {
+      let count = Int(text) ?? 1
+      guard count <= 100 else { return }
+      let messageType = Tamagotchi.tamagotchiAction(riceGrain: nil, waterDroplets: count)
+      
+      if messageType == .levelUp {
+        setupTamagotchiImageView()
+      }
+      setupMessageView(type: messageType)
+      setupTamagotchiStatusLabel()
+    }
   }
 }
 

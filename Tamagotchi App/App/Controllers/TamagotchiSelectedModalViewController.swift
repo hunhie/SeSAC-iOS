@@ -14,12 +14,12 @@ final class TamagotchiSelectedModalViewController: UIViewController {
   static let identifier = "TamagotchiSelectedModalViewController"
   
   @IBOutlet weak var modalBackView: UIView!
-  @IBOutlet weak var modalInnerView: UIView!
   @IBOutlet weak var tamagotchiImageView: UIImageView!
   @IBOutlet weak var tamagotchiNameView: UIView!
   @IBOutlet weak var tamagotchiNameLabel: UILabel!
   @IBOutlet weak var tamagotchiMessageLabel: UILabel!
   @IBOutlet var dividers: [UIView]!
+  @IBOutlet weak var buttonView: UIView!
   @IBOutlet weak var cancelButton: UIButton!
   @IBOutlet weak var startButton: UIButton!
   
@@ -49,7 +49,7 @@ final class TamagotchiSelectedModalViewController: UIViewController {
   
   func setupModalBackView() {
     
-    modalInnerView.backgroundColor = .clear
+    //modalInnerView.backgroundColor = .clear
     modalBackView.backgroundColor = ColorConstant.backgroundColor
     modalBackView.layer.cornerRadius = 8
     modalBackView.clipsToBounds = true
@@ -88,7 +88,7 @@ final class TamagotchiSelectedModalViewController: UIViewController {
   func setupTamagotchiMessageLabel() {
     
     guard let tamagotchi else { return }
-    tamagotchiMessageLabel.text = tamagotchi.profileMessage
+    tamagotchiMessageLabel.text = tamagotchi.introduceMessage
     tamagotchiMessageLabel.font = .systemFont(ofSize: 13)
     tamagotchiMessageLabel.textColor = ColorConstant.textColor
     tamagotchiMessageLabel.textAlignment = .center
@@ -96,6 +96,8 @@ final class TamagotchiSelectedModalViewController: UIViewController {
   }
   
   func setupButttons() {
+    
+    buttonView.backgroundColor = .clear
     
     startButton.setTitle("시작하기", for: .normal)
     startButton.setTitleColor(ColorConstant.textColor, for: .normal)
@@ -105,7 +107,8 @@ final class TamagotchiSelectedModalViewController: UIViewController {
     cancelButton.setTitle("취소", for: .normal)
     cancelButton.setTitleColor(ColorConstant.textColor, for: .normal)
     cancelButton.titleLabel?.font = .systemFont(ofSize: 14)
-    cancelButton.setBackgroundColor(ColorConstant.buttonSelectedColor, for: .highlighted)
+    cancelButton.setBackgroundColor(ColorConstant.buttonSelectedColor, for: .normal)
+    cancelButton.setBackgroundColor(ColorConstant.dividerColor, for: .highlighted)
   }
   
   
@@ -119,9 +122,8 @@ final class TamagotchiSelectedModalViewController: UIViewController {
   @IBAction func startButtonTapped(_ sender: UIButton) {
     UserDefaults.standard.setValue(true, forKey: "isLaunched")
 
-    if let encoded = try? JSONEncoder().encode(tamagotchi) {
-      UserDefaults.standard.setValue(encoded, forKey: StringConstant.selectedTamagotchi)
-    }
+    guard let tamagotchi else { return }
+    TamagotchiManager.shared.saveData(tamagotchi: tamagotchi)
     
     let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
     let sceneDelegate = windowScene?.delegate as? SceneDelegate

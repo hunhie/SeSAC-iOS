@@ -28,6 +28,7 @@
 		B6D108572A7E8D5F00B95733 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D108552A7E8D5F00B95733 /* SettingTableViewCell.xib */; };
 		B6D108592A7E995C00B95733 /* SettingNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D108582A7E995C00B95733 /* SettingNameViewController.swift */; };
 		B6E858C02A7D26630074CBBA /* Extension+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E858BF2A7D26630074CBBA /* Extension+UIButton.swift */; };
+		B6EC434A2A7F86C4001E1867 /* TamagotchiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EC43492A7F86C4001E1867 /* TamagotchiManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		B6D108552A7E8D5F00B95733 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		B6D108582A7E995C00B95733 /* SettingNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNameViewController.swift; sourceTree = "<group>"; };
 		B6E858BF2A7D26630074CBBA /* Extension+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIButton.swift"; sourceTree = "<group>"; };
+		B6EC43492A7F86C4001E1867 /* TamagotchiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		B699BD7C2A7CE44200DE2575 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				B6EC43482A7F86B6001E1867 /* Service */,
 				B699BD8D2A7D00B000DE2575 /* Constants */,
 				B699BD7E2A7CE57F00DE2575 /* Models */,
 				B699BD7D2A7CE57A00DE2575 /* Views */,
@@ -174,6 +177,14 @@
 				B6E858BF2A7D26630074CBBA /* Extension+UIButton.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B6EC43482A7F86B6001E1867 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B6EC43492A7F86C4001E1867 /* TamagotchiManager.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +267,7 @@
 				B6D1084B2A7E86EA00B95733 /* SettingViewController.swift in Sources */,
 				B699BD6B2A7CE2BB00DE2575 /* TamagotchiMainViewController.swift in Sources */,
 				B6D108562A7E8D5F00B95733 /* SettingTableViewCell.swift in Sources */,
+				B6EC434A2A7F86C4001E1867 /* TamagotchiManager.swift in Sources */,
 				B699BD672A7CE2BB00DE2575 /* AppDelegate.swift in Sources */,
 				B6D108592A7E995C00B95733 /* SettingNameViewController.swift in Sources */,
 				B699BD692A7CE2BB00DE2575 /* SceneDelegate.swift in Sources */,
