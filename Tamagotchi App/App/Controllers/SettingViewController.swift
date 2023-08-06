@@ -14,12 +14,6 @@ final class SettingViewController: UIViewController {
   static let identifier = "SettingViewController"
   
   @IBOutlet weak var settingTableView: UITableView!
-
-  lazy var menuList: [Menu] = [
-    Menu(name: "내 이름 설정하기", image: "pencil", detail: User.shared.name, type: .push(SettingNameViewController.identifier)),
-    Menu(name: "다마고치 변경하기", image: "moon.fill", type: .push(TamagotchiSelectViewController.identifier)),
-    Menu(name: "데이터 초기화", image: "arrow.clockwise", type: .alert)
-  ]
   
   // MARK: - Lifecycle Methods
   
@@ -30,6 +24,11 @@ final class SettingViewController: UIViewController {
     configureUI()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    settingTableView.reloadData()
+  }
   
   // MARK: - UI Setup
   
@@ -76,11 +75,11 @@ final class SettingViewController: UIViewController {
 
 extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return menuList.count
+    return Menu.MenuList().count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let menu = menuList[indexPath.row]
+    let menu =  Menu.MenuList()[indexPath.row]
     
     guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier) as? SettingTableViewCell else {
       return UITableViewCell()
@@ -93,7 +92,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    switch menuList[indexPath.row].type {
+    switch Menu.MenuList()[indexPath.row].type {
     case .alert:
       let alertController = UIAlertController(title: StringConstant.resetAlertTitle, message: StringConstant.resetAlertMessage, preferredStyle: .alert)
       let cancel = UIAlertAction(title: "취소", style: .cancel)
