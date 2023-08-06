@@ -17,7 +17,7 @@ final class SettingViewController: UIViewController {
 
   lazy var menuList: [Menu] = [
     Menu(name: "내 이름 설정하기", image: "pencil", detail: User.shared.name, type: .push(SettingNameViewController.identifier)),
-    Menu(name: "다마고치 변경하기", image: "moon.fill", type: .push("")),
+    Menu(name: "다마고치 변경하기", image: "moon.fill", type: .push(TamagotchiSelectViewController.identifier)),
     Menu(name: "데이터 초기화", image: "arrow.clockwise", type: .alert)
   ]
   
@@ -95,7 +95,25 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     switch menuList[indexPath.row].type {
     case .alert:
-      print()
+      let alertController = UIAlertController(title: StringConstant.resetAlertTitle, message: StringConstant.resetAlertMessage, preferredStyle: .alert)
+      let cancel = UIAlertAction(title: "취소", style: .cancel)
+      let done = UIAlertAction(title: "초기화", style: .destructive) { _ in
+        
+        TamagotchiManager.shared.resetData()
+        
+        guard let vc = self.storyboard?.instantiateViewController(identifier: TamagotchiSelectViewController.identifier) else { return }
+        
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        
+        let nav = UINavigationController(rootViewController: vc)
+        
+        sceneDelegate?.window?.rootViewController = nav
+        sceneDelegate?.window?.makeKeyAndVisible()
+      }
+      alertController.addAction(cancel)
+      alertController.addAction(done)
+      present(alertController, animated: true)
     case .push(let identifier):
       guard let vc = storyboard?.instantiateViewController(identifier: identifier) else { return }
       navigationController?.pushViewController(vc, animated: true)
