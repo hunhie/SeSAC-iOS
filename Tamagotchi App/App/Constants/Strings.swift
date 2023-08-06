@@ -37,6 +37,9 @@ enum StringConstant {
   
   // UserDefault Identifier
   static let selectedTamagotchi = "selectedTamagotchi"
+  static let tamagotchiRice = "tamagotchiRice"
+  static let tamagotchiWater = "tamagotchiWater"
+  static let userName = "userName"
   
   // Main Screen Image Path
   static let bubble = "bubble"
