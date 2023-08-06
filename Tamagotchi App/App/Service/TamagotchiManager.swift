@@ -44,6 +44,7 @@ final class TamagotchiManager {
   func resetData() {
     Tamagotchi.resetData()
     UserDefaults.standard.setValue(false, forKey: "isLaunched")
+    UserDefaults.standard.setValue("대장", forKey: StringConstant.userName)
     UserDefaults.standard.removeObject(forKey: StringConstant.selectedTamagotchi)
   }
 }
