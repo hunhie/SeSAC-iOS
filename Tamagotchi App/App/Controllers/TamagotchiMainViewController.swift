@@ -142,6 +142,7 @@ final class TamagotchiMainViewController: UIViewController {
     
     riceGrainRowView.backgroundColor = .clear
     
+    riceGrainTextField.delegate = self
     riceGrainTextField.attributedPlaceholder = NSAttributedString(string: "밥주세용", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
     riceGrainTextField.textAlignment = .center
     riceGrainTextField.keyboardType = .numberPad
@@ -163,6 +164,7 @@ final class TamagotchiMainViewController: UIViewController {
     
     waterDropletsRowView.backgroundColor = .clear
     
+    waterDropletsTextField.delegate = self
     waterDropletsTextField.attributedPlaceholder = NSAttributedString(string: "물주세용", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
     waterDropletsTextField.textAlignment = .center
     waterDropletsTextField.keyboardType = .numberPad
@@ -223,3 +225,8 @@ final class TamagotchiMainViewController: UIViewController {
   }
 }
 
+extension TamagotchiMainViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.becomeFirstResponder()
+  }
+}
