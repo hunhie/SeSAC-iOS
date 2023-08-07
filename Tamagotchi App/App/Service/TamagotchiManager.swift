@@ -14,6 +14,8 @@ final class TamagotchiManager {
   
   func saveData(tamagotchi: Tamagotchi?) {
     UserDefaults.standard.setValue(User.shared.name, forKey: StringConstant.userName)
+    let name = UserDefaults.standard.string(forKey: StringConstant.userName)
+    print(name)
     UserDefaults.standard.setValue(Tamagotchi.riceGrain, forKey: StringConstant.tamagotchiRice)
     UserDefaults.standard.setValue(Tamagotchi.waterDroplets, forKey: StringConstant.tamagotchiWater)
     guard let tamagotchi else { return }
@@ -23,6 +25,8 @@ final class TamagotchiManager {
   }
   
   func loadData() -> Tamagotchi? {
+    User.shared.name = UserDefaults.standard.string(forKey: StringConstant.userName) ?? ""
+    
     guard let savedData = UserDefaults.standard.data(forKey: StringConstant.selectedTamagotchi) else {
       return nil
     }
@@ -43,6 +47,7 @@ final class TamagotchiManager {
   
   func resetData() {
     Tamagotchi.resetData()
+    User.shared.name = "대장"
     UserDefaults.standard.setValue(false, forKey: "isLaunched")
     UserDefaults.standard.setValue("대장", forKey: StringConstant.userName)
     UserDefaults.standard.removeObject(forKey: StringConstant.selectedTamagotchi)
