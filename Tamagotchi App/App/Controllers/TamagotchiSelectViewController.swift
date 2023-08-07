@@ -61,7 +61,7 @@ final class TamagotchiSelectViewController: UIViewController {
   private func setupCollectionViewLayout() {
     
     let layout = UICollectionViewFlowLayout()
-    let spacing: CGFloat = 16
+    let spacing: CGFloat = 20
     let width = UIScreen.main.bounds.width - (spacing * 4)
     layout.itemSize = CGSize(width: width/3, height: width/3)
     layout.minimumLineSpacing = spacing
