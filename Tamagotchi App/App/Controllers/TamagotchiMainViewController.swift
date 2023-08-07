@@ -217,5 +217,9 @@ final class TamagotchiMainViewController: UIViewController {
       setupTamagotchiStatusLabel()
     }
   }
+  
+  @IBAction func tapGesture(_ sender: Any) {
+    view.endEditing(true)
+  }
 }
 
