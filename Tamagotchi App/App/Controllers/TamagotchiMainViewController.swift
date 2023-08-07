@@ -51,6 +51,7 @@ final class TamagotchiMainViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
+    setupMessageView(type: .common)
     setupNavigationTitleView()
   }
   
