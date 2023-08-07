@@ -31,9 +31,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mik-cf-U05" secondAttribute="height" multiplier="5:3" id="NSN-UG-9AN"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="tIv-g1-kac" appends="YES" id="ZqU-y8-0si"/>
-                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDz-qC-42p">
                                 <rect key="frame" x="105" y="136.66666666666666" width="204" height="0.0"/>
@@ -214,6 +211,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="BDz-qC-42p" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mik-cf-U05" secondAttribute="trailing" constant="-16" id="3Oi-7U-Amc"/>
                             <constraint firstItem="6Lj-cw-HyQ" firstAttribute="top" secondItem="NEx-dx-LC3" secondAttribute="bottom" constant="12" id="4eT-hP-1P4"/>
@@ -237,6 +235,9 @@
                             <constraint firstItem="hjS-OD-xC7" firstAttribute="top" secondItem="6Lj-cw-HyQ" secondAttribute="bottom" constant="40" id="vXG-nf-LTy"/>
                             <constraint firstItem="mik-cf-U05" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zrX-e7-UNq"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="8IZ-tT-6vr" appends="YES" id="Xl9-kq-OMH"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="divider" destination="bpd-8C-cWp" id="e6P-zH-1bh"/>
@@ -259,9 +260,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="tIv-g1-kac">
+                <tapGestureRecognizer id="8IZ-tT-6vr">
                     <connections>
-                        <action selector="tapGesture:" destination="BYZ-38-t0r" id="DCT-Sl-f8h"/>
+                        <action selector="tapGesture:" destination="BYZ-38-t0r" id="2Zg-wW-ffj"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -530,12 +531,20 @@
                                     <constraint firstAttribute="bottom" secondItem="f1q-dE-CvY" secondAttribute="bottom" id="j79-hf-mDB"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6O-yJ-vVq">
+                                <rect key="frame" x="20" y="100" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KZE-0G-MpR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="RXC-Vn-7uq" firstAttribute="leading" secondItem="KZE-0G-MpR" secondAttribute="leading" constant="20" id="Cm4-GM-mMk"/>
+                            <constraint firstItem="k6O-yJ-vVq" firstAttribute="top" secondItem="RXC-Vn-7uq" secondAttribute="bottom" constant="10" id="DRt-AB-04T"/>
                             <constraint firstItem="RXC-Vn-7uq" firstAttribute="top" secondItem="vuS-Xr-aMB" secondAttribute="top" constant="16" id="F1H-Mt-QHH"/>
+                            <constraint firstItem="k6O-yJ-vVq" firstAttribute="leading" secondItem="50e-Iw-SKh" secondAttribute="leading" id="Iwk-Em-X0l"/>
                             <constraint firstItem="KZE-0G-MpR" firstAttribute="trailing" secondItem="RXC-Vn-7uq" secondAttribute="trailing" constant="20" id="JjC-uF-a4L"/>
                             <constraint firstItem="vuS-Xr-aMB" firstAttribute="leading" secondItem="U1O-Di-byE" secondAttribute="leading" id="Ny1-4H-wWK"/>
                             <constraint firstItem="KZE-0G-MpR" firstAttribute="trailing" secondItem="vuS-Xr-aMB" secondAttribute="trailing" id="Q9k-oY-Aga"/>
@@ -543,6 +552,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="inputConditionLabel" destination="k6O-yJ-vVq" id="crn-YU-C1T"/>
                         <outlet property="nameTextField" destination="50e-Iw-SKh" id="PjM-DG-zvk"/>
                         <outlet property="nameTextFieldView" destination="RXC-Vn-7uq" id="kDV-d0-L2i"/>
                         <outlet property="nameTextFielddividerView" destination="f1q-dE-CvY" id="Uys-aM-W3a"/>

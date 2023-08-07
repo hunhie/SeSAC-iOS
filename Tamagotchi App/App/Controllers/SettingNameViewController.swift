@@ -10,12 +10,13 @@ import UIKit
 final class SettingNameViewController: UIViewController {
   
   static let identifier = "SettingNameViewController"
-
+  
   // MARK: - Properties
   @IBOutlet weak var navigationBarDivierView: UIView!
   @IBOutlet weak var nameTextFieldView: UIView!
   @IBOutlet weak var nameTextField: UITextField!
   @IBOutlet weak var nameTextFielddividerView: UIView!
+  @IBOutlet weak var inputConditionLabel: UILabel!
   
   // MARK: - Lifecycle Methods
   
@@ -35,7 +36,7 @@ final class SettingNameViewController: UIViewController {
   
   
   // MARK: - UI Setup
-
+  
   
   func configureUI() {
     
@@ -66,11 +67,14 @@ final class SettingNameViewController: UIViewController {
     nameTextFieldView.backgroundColor = .clear
     nameTextField.addTarget(self, action: #selector(nameTextFieldDidChange(_:)), for: .editingChanged)
     nameTextFielddividerView.backgroundColor = ColorConstant.textColor
+    inputConditionLabel.text = "이름은 2글자 이상 6글자 이하로 입력해주세요."
+    inputConditionLabel.font = .systemFont(ofSize: 11)
+    inputConditionLabel.textColor = .lightGray
   }
   
   func checkSaveBarButtonItem() {
     guard let text = nameTextField.text,
-          text.count > 0 && text != User.shared.name else {
+          2...6 ~= text.count && text != User.shared.name else {
       navigationItem.rightBarButtonItem?.isEnabled = false
       return
     }
@@ -96,7 +100,7 @@ final class SettingNameViewController: UIViewController {
   // MARK: - Public Methods
   
   // MARK: - Private Methods
-
+  
 }
 
 extension SettingNameViewController: UITextFieldDelegate {
