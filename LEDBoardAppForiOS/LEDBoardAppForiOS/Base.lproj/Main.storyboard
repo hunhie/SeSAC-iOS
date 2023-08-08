@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LEDBoardAppForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jec-7G-bNc">
+                                <rect key="frame" x="59" y="0.0" width="777" height="372"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3AX-hK-tMw">
+                                <rect key="frame" x="75" y="16" width="702" height="55"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="텍스트를 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3YX-kx-mAm">
+                                        <rect key="frame" x="0.0" y="0.0" width="581.66666666666663" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ddY-tO-bZg">
+                                        <rect key="frame" x="581.66666666666663" y="0.0" width="112.33333333333337" height="55"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kzx-56-2Tv">
+                                                <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="55"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="입력"/>
+                                                <connections>
+                                                    <action selector="textFieldReturnButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R39-fU-DeF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkH-Yt-ped">
+                                                <rect key="frame" x="58.666666666666742" y="0.0" width="53.666666666666657" height="55"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Aa"/>
+                                                <connections>
+                                                    <action selector="boardTextColorChangerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="png-TZ-XIL"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="3YX-kx-mAm" secondAttribute="bottom" id="Egf-uJ-tkM"/>
+                                    <constraint firstAttribute="bottom" secondItem="ddY-tO-bZg" secondAttribute="bottom" id="HOL-It-HS5"/>
+                                    <constraint firstItem="ddY-tO-bZg" firstAttribute="top" secondItem="3AX-hK-tMw" secondAttribute="top" id="IPY-EX-bpf"/>
+                                    <constraint firstAttribute="height" constant="55" id="TEn-El-uHI"/>
+                                    <constraint firstItem="3YX-kx-mAm" firstAttribute="top" secondItem="3AX-hK-tMw" secondAttribute="top" id="ZEH-rf-y8E"/>
+                                    <constraint firstItem="3YX-kx-mAm" firstAttribute="leading" secondItem="3AX-hK-tMw" secondAttribute="leading" id="cqF-Me-4lg"/>
+                                    <constraint firstAttribute="trailing" secondItem="ddY-tO-bZg" secondAttribute="trailing" constant="8" id="gcK-os-Mlw"/>
+                                    <constraint firstItem="ddY-tO-bZg" firstAttribute="leading" secondItem="3YX-kx-mAm" secondAttribute="trailing" id="h7E-5H-MgW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="jec-7G-bNc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="52z-jC-sby"/>
+                            <constraint firstItem="3AX-hK-tMw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Nau-08-TnI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jec-7G-bNc" secondAttribute="bottom" id="TYW-6t-DRi"/>
+                            <constraint firstItem="3AX-hK-tMw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="ZPP-Hk-sUV"/>
+                            <constraint firstItem="jec-7G-bNc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fSP-w2-DXj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3AX-hK-tMw" secondAttribute="trailing" constant="16" id="nuC-Ua-Ytv"/>
+                            <constraint firstAttribute="trailing" secondItem="jec-7G-bNc" secondAttribute="trailing" constant="16" id="t3i-Jp-PM8"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="SJk-Ge-zqT" appends="YES" id="g4I-ZA-Rau"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="boardLabel" destination="jec-7G-bNc" id="Hrz-wA-hue"/>
+                        <outlet property="boardTextColorChanger" destination="jkH-Yt-ped" id="P2W-js-HY3"/>
+                        <outlet property="boardTextField" destination="3YX-kx-mAm" id="i8x-pr-KKc"/>
+                        <outlet property="boardTextFieldReturn" destination="Kzx-56-2Tv" id="fF1-5M-t7K"/>
+                        <outlet property="boardTextInputView" destination="3AX-hK-tMw" id="NR7-wT-HEj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SJk-Ge-zqT">
+                    <connections>
+                        <action selector="tapGesture:" destination="BYZ-38-t0r" id="897-fC-8kC"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="478" y="-37"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
