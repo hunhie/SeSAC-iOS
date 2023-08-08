@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKd-fV-6Bp">
-                                <rect key="frame" x="184.66666666666666" y="754" width="24" height="14"/>
+                                <rect key="frame" x="184.66666666666666" y="724" width="24" height="14"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
@@ -60,9 +60,9 @@
                             <constraint firstItem="Kl3-jV-6Em" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nqt-Gf-vWg"/>
                             <constraint firstItem="gaD-1A-6uM" firstAttribute="top" secondItem="XNy-rn-uoH" secondAttribute="bottom" constant="20" id="Obj-BM-MFg"/>
                             <constraint firstItem="XNy-rn-uoH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="PvM-od-a89"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hKd-fV-6Bp" secondAttribute="bottom" constant="50" id="SXd-El-PaT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hKd-fV-6Bp" secondAttribute="bottom" constant="80" id="SXd-El-PaT"/>
                             <constraint firstItem="hWJ-JL-uIv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YrO-9g-MwS"/>
-                            <constraint firstItem="hKd-fV-6Bp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Kl3-jV-6Em" secondAttribute="bottom" constant="50" id="caU-bI-quI"/>
+                            <constraint firstItem="hKd-fV-6Bp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Kl3-jV-6Em" secondAttribute="bottom" constant="30" id="caU-bI-quI"/>
                             <constraint firstItem="hWJ-JL-uIv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="eJ7-4d-hNB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hWJ-JL-uIv" secondAttribute="trailing" constant="20" id="feN-lq-xYR"/>
                             <constraint firstItem="XNy-rn-uoH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rSP-c3-GMS"/>

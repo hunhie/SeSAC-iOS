@@ -34,6 +34,7 @@ class ViewController: UIViewController {
   func setupBeerLabel(name: String, desc: String) {
     self.bearNameLabel.text = name
     self.bearDescLabel.text = desc
+    self.bearDescLabel.font = .systemFont(ofSize: 12)
     self.bearDescLabel.numberOfLines = 0
   }
   
@@ -45,6 +46,7 @@ class ViewController: UIViewController {
       beerImageView.tintColor = .yellow
       return
     }
+    beerImageView.backgroundColor = .clear
     beerImageView.kf.setImage(with: url)
   }
   
