@@ -17,34 +17,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWJ-JL-uIv">
-                                <rect key="frame" x="20" y="79" width="353" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWJ-JL-uIv">
+                                <rect key="frame" x="20" y="79" width="353" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XNy-rn-uoH">
-                                <rect key="frame" x="98.333333333333329" y="155" width="196.33333333333337" height="229.33333333333337"/>
+                                <rect key="frame" x="98.333333333333329" y="134" width="196.33333333333337" height="229.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XNy-rn-uoH" secondAttribute="height" multiplier="6:7" id="3nK-Pl-a2D"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaD-1A-6uM">
-                                <rect key="frame" x="175.66666666666666" y="404.33333333333331" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaD-1A-6uM">
+                                <rect key="frame" x="196.66666666666666" y="383.33333333333331" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kl3-jV-6Em">
-                                <rect key="frame" x="78.666666666666671" y="440.33333333333331" width="235.66666666666663" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kl3-jV-6Em">
+                                <rect key="frame" x="78.666666666666671" y="398.33333333333331" width="235.66666666666663" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKd-fV-6Bp">
-                                <rect key="frame" x="159" y="511.33333333333331" width="75" height="34.333333333333314"/>
+                                <rect key="frame" x="184.66666666666666" y="754" width="24" height="14"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="randomButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kp8-qY-HgZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -57,15 +60,22 @@
                             <constraint firstItem="Kl3-jV-6Em" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nqt-Gf-vWg"/>
                             <constraint firstItem="gaD-1A-6uM" firstAttribute="top" secondItem="XNy-rn-uoH" secondAttribute="bottom" constant="20" id="Obj-BM-MFg"/>
                             <constraint firstItem="XNy-rn-uoH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="PvM-od-a89"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hKd-fV-6Bp" secondAttribute="bottom" constant="50" id="SXd-El-PaT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hKd-fV-6Bp" secondAttribute="bottom" constant="50" id="SXd-El-PaT"/>
                             <constraint firstItem="hWJ-JL-uIv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YrO-9g-MwS"/>
+                            <constraint firstItem="hKd-fV-6Bp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Kl3-jV-6Em" secondAttribute="bottom" constant="50" id="caU-bI-quI"/>
                             <constraint firstItem="hWJ-JL-uIv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="eJ7-4d-hNB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hWJ-JL-uIv" secondAttribute="trailing" constant="20" id="feN-lq-xYR"/>
                             <constraint firstItem="XNy-rn-uoH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rSP-c3-GMS"/>
                             <constraint firstItem="hKd-fV-6Bp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sYs-Ai-dnX"/>
-                            <constraint firstItem="hKd-fV-6Bp" firstAttribute="top" secondItem="Kl3-jV-6Em" secondAttribute="bottom" constant="50" id="wj9-ek-n6C"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bearDescLabel" destination="Kl3-jV-6Em" id="q4f-B8-NSD"/>
+                        <outlet property="bearNameLabel" destination="gaD-1A-6uM" id="dol-h4-joS"/>
+                        <outlet property="beerImageView" destination="XNy-rn-uoH" id="IBY-Hj-NUm"/>
+                        <outlet property="label" destination="hWJ-JL-uIv" id="QjU-hj-7hk"/>
+                        <outlet property="randomButton" destination="hKd-fV-6Bp" id="4Mp-fp-LxD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
