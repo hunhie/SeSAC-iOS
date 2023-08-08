@@ -10,6 +10,10 @@
 		B6D27E4D2A828BC800A51AF2 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = B6D27E4C2A828BC800A51AF2 /* SwiftyJSON */; };
 		B6D27E502A828BF800A51AF2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B6D27E4F2A828BF800A51AF2 /* Alamofire */; };
 		B6D27E532A828D5700A51AF2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B6D27E522A828D5700A51AF2 /* Kingfisher */; };
+		B6D27E552A8292DB00A51AF2 /* BeerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D27E542A8292DB00A51AF2 /* BeerTableViewController.swift */; };
+		B6D27E582A82949D00A51AF2 /* BeerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D27E562A82949D00A51AF2 /* BeerTableViewCell.swift */; };
+		B6D27E592A82949D00A51AF2 /* BeerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D27E572A82949D00A51AF2 /* BeerTableViewCell.xib */; };
+		B6D27E5B2A8294A400A51AF2 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D27E5A2A8294A400A51AF2 /* Beer.swift */; };
 		B6EC43BE2A8283F7001E1867 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EC43BD2A8283F7001E1867 /* AppDelegate.swift */; };
 		B6EC43C02A8283F7001E1867 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EC43BF2A8283F7001E1867 /* SceneDelegate.swift */; };
 		B6EC43C22A8283F7001E1867 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EC43C12A8283F7001E1867 /* ViewController.swift */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B6D27E542A8292DB00A51AF2 /* BeerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTableViewController.swift; sourceTree = "<group>"; };
+		B6D27E562A82949D00A51AF2 /* BeerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTableViewCell.swift; sourceTree = "<group>"; };
+		B6D27E572A82949D00A51AF2 /* BeerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerTableViewCell.xib; sourceTree = "<group>"; };
+		B6D27E5A2A8294A400A51AF2 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		B6EC43BA2A8283F7001E1867 /* Beer API.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beer API.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6EC43BD2A8283F7001E1867 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6EC43BF2A8283F7001E1867 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,10 +73,14 @@
 				B6EC43BD2A8283F7001E1867 /* AppDelegate.swift */,
 				B6EC43BF2A8283F7001E1867 /* SceneDelegate.swift */,
 				B6EC43C12A8283F7001E1867 /* ViewController.swift */,
+				B6D27E542A8292DB00A51AF2 /* BeerTableViewController.swift */,
 				B6EC43C32A8283F7001E1867 /* Main.storyboard */,
 				B6EC43C62A8283F8001E1867 /* Assets.xcassets */,
 				B6EC43C82A8283F8001E1867 /* LaunchScreen.storyboard */,
 				B6EC43CB2A8283F8001E1867 /* Info.plist */,
+				B6D27E562A82949D00A51AF2 /* BeerTableViewCell.swift */,
+				B6D27E572A82949D00A51AF2 /* BeerTableViewCell.xib */,
+				B6D27E5A2A8294A400A51AF2 /* Beer.swift */,
 			);
 			path = "Beer API";
 			sourceTree = "<group>";
@@ -144,6 +156,7 @@
 				B6EC43CA2A8283F8001E1867 /* LaunchScreen.storyboard in Resources */,
 				B6EC43C72A8283F8001E1867 /* Assets.xcassets in Resources */,
 				B6EC43C52A8283F7001E1867 /* Main.storyboard in Resources */,
+				B6D27E592A82949D00A51AF2 /* BeerTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,8 +168,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6EC43C22A8283F7001E1867 /* ViewController.swift in Sources */,
+				B6D27E5B2A8294A400A51AF2 /* Beer.swift in Sources */,
+				B6D27E552A8292DB00A51AF2 /* BeerTableViewController.swift in Sources */,
 				B6EC43BE2A8283F7001E1867 /* AppDelegate.swift in Sources */,
 				B6EC43C02A8283F7001E1867 /* SceneDelegate.swift in Sources */,
+				B6D27E582A82949D00A51AF2 /* BeerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
