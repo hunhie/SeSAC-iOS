@@ -39,15 +39,6 @@ final class DetailViewController: UIViewController {
   func configureUI() {
     guard let book = book else { return }
     
-    bookTitleLabel.text = book.title
-    bookPriceLabel.text = (book.price.toStringWithComma()  ?? "") + "원"
-    bookRateLabel.text = "\(book.rate)"
-    bookDescLabel.text = book.desc
-    likeBarButton.image = UIImage(systemName: book.like ? "heart.fill" : "heart")
-    
-    if let bookImage = book.bookImage {
-      bookImageView.load(url: bookImage)
-    }
     
     if type == .modal {
       self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .done, target: self, action: #selector(back))
@@ -60,9 +51,7 @@ final class DetailViewController: UIViewController {
   
   @IBAction func likeBarButtonTapped(_ sender: UIBarButtonItem) {
     guard let indexPath = indexPath else { return }
-    BookInfo.bookData[indexPath.row].like.toggle()
-    book?.like.toggle()
-    likeBarButton.image = UIImage(systemName: book!.like ? "heart.fill" : "heart")
+
   }
 }
 

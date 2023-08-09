@@ -6,21 +6,29 @@
 //
 
 import UIKit
+import Kingfisher
+import Alamofire
+import SwiftyJSON
 
 final class SearchCollectionViewController: UICollectionViewController {
   
   var searchedList: [Book] = []
+  var page: Int = 1
+  let searchbar = UISearchBar()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    collectionView.prefetchDataSource = self
+    
     setSearchBar()
     registerCell()
     setLayout()
+    callRequest(query: "iOS", page: page)
   }
   
   func setSearchBar() {
-    let searchbar = UISearchBar()
+    let searchbar = searchbar
     searchbar.delegate = self
     navigationItem.titleView = searchbar
     tabBarController?.tabBar.isHidden = true
@@ -49,17 +57,39 @@ final class SearchCollectionViewController: UICollectionViewController {
     
     collectionView.collectionViewLayout = layout
   }
-
+  
+  func callRequest(query: String, page: Int) {
+    let query = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+    let url = "https://dapi.kakao.com/v3/search/book?query=\(query)&size=50&page=\(page)"
+    let header = HTTPHeaders(["Authorization": "KakaoAK \(APIKeys.kakaoKey)"])
+    AF.request(url, method: .get, headers: header).validate().responseJSON { response in
+      switch response.result {
+      case .success(let value):
+        let json = JSON(value)
+        let data = json["documents"].arrayValue
+        
+        data.forEach { item in
+          let book = Book(title: item["title"].stringValue, authors: item["authors"][0].stringValue, price: item["price"].intValue, contents: item["contents"].stringValue, thumbnail: item["thumbnail"].stringValue)
+          self.searchedList.append(book)
+        }
+        
+        self.collectionView.reloadData()
+      case .failure(let error):
+        print(error)
+      }
+    }
+  }
+  
   @objc func back() {
     dismiss(animated: true)
   }
   
   @objc func liekButtonTapped(_ sender: UIButton) {
-    BookInfo.bookData[sender.tag].like.toggle()
+    
     collectionView.reloadItems(at: [IndexPath(row: sender.tag, section: 0)])
   }
 }
-extension SearchCollectionViewController {
+extension SearchCollectionViewController: UICollectionViewDataSourcePrefetching {
   override func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 1
   }
@@ -70,31 +100,31 @@ extension SearchCollectionViewController {
   
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let book = searchedList[indexPath.row]
-    print(#function, book)
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as! BookCollectionViewCell
     
-    cell.backView.backgroundColor = .gray
     cell.book = book
-    cell.indexPath = indexPath
     cell.configureCell()
     
-    cell.likeButton.addTarget(self, action: #selector(liekButtonTapped(_:)), for: .touchUpInside)
-    cell.likeButton.setImage(UIImage(systemName: book.like ? "heart.fill" : "heart"), for: .normal)
-    // cell 책 표지 이미지 설정
-    if let url = book.bookImage {
-      cell.bookImageView.load(url: url)
-    }
-    
     return cell
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+    for indexPath in indexPaths {
+      print( self.searchedList.count - 1, indexPath.row)
+      if self.searchedList.count - 1 == indexPath.row && page < 50{
+        self.page += 1
+        print(searchbar.text!)
+        callRequest(query: searchbar.text!, page: page)
+        self.collectionView.reloadData()
+      }
+    }
   }
 }
 
 extension SearchCollectionViewController: UISearchBarDelegate {
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     searchedList.removeAll()
-      let searched = BookInfo.bookData.filter({ $0.title.contains(searchBar.text!) })
-      searchedList = searched
-      print(searchedList)
-      collectionView.reloadData()
-    }
+    self.callRequest(query: searchBar.text!, page: page)
+    collectionView.reloadData()
+  }
 }

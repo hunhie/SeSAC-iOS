@@ -71,12 +71,6 @@ extension FinderViewController: UITableViewDelegate, UITableViewDataSource {
     let book = BookInfo.bookData[indexPath.row]
     let cell = tableView.dequeueReusableCell(withIdentifier: "BestBookTableViewCell") as! BestBookTableViewCell
     
-    if let image = book.bookImage {
-      cell.bookImageView.load(url: image)
-    }
-    cell.bookTitleLabel.text = book.title
-    cell.bookRelease.text = "2022"
-    cell.bookPlatform.isHidden = true
     
     return cell
   }
@@ -105,9 +99,6 @@ extension FinderViewController: UICollectionViewDelegate, UICollectionViewDataSo
     let book = BookInfo.recentBookData[indexPath.row]
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecentBookCollectionViewCell", for: indexPath) as! RecentBookCollectionViewCell
     
-    if let image = book.bookImage {
-      cell.imageView.load(url: image)
-    }
     
     return cell
   }

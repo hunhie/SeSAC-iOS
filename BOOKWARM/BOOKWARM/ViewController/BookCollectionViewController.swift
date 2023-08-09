@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Kingfisher
+import Alamofire
+import SwiftyJSON
 
 final class BookCollectionViewController: UICollectionViewController {
   
@@ -75,16 +78,7 @@ final class BookCollectionViewController: UICollectionViewController {
     
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as? BookCollectionViewCell else { return UICollectionViewCell() }
     
-    cell.book = book
-    cell.indexPath = indexPath
-    cell.configureCell()
-    
-    cell.likeButton.addTarget(self, action: #selector(liekButtonTapped(_:)), for: .touchUpInside)
-    cell.likeButton.setImage(UIImage(systemName: book.like ? "heart.fill" : "heart"), for: .normal)
-    // cell 책 표지 이미지 설정
-    if let url = book.bookImage {
-      cell.bookImageView.load(url: url)
-    }
+
     
     return cell
   }
@@ -103,7 +97,7 @@ final class BookCollectionViewController: UICollectionViewController {
   //MARK: - Action
   
   @objc func liekButtonTapped(_ sender: UIButton) {
-    BookInfo.bookData[sender.tag].like.toggle()
+
     collectionView.reloadItems(at: [IndexPath(row: sender.tag, section: 0)])
   }
 }
