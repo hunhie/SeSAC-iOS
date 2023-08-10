@@ -16,11 +16,10 @@ final class LanguageSelectViewController: UIViewController {
   @IBOutlet weak var navigationBar: UINavigationItem!
   
   var isTranslateFrom: Bool?
-  var selectedLanguage: LanguageTranslationMode = .detect
-  var languages = LanguageCode.allCases.map{ LanguageTranslationMode.select($0) }
-  
+  var translateFrom: LanguageTranslationMode = .detect
+  let languages = LanguageCode.allCases.map{ LanguageTranslationMode.select($0) }
   var languageList: [[LanguageTranslationMode]] {
-    [[selectedLanguage], languages]
+    [[.detect], languages]
   }
   
   var delegate: LanguageDelegate?
@@ -73,16 +72,18 @@ extension LanguageSelectViewController: UITableViewDelegate, UITableViewDataSour
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let selectLanguage = languageList[indexPath.section][indexPath.row]
-    guard let languageCode = selectLanguage.asLanguageCode() else {
+    guard let selectLanguageCode = selectLanguage.asLanguageCode(),
+          let translateFromCode = translateFrom.asLanguageCode() else {
       delegate?.setupTranslateFrom(translateFrom: .detect)
       dismiss(animated: true)
       return
     }
     if let isTranslateFrom,
        isTranslateFrom {
-      delegate?.setupTranslateFrom(translateFrom: .select(languageCode))
+      delegate?.setupTranslateFrom(translateFrom: translateFrom)
     } else {
-      delegate?.setupTranslateTo(translateTo: languageCode)
+      delegate?.setupTranslateTo(translateTo: selectLanguageCode)
+      delegate?.translateText(translateFromCode, target: selectLanguageCode)
     }
     
     dismiss(animated: true)

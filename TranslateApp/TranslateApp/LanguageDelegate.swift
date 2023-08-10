@@ -10,4 +10,5 @@ import Foundation
 protocol LanguageDelegate {
   func setupTranslateFrom(translateFrom: LanguageTranslationMode) -> Void
   func setupTranslateTo(translateTo: LanguageCode) -> Void
+  func translateText(_ translateFrom: LanguageCode, target: LanguageCode) -> Void
 }

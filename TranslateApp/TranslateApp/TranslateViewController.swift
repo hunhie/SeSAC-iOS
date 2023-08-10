@@ -183,9 +183,16 @@ final class TranslateViewController: UIViewController, LanguageDelegate {
     }
   }
   
+  func translateText(_ translateFrom: LanguageCode, target: LanguageCode) {
+    papagoAPIManager.translateLanguage(source: translateFrom, target: translateTo, text: originTextView.text) { result in
+      self.translatedTextView.text = result
+    }
+  }
+  
   @objc func selectLanguage(_ sender: UIButton) {
     let vc = storyboard?.instantiateViewController(withIdentifier: LanguageSelectViewController.identifier) as! LanguageSelectViewController
     vc.delegate = self
+    vc.translateFrom = translateFrom
     vc.isTranslateFrom = sender.tag == 0 ? true : false
 
     present(vc, animated: true)
@@ -227,7 +234,13 @@ extension TranslateViewController: UITextViewDelegate {
   func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
     self.translatedView.isHidden = true
     textView.text = nil
-    self.detectText(textView.text)
+    
+    switch translateFrom {
+    case .detect:
+      self.detectText(textView.text)
+    case .select:
+      break
+    }
     self.originTextView.font = .systemFont(ofSize: 17)
     return true
   }
@@ -244,9 +257,7 @@ extension TranslateViewController: UITextViewDelegate {
       guard let translateFrom = translateFrom.asLanguageCode() else { return }
       
       if translateFrom != translateTo {
-        papagoAPIManager.translateLanguage(source: translateFrom, target: translateTo, text: textView.text) { result in
-          self.translatedTextView.text = result
-        }
+        translateText(translateFrom, target: translateTo)
       } else {
         self.translatedTextView.text = textView.text
       }
