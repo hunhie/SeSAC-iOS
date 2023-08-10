@@ -190,6 +190,10 @@ final class TranslateViewController: UIViewController, LanguageDelegate {
 
     present(vc, animated: true)
   }
+  
+  @IBAction func tapGesture(_ sender: Any) {
+    view.endEditing(true)
+  }
 }
 
 /// TextView Deleagte 확장 구현
