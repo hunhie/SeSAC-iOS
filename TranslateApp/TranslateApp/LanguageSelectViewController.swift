@@ -72,18 +72,21 @@ extension LanguageSelectViewController: UITableViewDelegate, UITableViewDataSour
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let selectLanguage = languageList[indexPath.section][indexPath.row]
-    guard let selectLanguageCode = selectLanguage.asLanguageCode(),
-          let translateFromCode = translateFrom.asLanguageCode() else {
+    guard let selectLanguageCode = selectLanguage.asLanguageCode() else {
       delegate?.setupTranslateFrom(translateFrom: .detect)
       dismiss(animated: true)
       return
     }
     if let isTranslateFrom,
        isTranslateFrom {
-      delegate?.setupTranslateFrom(translateFrom: translateFrom)
+      delegate?.translateFrom = .select(selectLanguageCode)
+      delegate?.setupTranslateFrom(translateFrom: LanguageTranslationMode.select(selectLanguageCode))
+      delegate?.translateFrom = .select(selectLanguageCode)
     } else {
+      guard let translateFromCode = translateFrom.asLanguageCode() else { return }
+      delegate?.translateTo = selectLanguageCode
       delegate?.setupTranslateTo(translateTo: selectLanguageCode)
-      delegate?.translateText(translateFromCode, target: selectLanguageCode)
+      delegate?.translateText(translateFrom: translateFromCode, target: selectLanguageCode)
     }
     
     dismiss(animated: true)

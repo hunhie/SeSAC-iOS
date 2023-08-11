@@ -32,7 +32,6 @@ enum LanguageTranslationMode {
 
 final class TranslateViewController: UIViewController, LanguageDelegate {
   
-  
   //MARK: - Interface Builder Property
   @IBOutlet weak var translateView: UIView!
   @IBOutlet weak var originView: UIView!
@@ -164,7 +163,6 @@ final class TranslateViewController: UIViewController, LanguageDelegate {
   
   /// 원본 언어, 목적 언어 설정 메소드
   func setupTranslateTo(translateTo: LanguageCode) {
-    self.translateTo = translateTo
     self.translateToButton.setTitle(translateTo.languageString(), for: .normal)
     self.translatedLanguageLabel.text = translateTo.languageString()
   }
@@ -175,15 +173,14 @@ final class TranslateViewController: UIViewController, LanguageDelegate {
       let detect = "언어 감지"
       self.translateFromButton.setTitle(detect, for: .normal)
       self.originLanguageLabel.text = detect
-      self.translateFrom = LanguageTranslationMode.detect
     case .select(let code):
       self.translateFromButton.setTitle(code.languageString(), for: .normal)
       self.originLanguageLabel.text = code.languageString()
-      self.translateFrom = LanguageTranslationMode.select(code)
+
     }
   }
   
-  func translateText(_ translateFrom: LanguageCode, target: LanguageCode) {
+  func translateText(translateFrom: LanguageCode, target: LanguageCode) {
     papagoAPIManager.translateLanguage(source: translateFrom, target: translateTo, text: originTextView.text) { result in
       self.translatedTextView.text = result
     }
@@ -194,7 +191,7 @@ final class TranslateViewController: UIViewController, LanguageDelegate {
     vc.delegate = self
     vc.translateFrom = translateFrom
     vc.isTranslateFrom = sender.tag == 0 ? true : false
-
+    
     present(vc, animated: true)
   }
   
@@ -227,20 +224,19 @@ extension TranslateViewController: UITextViewDelegate {
   
   /// TextView에 변경사항이 발생했을 때 실행되는 메소드
   func textViewDidChange(_ textView: UITextView) {
-    self.detectText(textView.text)
-  }
-  
-  /// TextView에 입력이 시작될 때 실행되는 메소드
-  func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
-    self.translatedView.isHidden = true
-    textView.text = nil
-    
     switch translateFrom {
     case .detect:
       self.detectText(textView.text)
     case .select:
       break
     }
+  }
+  
+  /// TextView에 입력이 시작될 때 실행되는 메소드
+  func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+    self.translatedView.isHidden = true
+    textView.text = nil
+
     self.originTextView.font = .systemFont(ofSize: 17)
     return true
   }
@@ -257,7 +253,7 @@ extension TranslateViewController: UITextViewDelegate {
       guard let translateFrom = translateFrom.asLanguageCode() else { return }
       
       if translateFrom != translateTo {
-        translateText(translateFrom, target: translateTo)
+        translateText(translateFrom: translateFrom, target: translateTo)
       } else {
         self.translatedTextView.text = textView.text
       }
