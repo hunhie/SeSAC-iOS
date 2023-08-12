@@ -31,6 +31,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4A9-By-daI" userLabel="ContentView">
                                 <rect key="frame" x="0.0" y="1" width="298" height="121"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i2I-Jm-Nlr">
+                                        <rect key="frame" x="15.333333333333336" y="43" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="i2I-Jm-Nlr" secondAttribute="height" multiplier="1:1" id="HEK-58-0Ef"/>
+                                            <constraint firstAttribute="width" constant="35" id="sgM-mh-6q7"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e9j-yp-xvI">
+                                        <rect key="frame" x="0.0" y="8" width="65.666666666666671" height="105"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="e9j-yp-xvI" secondAttribute="height" multiplier="1:1.6" id="dc3-9T-wOO"/>
+                                        </constraints>
+                                    </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VDM-A7-hX3">
                                         <rect key="frame" x="85.666666666666671" y="36.333333333333343" width="41.333333333333329" height="48.666666666666657"/>
                                         <subviews>
@@ -48,17 +61,13 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e9j-yp-xvI">
-                                        <rect key="frame" x="0.0" y="8" width="65.666666666666671" height="105"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="e9j-yp-xvI" secondAttribute="height" multiplier="1:1.6" id="dc3-9T-wOO"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VDM-A7-hX3" secondAttribute="trailing" constant="20" id="7k7-P9-Fl3"/>
                                     <constraint firstItem="e9j-yp-xvI" firstAttribute="leading" secondItem="4A9-By-daI" secondAttribute="leading" id="8UE-c3-Yqp"/>
+                                    <constraint firstItem="i2I-Jm-Nlr" firstAttribute="centerY" secondItem="e9j-yp-xvI" secondAttribute="centerY" id="9wU-Qo-mcR"/>
+                                    <constraint firstItem="i2I-Jm-Nlr" firstAttribute="centerX" secondItem="e9j-yp-xvI" secondAttribute="centerX" id="Rlm-K0-5Co"/>
                                     <constraint firstItem="VDM-A7-hX3" firstAttribute="centerY" secondItem="4A9-By-daI" secondAttribute="centerY" id="Xa4-ce-ou8"/>
                                     <constraint firstAttribute="bottom" secondItem="e9j-yp-xvI" secondAttribute="bottom" constant="8" id="n3z-sg-EXa"/>
                                     <constraint firstItem="VDM-A7-hX3" firstAttribute="leading" secondItem="e9j-yp-xvI" secondAttribute="trailing" constant="20" id="sfx-6O-dpC"/>
@@ -91,6 +100,7 @@
                 <outlet property="divider" destination="Hr0-n7-ISE" id="xhS-oV-lNU"/>
                 <outlet property="infoLabel" destination="tda-Sq-P2N" id="aZv-WO-5lu"/>
                 <outlet property="nameLabel" destination="iLs-KO-G4u" id="LG9-ND-Tk1"/>
+                <outlet property="nonProfileImage" destination="i2I-Jm-Nlr" id="sVC-En-RQr"/>
                 <outlet property="profileImageView" destination="e9j-yp-xvI" id="rPk-yb-uTJ"/>
             </connections>
             <point key="canvasLocation" x="137.40458015267174" y="47.887323943661976"/>

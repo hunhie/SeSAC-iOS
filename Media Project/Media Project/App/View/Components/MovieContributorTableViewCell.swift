@@ -11,6 +11,7 @@ final class MovieContributorTableViewCell: UITableViewCell {
   
   @IBOutlet weak var backView: UIView!
   @IBOutlet weak var profileImageView: UIImageView!
+  @IBOutlet weak var nonProfileImage: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var infoLabel: UILabel!
   @IBOutlet weak var divider: UIView!
@@ -39,11 +40,14 @@ final class MovieContributorTableViewCell: UITableViewCell {
   func configureCell() {
     guard let movieContributor else { return }
     
-    if let url = URL(string: movieContributor.profileImageURL) {
+    
+    if movieContributor.profilePath != "",
+      let url = URL(string: movieContributor.profileImageURL) {
       profileImageView.kf.setImage(with: url)
     } else {
-      profileImageView.image = UIImage(systemName: "person.fill")
-      profileImageView.tintColor = .white
+      nonProfileImage.image = UIImage(systemName: "person.fill")
+      nonProfileImage.tintColor = .gray
+      profileImageView.backgroundColor = .clear
     }
     
     nameLabel.text = movieContributor.name
