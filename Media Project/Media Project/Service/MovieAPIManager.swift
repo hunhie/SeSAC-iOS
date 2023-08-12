@@ -32,6 +32,7 @@ final class MovieAPIManager {
 
 extension MovieAPIManager {
   static let baseURL = "https://api.themoviedb.org/3/"
+  static let imageCDN = "https://image.tmdb.org/t/p/original/"
   
   enum Endpoint {
     case trending(timeWindow)
