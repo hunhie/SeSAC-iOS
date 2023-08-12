@@ -11,8 +11,12 @@ struct Movie {
   let id: Int
   let title: String
   let overView: String
-  let posterURL: String
+  let posterPath: String
   let releaseDate: String
   let rate: Double
   let adult: Bool
+  
+  var posterImageURL: String {
+    MovieAPIManager.imageCDN + posterPath
+  }
 }
