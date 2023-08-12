@@ -22,6 +22,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     posterImageView.backgroundColor = .init(hexCode: "4d4d4d")
     posterImageView.layer.cornerRadius = 8
     posterImageView.clipsToBounds = true
+    posterImageView.contentMode = .scaleAspectFill
     
     titleLabel.font = .monospacedDigitSystemFont(ofSize: 15, weight: .bold)
     titleLabel.textColor = .init(hexCode: Colors.text.stringValue)
@@ -36,7 +37,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     titleLabel.text = movie.title
     releaseDateLabel.text = movie.releaseDate
     
-    if let url = URL(string: movie.posterURL) {
+    if let url = URL(string: movie.posterImageURL) {
       posterImageView.kf.setImage(with: url)
     }
   }
