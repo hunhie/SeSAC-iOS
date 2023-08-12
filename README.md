@@ -4,7 +4,7 @@ SeSAC iOS 과정을 진행하며 학습한 내용과 기능 구현 프로젝트�
 
 ### [네트워크 통신 - API 활용, the movie db API를 활용한 기능 구현 과제](https://github.com/walkerhilla/SeSAC-iOS/tree/main/Media%20Project)
 
-![](https://i.imgur.com/nwq43xd.gif)
+![](https://i.imgur.com/OtcECfK.gif)
 
 ### [네트워크 통신 - API 활용, Papago API를 활용한 번역 기능 구현 과제](https://github.com/walkerhilla/SeSAC-iOS/tree/main/TranslateApp)
 
