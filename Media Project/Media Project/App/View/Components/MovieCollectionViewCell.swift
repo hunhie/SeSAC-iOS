@@ -19,7 +19,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
     
-    posterImageView.backgroundColor = .init(hexCode: "4d4d4d")
+    posterImageView.backgroundColor = .init(hexCode: Colors.nonImage.stringValue)
     posterImageView.layer.cornerRadius = 8
     posterImageView.clipsToBounds = true
     posterImageView.contentMode = .scaleAspectFill

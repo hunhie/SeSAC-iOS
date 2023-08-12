@@ -39,9 +39,9 @@ final class WatchlistViewController: UIViewController {
   }
   
   func titleLabel() {
-    subTitle.text = Strings.Watchlist.Watchlist.rawValue
+    subTitle.text = Strings.Movies.Movies.rawValue
     subTitle.textColor = UIColor(hexCode: Colors.text.stringValue)
-    mainTitle.text = Strings.Watchlist.Movies.rawValue
+    mainTitle.text = Strings.Movies.Trending.rawValue
     mainTitle.textColor = UIColor(hexCode: Colors.primary.stringValue)
     mainTitle.font = .monospacedDigitSystemFont(ofSize: 27, weight: .bold)
   }
@@ -84,13 +84,15 @@ final class WatchlistViewController: UIViewController {
       for item in list {
         let id = item["id"].intValue
         let title = item["title"].stringValue
-        let overView = item["overView"].stringValue
+        let overView = item["overview"].stringValue
         let posterURL = item["poster_path"].stringValue
+        let backdropPath = item["backdrop_path"].stringValue
         let releaseDate = item["release_date"].stringValue
         let rate = item["vote_average"].doubleValue
         let adult = item["adult"].boolValue
         
-        let movie = Movie(id: id, title: title, overView: overView, posterPath: posterURL, releaseDate: releaseDate, rate: rate, adult: adult)
+        let movie = Movie(id: id, title: title, overView: overView, posterPath: posterURL, backdropPath: backdropPath, releaseDate: releaseDate, rate: rate, adult: adult)
+
         self.movieData.append(movie)
       }
       self.watchlistCollectionView.reloadData()
@@ -119,5 +121,14 @@ extension WatchlistViewController: UICollectionViewDelegate, UICollectionViewDat
     cell.configureCell()
     
     return cell
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let movie = movieData[indexPath.row]
+    print(MovieDetailViewController.identifier)
+    let vc = storyboard?.instantiateViewController(withIdentifier: MovieDetailViewController.identifier) as! MovieDetailViewController
+    vc.movie = movie
+    
+    navigationController?.pushViewController(vc, animated: true)
   }
 }
