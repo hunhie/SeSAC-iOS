@@ -8,12 +8,16 @@
 import Foundation
 
 enum Strings {
-  enum Watchlist: String {
-    case Watchlist
+  enum Movies: String {
     case Movies
+    case Trending
   }
   
   enum ComingSoon: String {
-    case ComingSoon
+    case ComingSoon = "Coming Soon"
+  }
+  
+  enum Details: String {
+    case MovieDetails = "Movie Details"
   }
 }
