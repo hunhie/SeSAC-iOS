@@ -213,12 +213,14 @@ extension TranslateViewController: UITextViewDelegate {
     guard let text,
           text.count > 0 else {
       self.setupTranslateFrom(translateFrom: LanguageTranslationMode.detect)
+      self.translateFrom = .detect
       return
     }
     papagoAPIManager.detectLanguage(text: text) { result in
       guard let result else { return }
       
       self.setupTranslateFrom(translateFrom: LanguageTranslationMode.select(result))
+      self.translateFrom = .select(result)
     }
   }
   

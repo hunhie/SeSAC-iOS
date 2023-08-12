@@ -55,14 +55,14 @@ extension LanguageSelectViewController: UITableViewDelegate, UITableViewDataSour
   }
   
   func numberOfSections(in tableView: UITableView) -> Int {
-    2
+    isTranslateFrom! ? 2 : 1
   }
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    languageList[section].count
+    isTranslateFrom! ? languageList[section].count : languageList[1].count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let language = languageList[indexPath.section][indexPath.row]
+    let language = isTranslateFrom! ? languageList[indexPath.section][indexPath.row] : languageList[1][indexPath.row]
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "languageSelectTableViewCell") else { return UITableViewCell() }
     
     cell.textLabel?.text = language.asString()
@@ -71,19 +71,21 @@ extension LanguageSelectViewController: UITableViewDelegate, UITableViewDataSour
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let selectLanguage = languageList[indexPath.section][indexPath.row]
-    guard let selectLanguageCode = selectLanguage.asLanguageCode() else {
-      delegate?.setupTranslateFrom(translateFrom: .detect)
-      dismiss(animated: true)
-      return
-    }
+    let selectLanguage = isTranslateFrom! ? languageList[indexPath.section][indexPath.row] : languageList[1][indexPath.row]
+
     if let isTranslateFrom,
        isTranslateFrom {
-      delegate?.translateFrom = .select(selectLanguageCode)
-      delegate?.setupTranslateFrom(translateFrom: LanguageTranslationMode.select(selectLanguageCode))
-      delegate?.translateFrom = .select(selectLanguageCode)
+      switch selectLanguage {
+      case .detect:
+        delegate?.translateFrom = .detect
+        delegate?.setupTranslateFrom(translateFrom: LanguageTranslationMode.detect)
+      case .select(let code):
+        delegate?.translateFrom = .select(code)
+        delegate?.setupTranslateFrom(translateFrom: LanguageTranslationMode.select(code))
+      }
     } else {
-      guard let translateFromCode = translateFrom.asLanguageCode() else { return }
+      guard let translateFromCode = translateFrom.asLanguageCode(),
+            let selectLanguageCode = selectLanguage.asLanguageCode() else { return }
       delegate?.translateTo = selectLanguageCode
       delegate?.setupTranslateTo(translateTo: selectLanguageCode)
       delegate?.translateText(translateFrom: translateFromCode, target: selectLanguageCode)
