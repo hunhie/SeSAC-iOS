@@ -9,7 +9,7 @@ import Foundation
 
 enum Strings {
   enum Watchlist: String {
-    case watchlist
+    case Watchlist
     case Movies
   }
   
