@@ -7,56 +7,52 @@
 
 import Foundation
 
-class MovieContributor {
-  enum genderType {
-    case male
-    case female
-  }
-  
-  enum CreditRoleType {
-    case cast
-    case crew
-  }
-  
-  let id: Int
-  let role: CreditRoleType
-  let name: String
-  let genderNumber: Int
-  let department: String
-  let profilePath: String
-  
-  init(id: Int, role: CreditRoleType, name: String, genderNumber: Int, department: String, profilePath: String) {
-    self.id = id
-    self.role = role
-    self.name = name
-    self.genderNumber = genderNumber
-    self.department = department
-    self.profilePath = profilePath
-  }
-  
-  var gender: genderType {
-    genderNumber == 0 ? .male : .female
-  }
-  
-  var profileImageURL: String {
-    MovieAPIManager.imageCDN + profilePath
-  }
+// MARK: - MovieContributor
+struct MovieContributor: Codable {
+    let id: Int
+    let cast, crew: [Cast]
 }
 
-final class Cast: MovieContributor {
-  let character: String
-  
-  init(id: Int, role: MovieContributor.CreditRoleType, name: String, genderNumber: Int, department: String, profilePath: String, character: String) {
-    self.character = character
-    super.init(id: id, role: role, name: name, genderNumber: genderNumber, department: department, profilePath: profilePath)
-  }
+// MARK: - Cast
+struct Cast: Codable {
+    let adult: Bool
+    let gender, id: Int
+    let knownForDepartment: Department
+    let name, originalName: String
+    let popularity: Double
+    let profilePath: String?
+    let castID: Int?
+    let character: String?
+    let creditID: String
+    let order: Int?
+    let department: Department?
+    let job: String?
+
+    enum CodingKeys: String, CodingKey {
+        case adult, gender, id
+        case knownForDepartment = "known_for_department"
+        case name
+        case originalName = "original_name"
+        case popularity
+        case profilePath = "profile_path"
+        case castID = "cast_id"
+        case character
+        case creditID = "credit_id"
+        case order, department, job
+    }
 }
 
-final class Crew: MovieContributor {
-  let job: String
-  
-  init(id: Int, role: MovieContributor.CreditRoleType, name: String, genderNumber: Int, department: String, profilePath: String, job: String) {
-    self.job = job
-    super.init(id: id, role: role, name: name, genderNumber: genderNumber, department: department, profilePath: profilePath)
-  }
+enum Department: String, Codable {
+    case acting = "Acting"
+    case art = "Art"
+    case camera = "Camera"
+    case costumeMakeUp = "Costume & Make-Up"
+    case crew = "Crew"
+    case directing = "Directing"
+    case editing = "Editing"
+    case lighting = "Lighting"
+    case production = "Production"
+    case sound = "Sound"
+    case visualEffects = "Visual Effects"
+    case writing = "Writing"
 }

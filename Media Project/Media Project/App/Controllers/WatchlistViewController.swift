@@ -17,7 +17,7 @@ final class WatchlistViewController: UIViewController {
   
   //MARK: - Stored Property
   
-  lazy var movieData: [Movie] = []
+  lazy var movieData: [Trending] = []
   
   //MARK: - View Controller Life cycle
   
@@ -80,6 +80,8 @@ final class WatchlistViewController: UIViewController {
   
   func callRequest() {
     MovieAPIManager.shared.callRequest(type: .trending(.day)) { json in
+      
+      print(json)
       let list = json["results"].arrayValue
       for item in list {
         let id = item["id"].intValue
@@ -91,7 +93,7 @@ final class WatchlistViewController: UIViewController {
         let rate = item["vote_average"].doubleValue
         let adult = item["adult"].boolValue
         
-        let movie = Movie(id: id, title: title, overView: overView, posterPath: posterURL, backdropPath: backdropPath, releaseDate: releaseDate, rate: rate, adult: adult)
+        let movie = Trending(id: id, title: title, overView: overView, posterPath: posterURL, backdropPath: backdropPath, releaseDate: releaseDate, rate: rate, adult: adult)
 
         self.movieData.append(movie)
       }

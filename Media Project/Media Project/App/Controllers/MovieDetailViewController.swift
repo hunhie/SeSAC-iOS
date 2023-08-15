@@ -22,7 +22,7 @@ final class MovieDetailViewController: UIViewController {
   //MARK: - Stored Property
   
   typealias Credits = [[MovieContributor]]
-  var movie: Movie?
+  var movie: Trending?
   lazy var credits: Credits = []
   lazy var sections: [SectionType] = [.cast, .crew]
   
@@ -110,36 +110,36 @@ final class MovieDetailViewController: UIViewController {
     guard let movie else { return }
     
     MovieAPIManager.shared.callRequest(type: .credits(movie.id)) { json in
-      let castData = json["cast"].arrayValue
-      let cast = castData.map { person in
-        let id = person["id"].intValue
-        let name = person["name"].stringValue
-        let genderNumber = person["gender"].intValue
-        let character = person["character"].stringValue
-        let department = person["known_for_department"].stringValue
-        let profilePath = person["profile_path"].stringValue
-        return Cast(id: id, role: .cast, name: name, genderNumber: genderNumber, department: department, profilePath: profilePath, character: character) as MovieContributor
-      }
-      
-      let crewData = json["crew"].arrayValue
-      let crewFilterd = crewData.filter { person in
-        person["known_for_department"].stringValue != "Acting"
-      }
-      let crew = crewFilterd.map { person in
-        let id = person["id"].intValue
-        let name = person["name"].stringValue
-        let genderNumber = person["gender"].intValue
-        let job = person["job"].stringValue
-        let department = person["known_for_department"].stringValue
-        let profilePath = person["profile_path"].stringValue
-        return Crew(id: id, role: .crew, name: name, genderNumber: genderNumber, department: department, profilePath: profilePath, job: job) as MovieContributor
-      }
-      
-      let castSlice = cast.count > 10 ? Array(cast[0...9]) : cast
-      let crewSlice = crew.count > 10 ? Array(crew[0...9]) : crew
-      
-      self.credits = [castSlice, crewSlice]
-      self.tableView.reloadData()
+//      let castData = json["cast"].arrayValue
+//      let cast = castData.map { person in
+//        let id = person["id"].intValue
+//        let name = person["name"].stringValue
+//        let genderNumber = person["gender"].intValue
+//        let character = person["character"].stringValue
+//        let department = person["known_for_department"].stringValue
+//        let profilePath = person["profile_path"].stringValue
+//        return Cast(id: id, role: .cast, name: name, genderNumber: genderNumber, department: department, profilePath: profilePath, character: character) as MovieContributor
+//      }
+//
+//      let crewData = json["crew"].arrayValue
+//      let crewFilterd = crewData.filter { person in
+//        person["known_for_department"].stringValue != "Acting"
+//      }
+//      let crew = crewFilterd.map { person in
+//        let id = person["id"].intValue
+//        let name = person["name"].stringValue
+//        let genderNumber = person["gender"].intValue
+//        let job = person["job"].stringValue
+//        let department = person["known_for_department"].stringValue
+//        let profilePath = person["profile_path"].stringValue
+//        return Crew(id: id, role: .crew, name: name, genderNumber: genderNumber, department: department, profilePath: profilePath, job: job) as MovieContributor
+//      }
+//
+//      let castSlice = cast.count > 10 ? Array(cast[0...9]) : cast
+//      let crewSlice = crew.count > 10 ? Array(crew[0...9]) : crew
+//
+//      self.credits = [castSlice, crewSlice]
+//      self.tableView.reloadData()
     }
   }
   

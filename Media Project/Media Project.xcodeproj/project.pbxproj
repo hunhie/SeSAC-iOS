@@ -29,7 +29,7 @@
 		B6D6F3C12A8783FB0003A8B7 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D6F3C02A8783FB0003A8B7 /* Extension+UIColor.swift */; };
 		B6EF325B2A878FA900787F5C /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EF32592A878FA900787F5C /* MovieCollectionViewCell.swift */; };
 		B6EF325C2A878FA900787F5C /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6EF325A2A878FA900787F5C /* MovieCollectionViewCell.xib */; };
-		B6EF325E2A8790A800787F5C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EF325D2A8790A800787F5C /* Movie.swift */; };
+		B6EF325E2A8790A800787F5C /* Trending.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EF325D2A8790A800787F5C /* Trending.swift */; };
 		B6EF32612A8793A200787F5C /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EF32602A8793A200787F5C /* Reusable.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,7 @@
 		B6D6F3C02A8783FB0003A8B7 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		B6EF32592A878FA900787F5C /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		B6EF325A2A878FA900787F5C /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
-		B6EF325D2A8790A800787F5C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		B6EF325D2A8790A800787F5C /* Trending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trending.swift; sourceTree = "<group>"; };
 		B6EF32602A8793A200787F5C /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,7 +133,7 @@
 		B6D6F3C42A8784220003A8B7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B6EF325D2A8790A800787F5C /* Movie.swift */,
+				B6EF325D2A8790A800787F5C /* Trending.swift */,
 				B6C438D82A87CE69000ED1F3 /* MovieContributor.swift */,
 			);
 			path = Models;
@@ -292,7 +292,7 @@
 				B6C438D92A87CE69000ED1F3 /* MovieContributor.swift in Sources */,
 				B6D6F3C12A8783FB0003A8B7 /* Extension+UIColor.swift in Sources */,
 				B6A4F4992A878A46007ED654 /* Strings.swift in Sources */,
-				B6EF325E2A8790A800787F5C /* Movie.swift in Sources */,
+				B6EF325E2A8790A800787F5C /* Trending.swift in Sources */,
 				B6C438D22A87CB41000ED1F3 /* MovieContributorTableViewCell.swift in Sources */,
 				B63F3F272A87AAFF00E9168A /* MovieAPIManager.swift in Sources */,
 				B63F3F222A87997700E9168A /* Extension+UIViewController.swift in Sources */,
