@@ -192,42 +192,70 @@ final class TamagotchiMainViewController: UIViewController {
   }
   
   @IBAction func riceGrainButtonTapped(_ sender: UIButton) {
-    
-    if let text = riceGrainTextField.text {
-      let count = Int(text) ?? 1
-      guard count <= 100 else { return }
+    guard let text = riceGrainTextField.text else { return }
+    do {
+      let count = try validateInput(text: text)
       let messageType = Tamagotchi.tamagotchiAction(riceGrain: count, waterDroplets: nil)
-      
       if messageType == .levelUp {
         setupTamagotchiImageView()
       }
       setupMessageView(type: messageType)
       setupTamagotchiStatusLabel()
+    } catch {
+      switch error {
+      case ValidationError.emptyString: print("빈 값")
+      case ValidationError.isNotInt: print("숫자 아님")
+      case ValidationError.isNotInt: print("범위를 벗어남")
+      default: print("Error")
+      }
     }
   }
   
   @IBAction func waterDropletsButtonTapped(_ sender: UIButton) {
-    
-    if let text = waterDropletsTextField.text {
-      let count = Int(text) ?? 1
-      guard count <= 100 else { return }
+    guard let text = waterDropletsTextField.text else { return }
+    do {
+      let count = try validateInput(text: text)
       let messageType = Tamagotchi.tamagotchiAction(riceGrain: nil, waterDroplets: count)
-      
       if messageType == .levelUp {
         setupTamagotchiImageView()
       }
       setupMessageView(type: messageType)
       setupTamagotchiStatusLabel()
+    } catch {
+      switch error {
+      case ValidationError.emptyString: print("빈 값")
+      case ValidationError.isNotInt: print("숫자 아님")
+      case ValidationError.isNotInt: print("범위를 벗어남")
+      default: print("Error")
+      }
     }
   }
   
   @IBAction func tapGesture(_ sender: Any) {
     view.endEditing(true)
   }
+  
+  func validateInput(text: String) throws -> Int {
+    guard !text.isEmpty else { throw ValidationError.emptyString }
+    
+    guard let number = Int(text) else { throw ValidationError.isNotInt }
+    
+    guard number <= 100 && number > 0 else { throw ValidationError.outOfRange }
+    
+    return number
+  }
 }
 
 extension TamagotchiMainViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     textField.becomeFirstResponder()
+  }
+}
+
+extension TamagotchiMainViewController {
+  enum ValidationError: Error {
+    case emptyString
+    case isNotInt
+    case outOfRange
   }
 }
