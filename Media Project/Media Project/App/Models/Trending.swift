@@ -43,7 +43,7 @@ struct Movie: Codable {
     let title: String
     let voteAverage: Double
     let voteCount: Int
-    let originalLanguage: OriginalLanguage
+    let originalLanguage: String
     let backdropPath, originalTitle, releaseDate, overview: String
     let adult: Bool
     let mediaType: MediaType
@@ -72,9 +72,4 @@ struct Movie: Codable {
 
 enum MediaType: String, Codable {
     case movie = "movie"
-}
-
-enum OriginalLanguage: String, Codable {
-    case en = "en"
-    case hi = "hi"
 }
