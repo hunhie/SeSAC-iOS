@@ -111,17 +111,34 @@ final class TamagotchiSelectedModalViewController: UIViewController {
     cancelButton.setBackgroundColor(ColorConstant.dividerColor, for: .highlighted)
   }
   
+  func setNotify() {
+    let content = UNMutableNotificationContent()
+    content.title = "다마고치를 잊으신건 아니죠?"
+    content.body = "밥과 물을 챙겨주세요"
+    content.badge = 1
+    
+    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 86400, repeats: true)
+    let request = UNNotificationRequest(identifier: "\(Date())", content: content, trigger: trigger)
+    
+    UNUserNotificationCenter.current().add(request) { error in
+      print(error)
+    }
+  }  
   
   // MARK: - IBActions
-
   
   @IBAction func cancelButtonTapped(_ sender: UIButton) {
     dismiss(animated: true)
   }
   
   @IBAction func startButtonTapped(_ sender: UIButton) {
+    if !UserDefaults.standard.bool(forKey: "isLaunched") {
+      setNotify()
+    }
+    
+    
     UserDefaults.standard.setValue(true, forKey: "isLaunched")
-
+    
     guard let tamagotchi else { return }
     TamagotchiManager.shared.saveData(tamagotchi: tamagotchi)
     
