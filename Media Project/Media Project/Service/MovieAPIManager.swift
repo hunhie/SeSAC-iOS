@@ -13,18 +13,18 @@ final class MovieAPIManager {
   static let shared = MovieAPIManager()
   private init() { }
   
-  func callRequest(type: Endpoint, handler: @escaping (Any) -> ()) {
+  func callRequest<T: Codable>(type: Endpoint, responseType: T.Type, handler: @escaping (T?) -> ()) {
     let url = type.requestURL
     let headers: HTTPHeaders = [
       "Authorization": APIKeys.theMovieDB
     ]
     switch type {
     case .credits:
-      AF.request(url, method: .get, headers: headers).validate().responseDecodable(of: MovieContributor.self) { response in
+      AF.request(url, method: .get, headers: headers).validate().responseDecodable(of: responseType) { response in
         handler(response.value)
       }
     case .trending:
-      AF.request(url, method: .get, headers: headers).validate().responseDecodable(of: Trending.self) { response in
+      AF.request(url, method: .get, headers: headers).validate().responseDecodable(of: responseType) { response in
         handler(response.value)
       }
     }
