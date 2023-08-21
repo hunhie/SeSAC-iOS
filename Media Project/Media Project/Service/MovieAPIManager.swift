@@ -21,11 +21,23 @@ final class MovieAPIManager {
     switch type {
     case .credits:
       AF.request(url, method: .get, headers: headers).validate().responseDecodable(of: responseType) { response in
-        handler(response.value)
+        switch response.result {
+        case .success(let value):
+          handler(value)
+        case .failure(let error):
+          print(error)
+          handler(nil)
+        }
       }
     case .trending:
       AF.request(url, method: .get, headers: headers).validate().responseDecodable(of: responseType) { response in
-        handler(response.value)
+        switch response.result {
+        case .success(let value):
+          handler(value)
+        case .failure(let error):
+          print(error)
+          handler(nil)
+        }
       }
     }
   }
