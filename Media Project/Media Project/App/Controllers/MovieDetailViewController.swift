@@ -23,7 +23,8 @@ final class MovieDetailViewController: UIViewController {
   
   var movie: Movie?
   lazy var credits: [[Cast]] = []
-  lazy var sections: [SectionType] = [.cast, .crew]
+  lazy var similar: [Movie] = []
+  lazy var sections: [SectionType] = [.cast, .crew, .similar]
   
   //MARK: - View Controller Life cycle
   
@@ -31,7 +32,7 @@ final class MovieDetailViewController: UIViewController {
     super.viewDidLoad()
     
     configureUI()
-    callRequest()
+    dispatchGroup()
   }
   
   
@@ -65,6 +66,8 @@ final class MovieDetailViewController: UIViewController {
   func registerTableViewCell() {
     let castCellNib = UINib(nibName: MovieContributorTableViewCell.identifier, bundle: nil)
     tableView.register(castCellNib, forCellReuseIdentifier: MovieContributorTableViewCell.identifier)
+    let similarCellNib = UINib(nibName: SimilarCollectionTableViewCell.identifier, bundle: nil)
+    tableView.register(similarCellNib, forCellReuseIdentifier: SimilarCollectionTableViewCell.identifier)
   }
   
   func setupTableHeaderView() {
@@ -92,13 +95,12 @@ final class MovieDetailViewController: UIViewController {
     overViewTitleLabel.text = "OverView"
     overViewTitleLabel.font = .monospacedDigitSystemFont(ofSize: 15, weight: .semibold)
     overViewTitleLabel.textColor = .systemGray
-
+    
     divider.backgroundColor = UIColor(hexCode: Colors.divider.stringValue)
-
+    
     guard let movie else { return }
-
+    
     overViewLabel.text = movie.overview
-    print(movie.overview)
     overViewLabel.numberOfLines = 0
     overViewLabel.textColor = UIColor(hexCode: Colors.text.stringValue)
   }
@@ -110,8 +112,41 @@ final class MovieDetailViewController: UIViewController {
     MovieAPIManager.shared.callRequest(type: .credits(movie.id), responseType: MovieContributor.self) { [weak self] data in
       guard let self,
             let data else { return }
-      print(data)
       self.credits = [data.cast, data.crew]
+    }
+  }
+  
+  func callRequestSimilar() {
+    guard let movie else { return }
+    MovieAPIManager.shared.callRequest(type: .similar(movie.id), responseType: Similar.self) { [weak self] data in
+      guard let self,
+            let data else { return }
+      self.similar = data.results
+    }
+  }
+  
+  func dispatchGroup() {
+    let group = DispatchGroup()
+
+    guard let movie else { return }
+    
+    group.enter()
+    MovieAPIManager.shared.callRequest(type: .credits(movie.id), responseType: MovieContributor.self) { [weak self] data in
+      guard let self,
+            let data else { return }
+      self.credits = [data.cast, data.crew]
+      group.leave()
+    }
+    
+    group.enter()
+    MovieAPIManager.shared.callRequest(type: .similar(movie.id), responseType: Similar.self) { [weak self] data in
+      guard let self,
+            let data else { return }
+      self.similar = data.results
+      group.leave()
+    }
+    
+    group.notify(queue: .main) {
       self.tableView.reloadData()
     }
   }
@@ -120,13 +155,21 @@ final class MovieDetailViewController: UIViewController {
 }
 
 extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource {
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    indexPath.section != 2 ? 100 : 200
+  }
+  
   func numberOfSections(in tableView: UITableView) -> Int {
-    credits.count
+    sections.count
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    let count = credits[section].count
-    return count < 10 ? count : 10
+    guard credits.count > 0 else { return 0 }
+    switch section {
+    case 0...1: return credits[section].count > 10 ? 10 : credits[section].count
+    case 2: return 1
+    default: return 0
+    }
   }
   
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -134,14 +177,22 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let movieContributor = credits[indexPath.section][indexPath.row]
-    
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieContributorTableViewCell.identifier) as? MovieContributorTableViewCell else { return UITableViewCell() }
-    
-    cell.cast = movieContributor
-    cell.configureCell()
-    
-    return cell
+    switch indexPath.section {
+    case 0...1:
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieContributorTableViewCell.identifier) as? MovieContributorTableViewCell else { return UITableViewCell() }
+      let movieContributor = credits[indexPath.section][indexPath.row]
+      cell.cast = movieContributor
+      cell.configureCell()
+      return cell
+    case 2:
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: SimilarCollectionTableViewCell.identifier) as? SimilarCollectionTableViewCell,
+            similar.count > 0 else { return UITableViewCell() }
+      cell.similarMovies = similar
+
+      return cell
+    default:
+      return UITableViewCell()
+    }
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -153,6 +204,7 @@ extension MovieDetailViewController {
   enum SectionType: String {
     case cast = "Cast"
     case crew = "Crew"
+    case similar = "Similar"
     
     var stringValue: String {
       self.rawValue

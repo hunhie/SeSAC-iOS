@@ -18,26 +18,14 @@ final class MovieAPIManager {
     let headers: HTTPHeaders = [
       "Authorization": APIKeys.theMovieDB
     ]
-    switch type {
-    case .credits:
-      AF.request(url, method: .get, headers: headers).validate().responseDecodable(of: responseType) { response in
-        switch response.result {
-        case .success(let value):
-          handler(value)
-        case .failure(let error):
-          print(error)
-          handler(nil)
-        }
-      }
-    case .trending:
-      AF.request(url, method: .get, headers: headers).validate().responseDecodable(of: responseType) { response in
-        switch response.result {
-        case .success(let value):
-          handler(value)
-        case .failure(let error):
-          print(error)
-          handler(nil)
-        }
+    
+    AF.request(url, method: .get, headers: headers).validate().responseDecodable(of: responseType) { response in
+      switch response.result {
+      case .success(let value):
+        handler(value)
+      case .failure(let error):
+        print(error)
+        handler(nil)
       }
     }
   }
@@ -50,12 +38,14 @@ extension MovieAPIManager {
   enum Endpoint {
     case trending(timeWindow)
     case credits(Int)
+    case similar(Int)
     
     var requestURL: String {
       let baseURL = MovieAPIManager.baseURL
       switch self {
       case .trending(let tw): return baseURL + "trending/movie/" + tw.rawValue
       case .credits(let id): return baseURL + "movie/\(id)/credits"
+      case .similar(let id): return baseURL + "movie/\(id)/similar"
       }
     }
     

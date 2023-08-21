@@ -46,7 +46,6 @@ struct Movie: Codable {
   let originalLanguage: String
   let backdropPath, originalTitle, releaseDate, overview: String
   let adult: Bool
-  let mediaType: MediaType
   let posterPath: String
   let popularity: Double
   let genreIDS: [Int]
@@ -62,7 +61,6 @@ struct Movie: Codable {
     case originalTitle = "original_title"
     case releaseDate = "release_date"
     case overview, adult
-    case mediaType = "media_type"
     case posterPath = "poster_path"
     case popularity
     case genreIDS = "genre_ids"
@@ -76,8 +74,4 @@ struct Movie: Codable {
   var backdropImageURL: String {
     MovieAPIManager.imageCDN + backdropPath
   }
-}
-
-enum MediaType: String, Codable {
-  case movie = "movie"
 }
