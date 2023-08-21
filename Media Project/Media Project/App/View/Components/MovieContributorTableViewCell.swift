@@ -16,7 +16,7 @@ final class MovieContributorTableViewCell: UITableViewCell {
   @IBOutlet weak var infoLabel: UILabel!
   @IBOutlet weak var divider: UIView!
   
-  var movieContributor: MovieContributor?
+  var cast: Cast?
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -38,11 +38,10 @@ final class MovieContributorTableViewCell: UITableViewCell {
   }
   
   func configureCell() {
-    guard let movieContributor else { return }
+    guard let cast else { return }
     
-    
-    if movieContributor.profilePath != "",
-      let url = URL(string: movieContributor.profileImageURL) {
+    if let url = cast.profileImageURL,
+       let url = URL(string: url) {
       profileImageView.kf.setImage(with: url)
     } else {
       nonProfileImage.image = UIImage(systemName: "person.fill")
@@ -50,15 +49,13 @@ final class MovieContributorTableViewCell: UITableViewCell {
       profileImageView.backgroundColor = .clear
     }
     
-    nameLabel.text = movieContributor.name
+    nameLabel.text = cast.name
     
-    switch movieContributor.role {
+    switch cast.role {
     case .cast:
-      let cast = movieContributor as! Cast
-      infoLabel.text = "\(cast.character) / \(cast.department)"
+      infoLabel.text = "\(cast.character ?? "")"
     case .crew:
-      let crew = movieContributor as! Crew
-      infoLabel.text = "\(crew.job) / \(crew.department)"
+      infoLabel.text = "\(cast.job ?? "")"
     }
   }
   

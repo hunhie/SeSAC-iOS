@@ -17,7 +17,7 @@ final class WatchlistViewController: UIViewController {
   
   //MARK: - Stored Property
   
-  lazy var movieData: [Trending] = []
+  lazy var movieData: [Movie] = []
   
   //MARK: - View Controller Life cycle
   
@@ -79,24 +79,10 @@ final class WatchlistViewController: UIViewController {
   //MARK: - API
   
   func callRequest() {
-    MovieAPIManager.shared.callRequest(type: .trending(.day)) { json in
-      
-      print(json)
-      let list = json["results"].arrayValue
-      for item in list {
-        let id = item["id"].intValue
-        let title = item["title"].stringValue
-        let overView = item["overview"].stringValue
-        let posterURL = item["poster_path"].stringValue
-        let backdropPath = item["backdrop_path"].stringValue
-        let releaseDate = item["release_date"].stringValue
-        let rate = item["vote_average"].doubleValue
-        let adult = item["adult"].boolValue
-        
-        let movie = Trending(id: id, title: title, overView: overView, posterPath: posterURL, backdropPath: backdropPath, releaseDate: releaseDate, rate: rate, adult: adult)
-
-        self.movieData.append(movie)
-      }
+    MovieAPIManager.shared.callRequest(type: .trending(.week), responseType: Trending.self) { [weak self] data in
+      guard let self,
+            let data else { return }
+      self.movieData = data.results
       self.watchlistCollectionView.reloadData()
     }
   }
@@ -118,7 +104,6 @@ extension WatchlistViewController: UICollectionViewDelegate, UICollectionViewDat
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let movie = movieData[indexPath.row]
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier , for: indexPath) as? MovieCollectionViewCell else { return UICollectionViewCell() }
-
     cell.movie = movie
     cell.configureCell()
     

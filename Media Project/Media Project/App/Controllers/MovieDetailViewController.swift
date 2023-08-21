@@ -21,9 +21,8 @@ final class MovieDetailViewController: UIViewController {
   
   //MARK: - Stored Property
   
-  typealias Credits = [[MovieContributor]]
-  var movie: Trending?
-  lazy var credits: Credits = []
+  var movie: Movie?
+  lazy var credits: [[Cast]] = []
   lazy var sections: [SectionType] = [.cast, .crew]
   
   //MARK: - View Controller Life cycle
@@ -70,22 +69,22 @@ final class MovieDetailViewController: UIViewController {
   
   func setupTableHeaderView() {
     guard let movie else { return }
-    
+
     backImageView.contentMode = .scaleAspectFill
     posterImageView.contentMode = .scaleAspectFill
-    
+
     titleLabel.text = movie.title
     titleLabel.font = .monospacedDigitSystemFont(ofSize: 21, weight: .bold)
     titleLabel.textColor = UIColor(hexCode: Colors.text.stringValue)
-    
+
     if let url = URL(string: movie.posterImageURL) {
       posterImageView.kf.setImage(with: url)
     }
-    
+
     if let url = URL(string: movie.backdropImageURL) {
       backImageView.kf.setImage(with: url)
     }
-    
+
     setupOverView()
   }
   
@@ -93,13 +92,13 @@ final class MovieDetailViewController: UIViewController {
     overViewTitleLabel.text = "OverView"
     overViewTitleLabel.font = .monospacedDigitSystemFont(ofSize: 15, weight: .semibold)
     overViewTitleLabel.textColor = .systemGray
-    
+
     divider.backgroundColor = UIColor(hexCode: Colors.divider.stringValue)
 
     guard let movie else { return }
 
-    overViewLabel.text = movie.overView
-    print(movie.overView)
+    overViewLabel.text = movie.overview
+    print(movie.overview)
     overViewLabel.numberOfLines = 0
     overViewLabel.textColor = UIColor(hexCode: Colors.text.stringValue)
   }
@@ -108,38 +107,12 @@ final class MovieDetailViewController: UIViewController {
   
   func callRequest() {
     guard let movie else { return }
-    
-    MovieAPIManager.shared.callRequest(type: .credits(movie.id)) { json in
-//      let castData = json["cast"].arrayValue
-//      let cast = castData.map { person in
-//        let id = person["id"].intValue
-//        let name = person["name"].stringValue
-//        let genderNumber = person["gender"].intValue
-//        let character = person["character"].stringValue
-//        let department = person["known_for_department"].stringValue
-//        let profilePath = person["profile_path"].stringValue
-//        return Cast(id: id, role: .cast, name: name, genderNumber: genderNumber, department: department, profilePath: profilePath, character: character) as MovieContributor
-//      }
-//
-//      let crewData = json["crew"].arrayValue
-//      let crewFilterd = crewData.filter { person in
-//        person["known_for_department"].stringValue != "Acting"
-//      }
-//      let crew = crewFilterd.map { person in
-//        let id = person["id"].intValue
-//        let name = person["name"].stringValue
-//        let genderNumber = person["gender"].intValue
-//        let job = person["job"].stringValue
-//        let department = person["known_for_department"].stringValue
-//        let profilePath = person["profile_path"].stringValue
-//        return Crew(id: id, role: .crew, name: name, genderNumber: genderNumber, department: department, profilePath: profilePath, job: job) as MovieContributor
-//      }
-//
-//      let castSlice = cast.count > 10 ? Array(cast[0...9]) : cast
-//      let crewSlice = crew.count > 10 ? Array(crew[0...9]) : crew
-//
-//      self.credits = [castSlice, crewSlice]
-//      self.tableView.reloadData()
+    MovieAPIManager.shared.callRequest(type: .credits(movie.id), responseType: MovieContributor.self) { [weak self] data in
+      guard let self,
+            let data else { return }
+      print(data)
+      self.credits = [data.cast, data.crew]
+      self.tableView.reloadData()
     }
   }
   
@@ -152,7 +125,8 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    credits[section].count
+    let count = credits[section].count
+    return count < 10 ? count : 10
   }
   
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -164,7 +138,7 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
     
     guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieContributorTableViewCell.identifier) as? MovieContributorTableViewCell else { return UITableViewCell() }
     
-    cell.movieContributor = movieContributor
+    cell.cast = movieContributor
     cell.configureCell()
     
     return cell

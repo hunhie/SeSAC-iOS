@@ -14,7 +14,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var releaseDateLabel: UILabel!
   
-  var movie: Trending?
+  var movie: Movie?
   
   override func awakeFromNib() {
     super.awakeFromNib()
