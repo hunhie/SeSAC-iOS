@@ -15,7 +15,7 @@ class AssignmentMainViewController: UIViewController {
     stackView.axis = .vertical
     stackView.spacing = 30
     
-    (1...3).forEach { i in
+    (1...2).forEach { i in
       let button = UIButton()
       button.setTitle("Example \(i)", for: .normal)
       button.titleLabel?.font = .boldSystemFont(ofSize: 17)
@@ -46,7 +46,7 @@ class AssignmentMainViewController: UIViewController {
     buttonStackView.snp.makeConstraints { make in
       make.centerX.centerY.equalTo(view)
       make.width.equalTo(view).multipliedBy(0.55)
-      make.height.equalTo(view).multipliedBy(0.27)
+      make.height.equalTo(view).multipliedBy(0.15)
     }
   }
   
@@ -55,6 +55,12 @@ class AssignmentMainViewController: UIViewController {
     if tag == 1 {
       let vc = Example1ViewController()
       present(vc, animated: true)
+    } else if tag == 2 {
+      let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+      let sceneDelegate = windowScene?.delegate as? SceneDelegate
+      let vc = Example2ViewController()
+      sceneDelegate?.window?.rootViewController = vc
+      sceneDelegate?.window?.makeKeyAndVisible()
     }
   }
 }
