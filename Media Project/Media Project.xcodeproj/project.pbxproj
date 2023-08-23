@@ -18,6 +18,9 @@
 		B683F6762A93DC69003EB8F8 /* SimilarCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683F6742A93DC69003EB8F8 /* SimilarCollectionTableViewCell.swift */; };
 		B683F6772A93DC69003EB8F8 /* SimilarCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B683F6752A93DC69003EB8F8 /* SimilarCollectionTableViewCell.xib */; };
 		B6A4F4992A878A46007ED654 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A4F4982A878A46007ED654 /* Strings.swift */; };
+		B6B51EAD2A96329400DFE9E4 /* FinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B51EAC2A96329400DFE9E4 /* FinderViewController.swift */; };
+		B6B51EB02A96343600DFE9E4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B6B51EAF2A96343600DFE9E4 /* SnapKit */; };
+		B6B51EB22A963A3000DFE9E4 /* Theater.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B51EB12A963A3000DFE9E4 /* Theater.swift */; };
 		B6C438D22A87CB41000ED1F3 /* MovieContributorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C438D02A87CB41000ED1F3 /* MovieContributorTableViewCell.swift */; };
 		B6C438D32A87CB41000ED1F3 /* MovieContributorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6C438D12A87CB41000ED1F3 /* MovieContributorTableViewCell.xib */; };
 		B6C438D92A87CE69000ED1F3 /* MovieContributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C438D82A87CE69000ED1F3 /* MovieContributor.swift */; };
@@ -50,6 +53,8 @@
 		B683F6742A93DC69003EB8F8 /* SimilarCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarCollectionTableViewCell.swift; sourceTree = "<group>"; };
 		B683F6752A93DC69003EB8F8 /* SimilarCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimilarCollectionTableViewCell.xib; sourceTree = "<group>"; };
 		B6A4F4982A878A46007ED654 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		B6B51EAC2A96329400DFE9E4 /* FinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderViewController.swift; sourceTree = "<group>"; };
+		B6B51EB12A963A3000DFE9E4 /* Theater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theater.swift; sourceTree = "<group>"; };
 		B6C438D02A87CB41000ED1F3 /* MovieContributorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieContributorTableViewCell.swift; sourceTree = "<group>"; };
 		B6C438D12A87CB41000ED1F3 /* MovieContributorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieContributorTableViewCell.xib; sourceTree = "<group>"; };
 		B6C438D82A87CE69000ED1F3 /* MovieContributor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieContributor.swift; sourceTree = "<group>"; };
@@ -75,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6C850C92A8759D1000D3461 /* Kingfisher in Frameworks */,
+				B6B51EB02A96343600DFE9E4 /* SnapKit in Frameworks */,
 				B6C850C62A8759C1000D3461 /* SwiftyJSON in Frameworks */,
 				B6C850C32A8759BA000D3461 /* Alamofire in Frameworks */,
 			);
@@ -146,6 +152,7 @@
 				B6EF325D2A8790A800787F5C /* Trending.swift */,
 				B6C438D82A87CE69000ED1F3 /* MovieContributor.swift */,
 				B683F66A2A939748003EB8F8 /* Similar.swift */,
+				B6B51EB12A963A3000DFE9E4 /* Theater.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,6 +195,7 @@
 			children = (
 				B6C850B12A8757D2000D3461 /* WatchlistViewController.swift */,
 				B63F3F2A2A87C1A800E9168A /* MovieDetailViewController.swift */,
+				B6B51EAC2A96329400DFE9E4 /* FinderViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -233,6 +241,7 @@
 				B6C850C22A8759BA000D3461 /* Alamofire */,
 				B6C850C52A8759C1000D3461 /* SwiftyJSON */,
 				B6C850C82A8759D1000D3461 /* Kingfisher */,
+				B6B51EAF2A96343600DFE9E4 /* SnapKit */,
 			);
 			productName = "Media Project";
 			productReference = B6C850AA2A8757D2000D3461 /* Media Project.app */;
@@ -266,6 +275,7 @@
 				B6C850C12A8759BA000D3461 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				B6C850C42A8759C1000D3461 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				B6C850C72A8759D1000D3461 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				B6B51EAE2A96343600DFE9E4 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = B6C850AB2A8757D2000D3461 /* Products */;
 			projectDirPath = "";
@@ -301,11 +311,13 @@
 				B6C850B22A8757D2000D3461 /* WatchlistViewController.swift in Sources */,
 				B6EF32612A8793A200787F5C /* Reusable.swift in Sources */,
 				B63F3F292A87B36100E9168A /* APIKeys.swift in Sources */,
+				B6B51EB22A963A3000DFE9E4 /* Theater.swift in Sources */,
 				B6D6F3BF2A8783710003A8B7 /* Colors.swift in Sources */,
 				B63F3F2B2A87C1A800E9168A /* MovieDetailViewController.swift in Sources */,
 				B6C850AE2A8757D2000D3461 /* AppDelegate.swift in Sources */,
 				B63F3F242A87A90F00E9168A /* Extension+UIView.swift in Sources */,
 				B6C850B02A8757D2000D3461 /* SceneDelegate.swift in Sources */,
+				B6B51EAD2A96329400DFE9E4 /* FinderViewController.swift in Sources */,
 				B683F6762A93DC69003EB8F8 /* SimilarCollectionTableViewCell.swift in Sources */,
 				B6C438D92A87CE69000ED1F3 /* MovieContributor.swift in Sources */,
 				B6D6F3C12A8783FB0003A8B7 /* Extension+UIColor.swift in Sources */,
@@ -552,6 +564,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B6B51EAE2A96343600DFE9E4 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		B6C850C12A8759BA000D3461 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:Alamofire/Alamofire.git";
@@ -579,6 +599,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B6B51EAF2A96343600DFE9E4 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6B51EAE2A96343600DFE9E4 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		B6C850C22A8759BA000D3461 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B6C850C12A8759BA000D3461 /* XCRemoteSwiftPackageReference "Alamofire" */;

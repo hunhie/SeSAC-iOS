@@ -183,10 +183,10 @@
             </objects>
             <point key="canvasLocation" x="3719.8473282442746" y="203.52112676056339"/>
         </scene>
-        <!--View Controller-->
+        <!--Finder View Controller-->
         <scene sceneID="mLA-Ji-pdB">
             <objects>
-                <viewController id="8zl-Zs-n43" sceneMemberID="viewController">
+                <viewController id="8zl-Zs-n43" customClass="FinderViewController" customModule="Media_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x7h-sX-ccc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -218,11 +218,11 @@
             </objects>
             <point key="canvasLocation" x="1872.5190839694656" y="203.52112676056339"/>
         </scene>
-        <!--Coming Soon-->
+        <!--Finder-->
         <scene sceneID="9x4-ar-vSs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LaT-zv-9sn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Coming Soon" image="film" catalog="system" id="cVr-ws-yJJ"/>
+                    <tabBarItem key="tabBarItem" title="Finder" image="map" catalog="system" id="cVr-ws-yJJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j1X-zk-W6D">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -258,7 +258,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="film" catalog="system" width="128" height="93"/>
+        <image name="map" catalog="system" width="128" height="112"/>
         <image name="rectangle.on.rectangle.angled" catalog="system" width="128" height="98"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
