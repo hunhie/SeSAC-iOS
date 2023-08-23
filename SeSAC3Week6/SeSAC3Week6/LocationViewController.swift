@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import SnapKit
 import CoreLocation
+import MapKit
 
 class LocationViewController: UIViewController {
   
   let locationManager = CLLocationManager()
-  
+  let mapView = MKMapView()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -19,6 +21,7 @@ class LocationViewController: UIViewController {
     setupLocationManager()
     configureUI()
     checkDeviceLocationAuthorization()
+    setRegionAndAnnotation()
   }
   
   func setupLocationManager() {
@@ -28,6 +31,24 @@ class LocationViewController: UIViewController {
   
   func configureUI() {
     view.backgroundColor = .white
+    view.addSubview(mapView)
+    mapView.snp.makeConstraints { make in
+      make.edges.equalTo(view)
+    }
+  }
+  
+  func setRegionAndAnnotation() {
+    mapView.delegate = self
+    
+    let center = CLLocationCoordinate2D(latitude: 37.517829, longitude: 126.886270)
+    let region = MKCoordinateRegion(center: center, latitudinalMeters: 400, longitudinalMeters: 400)
+    mapView.setRegion(region, animated: true)
+    
+    let annotation = MKPointAnnotation()
+    annotation.title = "영캠이에요"
+    annotation.coordinate = center
+    
+    mapView.addAnnotation(annotation)
   }
   
   func checkDeviceLocationAuthorization() {
@@ -43,38 +64,45 @@ class LocationViewController: UIViewController {
         }
         checkCurrentLocationAuthorization(status: authorization)
       } else {
-        print("위치 서빟스가 꺼져 있어서 위치 권한 요청 못함")
+        print("위치 서비스가 꺼져 있어서 위치 권한 요청 못함")
       }
     }
   }
   
   func checkCurrentLocationAuthorization(status: CLAuthorizationStatus) {
+    print("check", status)
+    
     switch status {
     case .authorizedAlways: print("authorizedAlways")
       locationManager.startUpdatingLocation()
     case .notDetermined: print("notDetermined")
+      locationManager.desiredAccuracy = kCLLocationAccuracyBest
       locationManager.requestWhenInUseAuthorization()
     case .authorizedWhenInUse: print("authorizedWhenInUse")
       locationManager.startUpdatingLocation()
-      locationManager.requestAlwaysAuthorization()
     case .denied: print("denied")
     case .restricted: print("restricted")
+    @unknown default: break
     }
   }
 }
 
 extension LocationViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    print(#function)
     print(locations)
   }
   
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    print(#function)
     print(error)
   }
   
   // iOS 14 이상
   // 사용자의 권한 상태가 바뀔 때를 알려줌
   func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+    checkDeviceLocationAuthorization()
+    print(#function)
   }
   
   //iOS 14 미만
@@ -84,4 +112,19 @@ extension LocationViewController: CLLocationManagerDelegate {
   //  func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
   //    print(#fcu)
   //  }
+}
+
+extension LocationViewController: MKMapViewDelegate {
+  
+  func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+    print(#function)
+  }
+  
+  func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
+    print(#function)
+  }
+  
+//  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//    print(#function)
+//  }
 }
