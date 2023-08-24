@@ -22,9 +22,13 @@
 		B683F65F2A930A15003EB8F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B683F65D2A930A15003EB8F8 /* LaunchScreen.storyboard */; };
 		B6AA03252A96F0E900CDC665 /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA03242A96F0E900CDC665 /* GenericViewController.swift */; };
 		B6AA03272A96F10F00CDC665 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA03262A96F10F00CDC665 /* Extension+UIViewController.swift */; };
-		B6AA032A2A971CEF00CDC665 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA03292A971CEF00CDC665 /* CustomViewController.swift */; };
-		B6AA032C2A971EA000CDC665 /* BlackRadiusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA032B2A971EA000CDC665 /* BlackRadiusTextField.swift */; };
+		B6AA032A2A971CEF00CDC665 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA03292A971CEF00CDC665 /* LoginViewController.swift */; };
+		B6AA032C2A971EA000CDC665 /* RadiusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA032B2A971EA000CDC665 /* RadiusTextField.swift */; };
 		B6AA032E2A972A2800CDC665 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA032D2A972A2800CDC665 /* CustomTableViewController.swift */; };
+		B6AA03302A974D6200CDC665 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA032F2A974D6200CDC665 /* SignUpViewController.swift */; };
+		B6AA03332A974DD400CDC665 /* LogoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA03322A974DD400CDC665 /* LogoLabel.swift */; };
+		B6AA03352A9752C100CDC665 /* RadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA03342A9752C100CDC665 /* RadiusButton.swift */; };
+		B6AA03372A97591D00CDC665 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA03362A97591D00CDC665 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,9 +48,13 @@
 		B683F6602A930A15003EB8F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6AA03242A96F0E900CDC665 /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
 		B6AA03262A96F10F00CDC665 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
-		B6AA03292A971CEF00CDC665 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
-		B6AA032B2A971EA000CDC665 /* BlackRadiusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackRadiusTextField.swift; sourceTree = "<group>"; };
+		B6AA03292A971CEF00CDC665 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B6AA032B2A971EA000CDC665 /* RadiusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusTextField.swift; sourceTree = "<group>"; };
 		B6AA032D2A972A2800CDC665 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
+		B6AA032F2A974D6200CDC665 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B6AA03322A974DD400CDC665 /* LogoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoLabel.swift; sourceTree = "<group>"; };
+		B6AA03342A9752C100CDC665 /* RadiusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusButton.swift; sourceTree = "<group>"; };
+		B6AA03362A97591D00CDC665 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,11 +127,23 @@
 		B6AA03282A971CDC00CDC665 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				B6AA03292A971CEF00CDC665 /* CustomViewController.swift */,
-				B6AA032B2A971EA000CDC665 /* BlackRadiusTextField.swift */,
+				B6AA03312A974DBF00CDC665 /* Components */,
+				B6AA03292A971CEF00CDC665 /* LoginViewController.swift */,
+				B6AA032F2A974D6200CDC665 /* SignUpViewController.swift */,
 				B6AA032D2A972A2800CDC665 /* CustomTableViewController.swift */,
+				B6AA03362A97591D00CDC665 /* MainViewController.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		B6AA03312A974DBF00CDC665 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B6AA032B2A971EA000CDC665 /* RadiusTextField.swift */,
+				B6AA03322A974DD400CDC665 /* LogoLabel.swift */,
+				B6AA03342A9752C100CDC665 /* RadiusButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,16 +225,20 @@
 			files = (
 				B605208E2A945CE40029CA0F /* TextViewController.swift in Sources */,
 				B605208C2A9447B80029CA0F /* SnapViewController.swift in Sources */,
-				B6AA032C2A971EA000CDC665 /* BlackRadiusTextField.swift in Sources */,
+				B6AA032C2A971EA000CDC665 /* RadiusTextField.swift in Sources */,
 				B6AA03252A96F0E900CDC665 /* GenericViewController.swift in Sources */,
-				B6AA032A2A971CEF00CDC665 /* CustomViewController.swift in Sources */,
+				B6AA032A2A971CEF00CDC665 /* LoginViewController.swift in Sources */,
 				B60520942A949C720029CA0F /* AssignmentMainViewController.swift in Sources */,
 				B683F6572A930A14003EB8F8 /* ViewController.swift in Sources */,
 				B60520902A94792D0029CA0F /* LocationViewController.swift in Sources */,
+				B6AA03352A9752C100CDC665 /* RadiusButton.swift in Sources */,
 				B60520922A9497FE0029CA0F /* Example1ViewController.swift in Sources */,
+				B6AA03302A974D6200CDC665 /* SignUpViewController.swift in Sources */,
 				B683F6532A930A14003EB8F8 /* AppDelegate.swift in Sources */,
+				B6AA03332A974DD400CDC665 /* LogoLabel.swift in Sources */,
 				B6AA03272A96F10F00CDC665 /* Extension+UIViewController.swift in Sources */,
 				B683F6552A930A14003EB8F8 /* SceneDelegate.swift in Sources */,
+				B6AA03372A97591D00CDC665 /* MainViewController.swift in Sources */,
 				B6AA032E2A972A2800CDC665 /* CustomTableViewController.swift in Sources */,
 				B63955012A94A0FC00AE3176 /* Example2ViewController.swift in Sources */,
 			);

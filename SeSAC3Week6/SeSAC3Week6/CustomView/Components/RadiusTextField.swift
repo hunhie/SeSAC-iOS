@@ -1,5 +1,5 @@
 //
-//  BlackRadiusTextField.swift
+//  RadiusTextField.swift
 //  SeSAC3Week6
 //
 //  Created by walkerhilla on 2023/08/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BlackRadiusTextField: UITextField {
+class RadiusTextField: UITextField {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -23,11 +23,11 @@ class BlackRadiusTextField: UITextField {
   }
   
   func configureView() {
+    backgroundColor = .systemGray
     borderStyle = .none
-    layer.borderColor = UIColor.black.cgColor
-    layer.borderWidth = 1
     layer.cornerRadius = 8
-    textColor = .black
+    textColor = .white
+    attributedPlaceholder = NSAttributedString(string: " ", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
     textAlignment = .center
     font = .boldSystemFont(ofSize: 15)
   }
