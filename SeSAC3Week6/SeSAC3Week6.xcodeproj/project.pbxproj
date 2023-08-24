@@ -20,6 +20,11 @@
 		B683F65A2A930A14003EB8F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B683F6582A930A14003EB8F8 /* Main.storyboard */; };
 		B683F65C2A930A15003EB8F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B683F65B2A930A15003EB8F8 /* Assets.xcassets */; };
 		B683F65F2A930A15003EB8F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B683F65D2A930A15003EB8F8 /* LaunchScreen.storyboard */; };
+		B6AA03252A96F0E900CDC665 /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA03242A96F0E900CDC665 /* GenericViewController.swift */; };
+		B6AA03272A96F10F00CDC665 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA03262A96F10F00CDC665 /* Extension+UIViewController.swift */; };
+		B6AA032A2A971CEF00CDC665 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA03292A971CEF00CDC665 /* CustomViewController.swift */; };
+		B6AA032C2A971EA000CDC665 /* BlackRadiusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA032B2A971EA000CDC665 /* BlackRadiusTextField.swift */; };
+		B6AA032E2A972A2800CDC665 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA032D2A972A2800CDC665 /* CustomTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +42,11 @@
 		B683F65B2A930A15003EB8F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B683F65E2A930A15003EB8F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B683F6602A930A15003EB8F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6AA03242A96F0E900CDC665 /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
+		B6AA03262A96F10F00CDC665 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
+		B6AA03292A971CEF00CDC665 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		B6AA032B2A971EA000CDC665 /* BlackRadiusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackRadiusTextField.swift; sourceTree = "<group>"; };
+		B6AA032D2A972A2800CDC665 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,11 +80,12 @@
 		B683F6512A930A14003EB8F8 /* SeSAC3Week6 */ = {
 			isa = PBXGroup;
 			children = (
+				B6AA03282A971CDC00CDC665 /* CustomView */,
+				B6AA03232A96F0DB00CDC665 /* Generic */,
+				B6AA03222A96F0D000CDC665 /* Text */,
 				B683F6522A930A14003EB8F8 /* AppDelegate.swift */,
 				B683F6542A930A14003EB8F8 /* SceneDelegate.swift */,
 				B683F6562A930A14003EB8F8 /* ViewController.swift */,
-				B605208B2A9447B80029CA0F /* SnapViewController.swift */,
-				B605208D2A945CE40029CA0F /* TextViewController.swift */,
 				B605208F2A94792D0029CA0F /* LocationViewController.swift */,
 				B60520912A9497FE0029CA0F /* Example1ViewController.swift */,
 				B63955002A94A0FC00AE3176 /* Example2ViewController.swift */,
@@ -85,6 +96,34 @@
 				B683F65D2A930A15003EB8F8 /* LaunchScreen.storyboard */,
 			);
 			path = SeSAC3Week6;
+			sourceTree = "<group>";
+		};
+		B6AA03222A96F0D000CDC665 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				B605208B2A9447B80029CA0F /* SnapViewController.swift */,
+				B605208D2A945CE40029CA0F /* TextViewController.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
+		B6AA03232A96F0DB00CDC665 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				B6AA03242A96F0E900CDC665 /* GenericViewController.swift */,
+				B6AA03262A96F10F00CDC665 /* Extension+UIViewController.swift */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
+		B6AA03282A971CDC00CDC665 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				B6AA03292A971CEF00CDC665 /* CustomViewController.swift */,
+				B6AA032B2A971EA000CDC665 /* BlackRadiusTextField.swift */,
+				B6AA032D2A972A2800CDC665 /* CustomTableViewController.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,12 +205,17 @@
 			files = (
 				B605208E2A945CE40029CA0F /* TextViewController.swift in Sources */,
 				B605208C2A9447B80029CA0F /* SnapViewController.swift in Sources */,
+				B6AA032C2A971EA000CDC665 /* BlackRadiusTextField.swift in Sources */,
+				B6AA03252A96F0E900CDC665 /* GenericViewController.swift in Sources */,
+				B6AA032A2A971CEF00CDC665 /* CustomViewController.swift in Sources */,
 				B60520942A949C720029CA0F /* AssignmentMainViewController.swift in Sources */,
 				B683F6572A930A14003EB8F8 /* ViewController.swift in Sources */,
 				B60520902A94792D0029CA0F /* LocationViewController.swift in Sources */,
 				B60520922A9497FE0029CA0F /* Example1ViewController.swift in Sources */,
 				B683F6532A930A14003EB8F8 /* AppDelegate.swift in Sources */,
+				B6AA03272A96F10F00CDC665 /* Extension+UIViewController.swift in Sources */,
 				B683F6552A930A14003EB8F8 /* SceneDelegate.swift in Sources */,
+				B6AA032E2A972A2800CDC665 /* CustomTableViewController.swift in Sources */,
 				B63955012A94A0FC00AE3176 /* Example2ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
