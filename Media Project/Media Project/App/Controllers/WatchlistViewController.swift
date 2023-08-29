@@ -36,6 +36,9 @@ final class WatchlistViewController: UIViewController {
     setupTabBar()
     setupSearchButton()
     setupCollectionView()
+    
+    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle.fill"), style: .plain, target: self, action: #selector(profileButtonTapped))
+    navigationItem.rightBarButtonItem?.tintColor = UIColor(hexCode: Colors.primary.stringValue)
   }
   
   func titleLabel() {
@@ -90,6 +93,10 @@ final class WatchlistViewController: UIViewController {
   //MARK: - Actions
   
   @objc func searchBarButtonTapped() {
+    print(#function)
+  }
+  
+  @objc func profileButtonTapped() {
     print(#function)
   }
 }

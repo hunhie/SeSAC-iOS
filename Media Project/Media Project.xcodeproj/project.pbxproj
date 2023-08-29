@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B611AA9F2A9E6A1B009FDCAB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611AA9E2A9E6A1B009FDCAB /* ProfileViewController.swift */; };
+		B611AAA12A9E6C26009FDCAB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611AAA02A9E6C26009FDCAB /* ProfileView.swift */; };
 		B63F3F222A87997700E9168A /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63F3F212A87997700E9168A /* Extension+UIViewController.swift */; };
 		B63F3F242A87A90F00E9168A /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63F3F232A87A90F00E9168A /* Extension+UIView.swift */; };
 		B63F3F272A87AAFF00E9168A /* MovieAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63F3F262A87AAFF00E9168A /* MovieAPIManager.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B611AA9E2A9E6A1B009FDCAB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B611AAA02A9E6C26009FDCAB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B63F3F212A87997700E9168A /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		B63F3F232A87A90F00E9168A /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		B63F3F262A87AAFF00E9168A /* MovieAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPIManager.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 				B683F6742A93DC69003EB8F8 /* SimilarCollectionTableViewCell.swift */,
 				B683F6752A93DC69003EB8F8 /* SimilarCollectionTableViewCell.xib */,
 				B6E90B8E2A9A6D4200C8CA09 /* OnboardingButton.swift */,
+				B611AAA02A9E6C26009FDCAB /* ProfileView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 				B6C850B12A8757D2000D3461 /* WatchlistViewController.swift */,
 				B63F3F2A2A87C1A800E9168A /* MovieDetailViewController.swift */,
 				B6B51EAC2A96329400DFE9E4 /* FinderViewController.swift */,
+				B611AA9E2A9E6A1B009FDCAB /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -339,6 +345,7 @@
 				B6B51EAD2A96329400DFE9E4 /* FinderViewController.swift in Sources */,
 				B683F6762A93DC69003EB8F8 /* SimilarCollectionTableViewCell.swift in Sources */,
 				B6C438D92A87CE69000ED1F3 /* MovieContributor.swift in Sources */,
+				B611AAA12A9E6C26009FDCAB /* ProfileView.swift in Sources */,
 				B6D6F3C12A8783FB0003A8B7 /* Extension+UIColor.swift in Sources */,
 				B683F6722A939E28003EB8F8 /* SimilarCollectionViewCell.swift in Sources */,
 				B6E90B8F2A9A6D4200C8CA09 /* OnboardingButton.swift in Sources */,
@@ -347,6 +354,7 @@
 				B6C438D22A87CB41000ED1F3 /* MovieContributorTableViewCell.swift in Sources */,
 				B63F3F272A87AAFF00E9168A /* MovieAPIManager.swift in Sources */,
 				B683F66B2A939748003EB8F8 /* Similar.swift in Sources */,
+				B611AA9F2A9E6A1B009FDCAB /* ProfileViewController.swift in Sources */,
 				B63F3F222A87997700E9168A /* Extension+UIViewController.swift in Sources */,
 				B6EF325B2A878FA900787F5C /* MovieCollectionViewCell.swift in Sources */,
 			);
