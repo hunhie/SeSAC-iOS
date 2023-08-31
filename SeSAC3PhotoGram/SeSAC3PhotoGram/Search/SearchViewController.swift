@@ -22,6 +22,8 @@ class SearchViewController: BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    
+    mainView.searchBar.becomeFirstResponder()
   }
   
   override func configureView() {

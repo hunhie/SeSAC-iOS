@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B611AAA62A9EC742009FDCAB /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611AAA52A9EC742009FDCAB /* APIService.swift */; };
+		B611AAA82A9EEC11009FDCAB /* URLSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611AAA72A9EEC11009FDCAB /* URLSessionViewController.swift */; };
 		B65805622A9DB57D002C658B /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65805612A9DB57D002C658B /* TitleViewController.swift */; };
 		B65805642A9DC101002C658B /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65805632A9DC101002C658B /* ContentViewController.swift */; };
 		B65805662A9DC77D002C658B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65805652A9DC77D002C658B /* WebViewController.swift */; };
@@ -24,6 +26,8 @@
 		B65F2CDF2A9C337C000FBC7E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65F2CDE2A9C337C000FBC7E /* SearchView.swift */; };
 		B65F2CE12A9C3670000FBC7E /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65F2CE02A9C3670000FBC7E /* BaseCollectionViewCell.swift */; };
 		B65F2CE32A9C3B01000FBC7E /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65F2CE22A9C3B01000FBC7E /* SearchCollectionViewCell.swift */; };
+		B6699E1A2AA01A6800F9A9C8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6699E192AA01A6800F9A9C8 /* HomeView.swift */; };
+		B6699E1C2AA01A8200F9A9C8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6699E1B2AA01A8200F9A9C8 /* HomeViewController.swift */; };
 		B6DF47412A9D7BE6005879FB /* Extensnion+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DF47402A9D7BE6005879FB /* Extensnion+Notification.swift */; };
 		B6DF47432A9D7C85005879FB /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DF47422A9D7C85005879FB /* DateView.swift */; };
 		B6DF47452A9D7DC5005879FB /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DF47442A9D7DC5005879FB /* DateViewController.swift */; };
@@ -58,6 +62,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B611AAA52A9EC742009FDCAB /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		B611AAA72A9EEC11009FDCAB /* URLSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionViewController.swift; sourceTree = "<group>"; };
 		B65805612A9DB57D002C658B /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		B65805632A9DC101002C658B /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		B65805652A9DC77D002C658B /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +82,8 @@
 		B65F2CDE2A9C337C000FBC7E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		B65F2CE02A9C3670000FBC7E /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		B65F2CE22A9C3B01000FBC7E /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		B6699E192AA01A6800F9A9C8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B6699E1B2AA01A8200F9A9C8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B6DF47402A9D7BE6005879FB /* Extensnion+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensnion+Notification.swift"; sourceTree = "<group>"; };
 		B6DF47422A9D7C85005879FB /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		B6DF47442A9D7DC5005879FB /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B611AAA42A9EC733009FDCAB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B611AAA52A9EC742009FDCAB /* APIService.swift */,
+				B611AAA72A9EEC11009FDCAB /* URLSessionViewController.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		B65F2CB02A9C1D64000FBC7E = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +135,8 @@
 		B65F2CBB2A9C1D64000FBC7E /* SeSAC3PhotoGram */ = {
 			isa = PBXGroup;
 			children = (
+				B6699E182AA01A5400F9A9C8 /* Home */,
+				B611AAA42A9EC733009FDCAB /* Network */,
 				B6DF473F2A9D7BD4005879FB /* Extension */,
 				B65F2CDB2A9C3006000FBC7E /* Add */,
 				B65F2CD62A9C272B000FBC7E /* Search */,
@@ -165,6 +184,15 @@
 				B65805652A9DC77D002C658B /* WebViewController.swift */,
 			);
 			path = Add;
+			sourceTree = "<group>";
+		};
+		B6699E182AA01A5400F9A9C8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B6699E192AA01A6800F9A9C8 /* HomeView.swift */,
+				B6699E1B2AA01A8200F9A9C8 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		B6DF473F2A9D7BD4005879FB /* Extension */ = {
@@ -292,6 +320,7 @@
 				B65F2CD82A9C2747000FBC7E /* SearchViewController.swift in Sources */,
 				B65F2CE12A9C3670000FBC7E /* BaseCollectionViewCell.swift in Sources */,
 				B65F2CC12A9C1D64000FBC7E /* AddViewController.swift in Sources */,
+				B6699E1C2AA01A8200F9A9C8 /* HomeViewController.swift in Sources */,
 				B65805622A9DB57D002C658B /* TitleViewController.swift in Sources */,
 				B6DF47452A9D7DC5005879FB /* DateViewController.swift in Sources */,
 				B65F2CE32A9C3B01000FBC7E /* SearchCollectionViewCell.swift in Sources */,
@@ -300,8 +329,11 @@
 				B65F2CDF2A9C337C000FBC7E /* SearchView.swift in Sources */,
 				B65F2CDA2A9C2EBE000FBC7E /* BaseView.swift in Sources */,
 				B6DF47492A9D8E9B005879FB /* Extension+DateFormat.swift in Sources */,
+				B611AAA82A9EEC11009FDCAB /* URLSessionViewController.swift in Sources */,
+				B6699E1A2AA01A6800F9A9C8 /* HomeView.swift in Sources */,
 				B65F2CBD2A9C1D64000FBC7E /* AppDelegate.swift in Sources */,
 				B65F2CBF2A9C1D64000FBC7E /* SceneDelegate.swift in Sources */,
+				B611AAA62A9EC742009FDCAB /* APIService.swift in Sources */,
 				B6DF47472A9D8150005879FB /* PassDataDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

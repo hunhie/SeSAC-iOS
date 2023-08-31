@@ -22,6 +22,10 @@ class TitleViewController: BaseViewController {
     
   }
   
+  deinit {
+    print("deinit: \(self)")
+  }
+  
   override func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
    
