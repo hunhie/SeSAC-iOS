@@ -9,8 +9,11 @@ import UIKit
 import Kingfisher
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 final class BookCollectionViewController: UICollectionViewController {
+  
+  var tasks: Results<BookTable>!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -22,8 +25,13 @@ final class BookCollectionViewController: UICollectionViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
-    collectionView.reloadData()
     tabBarController?.tabBar.isHidden = false
+    
+    let realm = try! Realm()
+    let data = realm.objects(BookTable.self)
+
+    self.tasks = data
+    self.collectionView.reloadData()
   }
   
   @IBAction func searchBarButtonTapped(_ sender: UIBarButtonItem) {
@@ -69,15 +77,17 @@ final class BookCollectionViewController: UICollectionViewController {
   
   // 섹션 내 아이템 갯수
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return BookInfo.dataCount
+    return tasks.count
   }
   
   // 아이템 Cell 설정
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let book = BookInfo.bookData[indexPath.row]
-    
+    let task = tasks[indexPath.row]
+    let book = Book(title: task.title, authors: task.author, price: task.price, contents: task.contents, thumbnail: task.thumbnail)
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as? BookCollectionViewCell else { return UICollectionViewCell() }
     
+    cell.book = book
+    cell.configureCell()
 
     
     return cell

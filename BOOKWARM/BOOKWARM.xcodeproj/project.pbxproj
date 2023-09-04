@@ -16,6 +16,8 @@
 		B653706D2A83CF5F0082D64F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B653706C2A83CF5F0082D64F /* Kingfisher */; };
 		B65370702A83CF740082D64F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B653706F2A83CF740082D64F /* Alamofire */; };
 		B65370732A83CFA10082D64F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = B65370722A83CFA10082D64F /* SwiftyJSON */; };
+		B6699E272AA661E400F9A9C8 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B6699E262AA661E400F9A9C8 /* RealmSwift */; };
+		B6699E2B2AA664AA00F9A9C8 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6699E2A2AA664AA00F9A9C8 /* RealmModel.swift */; };
 		B6887DC92A7799FC002764A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6887DC82A7799FC002764A2 /* AppDelegate.swift */; };
 		B6887DCB2A7799FC002764A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6887DCA2A7799FC002764A2 /* SceneDelegate.swift */; };
 		B6887DD02A7799FC002764A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6887DCE2A7799FC002764A2 /* Main.storyboard */; };
@@ -38,6 +40,7 @@
 		B64495412A7A3D2500FBDCC6 /* RecentBookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBookCollectionViewCell.swift; sourceTree = "<group>"; };
 		B64495422A7A3D2500FBDCC6 /* RecentBookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentBookCollectionViewCell.xib; sourceTree = "<group>"; };
 		B65370692A83CE550082D64F /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		B6699E2A2AA664AA00F9A9C8 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		B6887DC52A7799FC002764A2 /* BOOKWARM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BOOKWARM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6887DC82A7799FC002764A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6887DCA2A7799FC002764A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6699E272AA661E400F9A9C8 /* RealmSwift in Frameworks */,
 				B65370732A83CFA10082D64F /* SwiftyJSON in Frameworks */,
 				B653706D2A83CF5F0082D64F /* Kingfisher in Frameworks */,
 				B65370702A83CF740082D64F /* Alamofire in Frameworks */,
@@ -106,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				B6887DDC2A779A32002764A2 /* Book.swift */,
+				B6699E2A2AA664AA00F9A9C8 /* RealmModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				B653706C2A83CF5F0082D64F /* Kingfisher */,
 				B653706F2A83CF740082D64F /* Alamofire */,
 				B65370722A83CFA10082D64F /* SwiftyJSON */,
+				B6699E262AA661E400F9A9C8 /* RealmSwift */,
 			);
 			productName = BOOKWARM;
 			productReference = B6887DC52A7799FC002764A2 /* BOOKWARM.app */;
@@ -205,6 +211,7 @@
 				B653706B2A83CF5F0082D64F /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				B653706E2A83CF740082D64F /* XCRemoteSwiftPackageReference "Alamofire" */,
 				B65370712A83CFA10082D64F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				B6699E252AA661E400F9A9C8 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = B6887DC62A7799FC002764A2 /* Products */;
 			projectDirPath = "";
@@ -237,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6887DDD2A779A32002764A2 /* Book.swift in Sources */,
+				B6699E2B2AA664AA00F9A9C8 /* RealmModel.swift in Sources */,
 				B6887DE32A779CB4002764A2 /* Extension+UIImage.swift in Sources */,
 				B653706A2A83CE550082D64F /* APIKeys.swift in Sources */,
 				B6887DF02A77B0C9002764A2 /* Extension+Int.swift in Sources */,
@@ -502,6 +510,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		B6699E252AA661E400F9A9C8 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.42.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -519,6 +535,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B65370712A83CFA10082D64F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		B6699E262AA661E400F9A9C8 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6699E252AA661E400F9A9C8 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

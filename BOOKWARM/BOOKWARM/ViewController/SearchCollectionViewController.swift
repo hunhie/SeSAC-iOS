@@ -9,6 +9,7 @@ import UIKit
 import Kingfisher
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 final class SearchCollectionViewController: UICollectionViewController {
   
@@ -87,6 +88,18 @@ final class SearchCollectionViewController: UICollectionViewController {
   @objc func liekButtonTapped(_ sender: UIButton) {
     
     collectionView.reloadItems(at: [IndexPath(row: sender.tag, section: 0)])
+  }
+  
+  override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    // realm 파일에 접근할 수 있도록, 위치를 찾는 코드
+    let realm = try! Realm()
+    let book = searchedList[indexPath.item]
+    let task = BookTable(title: book.title, author: book.authors, price: book.price, contents: book.contents, thumbnail: book.thumbnail)
+    try! realm.write {
+      realm.add(task)
+    }
+    
+    navigationController?.popViewController(animated: true)
   }
 }
 extension SearchCollectionViewController: UICollectionViewDataSourcePrefetching {
