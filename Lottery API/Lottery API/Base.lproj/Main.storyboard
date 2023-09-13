@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lottery_API" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,28 +127,10 @@
                             <constraint firstItem="p9z-wH-ptQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yj8-dY-Wu4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p9z-wH-ptQ" secondAttribute="trailing" constant="20" id="kxJ-OZ-L1D"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="nTp-jC-I5f" appends="YES" id="mtg-0J-6TI"/>
-                        </connections>
                     </view>
-                    <connections>
-                        <outlet property="plusImageView" destination="Kx4-k3-ZXM" id="Uw9-ol-YUS"/>
-                        <outlet property="seriesField" destination="j3S-Aw-3bn" id="YAA-xz-FPb"/>
-                        <outletCollection property="numberViews" destination="S3o-qW-5Sx" collectionClass="NSMutableArray" id="HQo-3Q-fqo"/>
-                        <outletCollection property="numberViews" destination="pZE-Zd-96E" collectionClass="NSMutableArray" id="0o5-3l-c6w"/>
-                        <outletCollection property="numberViews" destination="iQz-is-RDX" collectionClass="NSMutableArray" id="zey-nR-RTs"/>
-                        <outletCollection property="numberViews" destination="N0z-rd-Uei" collectionClass="NSMutableArray" id="GVN-hx-fyC"/>
-                        <outletCollection property="numberViews" destination="5GU-F9-DlT" collectionClass="NSMutableArray" id="N3w-q8-Moq"/>
-                        <outletCollection property="numberViews" destination="tKj-a2-8vG" collectionClass="NSMutableArray" id="tms-ow-gRe"/>
-                        <outletCollection property="numberViews" destination="eNm-0R-Lcn" collectionClass="NSMutableArray" id="V1w-TG-2S3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="nTp-jC-I5f">
-                    <connections>
-                        <action selector="tapGesture:" destination="BYZ-38-t0r" id="bj9-ej-C6f"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="nTp-jC-I5f"/>
             </objects>
             <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>

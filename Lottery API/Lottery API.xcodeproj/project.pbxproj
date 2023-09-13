@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6ABE5D12AB1916600CE366B /* LottoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ABE5D02AB1916600CE366B /* LottoView.swift */; };
+		B6ABE5D32AB1917D00CE366B /* LottoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ABE5D22AB1917D00CE366B /* LottoViewModel.swift */; };
+		B6ABE5D52AB1919900CE366B /* Lotto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ABE5D42AB1919900CE366B /* Lotto.swift */; };
+		B6ABE5D72AB194C700CE366B /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ABE5D62AB194C700CE366B /* Observable.swift */; };
+		B6ABE5DA2AB1A1AE00CE366B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B6ABE5D92AB1A1AE00CE366B /* SnapKit */; };
+		B6ABE5DC2AB1A97800CE366B /* CircleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ABE5DB2AB1A97800CE366B /* CircleLabel.swift */; };
+		B6ABE5DE2AB1B3C200CE366B /* LottoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ABE5DD2AB1B3C200CE366B /* LottoAPIManager.swift */; };
+		B6ABE5E02AB1BC3800CE366B /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ABE5DF2AB1BC3800CE366B /* Extension+UIViewController.swift */; };
 		B6EC43902A82566E001E1867 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EC438F2A82566E001E1867 /* AppDelegate.swift */; };
 		B6EC43922A82566E001E1867 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EC43912A82566E001E1867 /* SceneDelegate.swift */; };
-		B6EC43942A82566E001E1867 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EC43932A82566E001E1867 /* ViewController.swift */; };
+		B6EC43942A82566E001E1867 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EC43932A82566E001E1867 /* LottoViewController.swift */; };
 		B6EC43972A82566E001E1867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6EC43952A82566E001E1867 /* Main.storyboard */; };
 		B6EC43992A82566F001E1867 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6EC43982A82566F001E1867 /* Assets.xcassets */; };
 		B6EC439C2A82566F001E1867 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6EC439A2A82566F001E1867 /* LaunchScreen.storyboard */; };
@@ -21,10 +29,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B6ABE5D02AB1916600CE366B /* LottoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoView.swift; sourceTree = "<group>"; };
+		B6ABE5D22AB1917D00CE366B /* LottoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewModel.swift; sourceTree = "<group>"; };
+		B6ABE5D42AB1919900CE366B /* Lotto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lotto.swift; sourceTree = "<group>"; };
+		B6ABE5D62AB194C700CE366B /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		B6ABE5DB2AB1A97800CE366B /* CircleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLabel.swift; sourceTree = "<group>"; };
+		B6ABE5DD2AB1B3C200CE366B /* LottoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoAPIManager.swift; sourceTree = "<group>"; };
+		B6ABE5DF2AB1BC3800CE366B /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		B6EC438C2A82566E001E1867 /* Lottery API.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lottery API.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6EC438F2A82566E001E1867 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6EC43912A82566E001E1867 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B6EC43932A82566E001E1867 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B6EC43932A82566E001E1867 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		B6EC43962A82566E001E1867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B6EC43982A82566F001E1867 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6EC439B2A82566F001E1867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6ABE5DA2AB1A1AE00CE366B /* SnapKit in Frameworks */,
 				B6EC43B02A827ACF001E1867 /* SwiftyJSON in Frameworks */,
 				B6EC43AD2A827AC2001E1867 /* Alamofire in Frameworks */,
 			);
@@ -68,13 +84,20 @@
 			children = (
 				B6EC438F2A82566E001E1867 /* AppDelegate.swift */,
 				B6EC43912A82566E001E1867 /* SceneDelegate.swift */,
-				B6EC43932A82566E001E1867 /* ViewController.swift */,
+				B6ABE5DB2AB1A97800CE366B /* CircleLabel.swift */,
+				B6ABE5D62AB194C700CE366B /* Observable.swift */,
+				B6ABE5DD2AB1B3C200CE366B /* LottoAPIManager.swift */,
+				B6ABE5D42AB1919900CE366B /* Lotto.swift */,
+				B6ABE5D02AB1916600CE366B /* LottoView.swift */,
+				B6ABE5D22AB1917D00CE366B /* LottoViewModel.swift */,
+				B6EC43932A82566E001E1867 /* LottoViewController.swift */,
 				B6EC43952A82566E001E1867 /* Main.storyboard */,
 				B6EC43982A82566F001E1867 /* Assets.xcassets */,
 				B6EC439A2A82566F001E1867 /* LaunchScreen.storyboard */,
 				B6EC439D2A82566F001E1867 /* Info.plist */,
 				B6EC43A52A827266001E1867 /* Extension+UIView.swift */,
 				B6EC43A72A827675001E1867 /* Extension+UIColor.swift */,
+				B6ABE5DF2AB1BC3800CE366B /* Extension+UIViewController.swift */,
 				B6EC43A92A8276A5001E1867 /* Colors.swift */,
 			);
 			path = "Lottery API";
@@ -99,6 +122,7 @@
 			packageProductDependencies = (
 				B6EC43AC2A827AC2001E1867 /* Alamofire */,
 				B6EC43AF2A827ACF001E1867 /* SwiftyJSON */,
+				B6ABE5D92AB1A1AE00CE366B /* SnapKit */,
 			);
 			productName = "Lottery API";
 			productReference = B6EC438C2A82566E001E1867 /* Lottery API.app */;
@@ -131,6 +155,7 @@
 			packageReferences = (
 				B6EC43AB2A827AC2001E1867 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				B6EC43AE2A827ACF001E1867 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				B6ABE5D82AB1A1AE00CE366B /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = B6EC438D2A82566E001E1867 /* Products */;
 			projectDirPath = "";
@@ -159,12 +184,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6ABE5D52AB1919900CE366B /* Lotto.swift in Sources */,
 				B6EC43A82A827675001E1867 /* Extension+UIColor.swift in Sources */,
 				B6EC43AA2A8276A5001E1867 /* Colors.swift in Sources */,
-				B6EC43942A82566E001E1867 /* ViewController.swift in Sources */,
+				B6EC43942A82566E001E1867 /* LottoViewController.swift in Sources */,
 				B6EC43902A82566E001E1867 /* AppDelegate.swift in Sources */,
 				B6EC43922A82566E001E1867 /* SceneDelegate.swift in Sources */,
+				B6ABE5D72AB194C700CE366B /* Observable.swift in Sources */,
+				B6ABE5DC2AB1A97800CE366B /* CircleLabel.swift in Sources */,
+				B6ABE5E02AB1BC3800CE366B /* Extension+UIViewController.swift in Sources */,
+				B6ABE5D32AB1917D00CE366B /* LottoViewModel.swift in Sources */,
 				B6EC43A62A827266001E1867 /* Extension+UIView.swift in Sources */,
+				B6ABE5D12AB1916600CE366B /* LottoView.swift in Sources */,
+				B6ABE5DE2AB1B3C200CE366B /* LottoAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +424,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B6ABE5D82AB1A1AE00CE366B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		B6EC43AB2A827AC2001E1867 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:Alamofire/Alamofire.git";
@@ -411,6 +451,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B6ABE5D92AB1A1AE00CE366B /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6ABE5D82AB1A1AE00CE366B /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		B6EC43AC2A827AC2001E1867 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B6EC43AB2A827AC2001E1867 /* XCRemoteSwiftPackageReference "Alamofire" */;
